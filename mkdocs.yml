@@ -1,7 +1,29 @@
-site_name: Carol Shaw
+site_name: Equipe Carol Shaw - NoFluxoUNB - Avaliação de Qualidade
 theme:
   name: material
+  language: pt-BR
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.expand
 
 nav:
   - Home: index.md
-  
+  - Projeto:
+      - Visão Geral: projeto/visao_geral.md
+      - Stakeholders: projeto/stakeholders.md
+  - Planejamento (Fase 1):
+      - Propósito e Escopo: fase1/proposito_escopo.md
+      - Modelo de Qualidade: fase1/modelo_qualidade.md
+      - Características: fase1/caracteristicas.md
+  - Sustentabilidade:
+      - ODS e Metas: impacto/ods.md
+  - Administrativo:
+      - Contribuição: administrativo/contribuicao.md
+      - Declaração de IA: administrativo/ia.md
+      - Rastreabilidade: administrativo/links.md
+
+extra:
+  version: "Fase 1 (EU1)"
+  last_update: "11/05/2026"
