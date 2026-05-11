@@ -12,7 +12,7 @@ nav:
   - Home: index.md
   - Projeto:
       - Visão Geral: projeto/visao_geral.md
-      - Stakeholders: projeto/stakeholders.md
+      - Requisitante e partes interessadas: projeto/stakeholders.md
   - Planejamento (Fase 1):
       - Propósito e Escopo: fase1/proposito_escopo.md
       - Modelo de Qualidade: fase1/modelo_qualidade.md
