@@ -20,9 +20,9 @@ nav:
   - Sustentabilidade:
       - ODS e Metas: impacto/ods.md
   - Administrativo:
-      - Contribuição: administrativo/contribuicao.md
-      - Declaração de IA: administrativo/ia.md
-      - Rastreabilidade: administrativo/links.md
+      - Contribuição: adm/contribuicao.md
+      - Declaração de IA: adm/ia.md
+      - Rastreabilidade: adm/links.md
 
 extra:
   version: "Fase 1 (EU1)"
