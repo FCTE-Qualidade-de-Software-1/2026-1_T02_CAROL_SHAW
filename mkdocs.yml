@@ -1,0 +1,7 @@
+site_name: Carol Shaw
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  
