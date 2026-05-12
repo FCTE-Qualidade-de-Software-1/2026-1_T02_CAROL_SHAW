@@ -11,55 +11,48 @@ site_dir: site
 theme:
   name: material
   language: pt-BR
+
   logo: assets/img/favicon.svg
   favicon: assets/img/favicon.svg
-  
+
   font:
     text: Poppins
     code: JetBrains Mono
 
   palette:
-    # Dark mode — Premium NoFluxo (Violeta + Preto profundo)
+    # Dark mode — inspirado no NoFluxo
     - scheme: slate
       primary: deep purple
       accent: purple
-      media: "(prefers-color-scheme: dark)"
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Alternar para modo claro
 
     # Light mode
     - scheme: default
       primary: deep purple
       accent: purple
-      media: "(prefers-color-scheme: light)"
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Alternar para modo escuro
-
-    # System preference
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Seguir preferência do sistema
 
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
-    - navigation.path
-    - navigation.indexes
-    - navigation.prune
     - navigation.top
-    - header.autohide
+    - navigation.footer
+
     - toc.integrate
     - toc.follow
-    - search.suggest
+
     - search.highlight
     - search.share
-    - content.tabs.link
+    - search.suggest
+
     - content.code.copy
+    - content.tabs.link
 
   icon:
     repo: fontawesome/brands/github
@@ -91,19 +84,36 @@ nav:
       - Rastreabilidade: adm/links.md
 
 markdown_extensions:
-  - pymdownx.highlight
+  # HTML
+  - md_in_html
+  - attr_list
+
+  # Admonitions / dropdowns
+  - admonition
+  - pymdownx.details
+
+  # Code blocks
   - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
   - pymdownx.inlinehilite
   - pymdownx.snippets
 
-  - admonition
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Extras
   - footnotes
-  - attr_list
-  - md_in_html
+
+  # TOC
+  - toc:
+      permalink: true
 
 extra:
   generator: false
-  
+
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/FCTE-Qualidade-de-Software-1/2026-1_T02_CAROL_SHAW
