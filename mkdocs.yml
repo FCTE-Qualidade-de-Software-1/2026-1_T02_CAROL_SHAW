@@ -27,3 +27,10 @@ nav:
 extra:
   version: "Fase 1 (EU1)"
   last_update: "11/05/2026"
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
