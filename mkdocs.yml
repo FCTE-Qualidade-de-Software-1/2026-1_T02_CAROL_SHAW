@@ -67,8 +67,8 @@ nav:
   - Home: index.md
 
   - Projeto:
-      - Visão Geral: fase1/descricao_produto.md
       - Requisitante e Partes Interessadas: projeto/stakeholders.md
+      - Visão Geral: fase1/descricao_produto.md
 
   - Planejamento (Fase 1):
       - Descrição do Produto: fase1/descricao_produto.md
