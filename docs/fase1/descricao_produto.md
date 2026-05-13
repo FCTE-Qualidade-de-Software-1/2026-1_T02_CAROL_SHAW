@@ -15,6 +15,7 @@ Dessa forma, o estudante consegue um planejamento acadêmico assertivo e persona
 ## Principais funcionalidades
 
 O produto permite:
+
 - Visualizar de forma simples e interativa as matérias equivalentes no fluxograma oficial do curso.
 - Selecionar disciplinas futuras para montar um planejamento personalizado.
 - Usar inteligência artificial para recomendar disciplinas alinhadas aos interesses pessoais, como desenvolvimento de games ou outras áreas específicas, com base nas ementas e informações dos cursos da UnB.
@@ -22,6 +23,7 @@ O produto permite:
 ## Classificação do tipo de produto
 
 De acordo com a norma IEEE 1062, o NoFluxoUnB mesmo sendo um produto desenvolvido para um público específico (alunos da universidade de brasília), ele é classificado como um produto **COTS** *Commercial Off-The-Shelf Software*(Software Comercial de Prateleira) pois:
+
 1. **Produto padronizado**: O NoFluxoUnB não apresenta nada de particular ou específico para um cliente, todos os clientes fazem uso do mesmo produto
 2. **Disponibilidade Geral**: É uma solução de referência, disponível a qualquer instituição que se enquadre no seu público-alvo.
 
