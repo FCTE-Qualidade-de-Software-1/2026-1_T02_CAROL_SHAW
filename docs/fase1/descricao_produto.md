@@ -16,6 +16,7 @@ Dessa forma, o estudante consegue um planejamento acadêmico assertivo e persona
 
 O produto permite:
 
+- Visualizar o fluxograma curricular de todos os cursos de graduação da UnB.
 - Visualizar de forma simples e interativa as matérias equivalentes no fluxograma oficial do curso.
 - Selecionar disciplinas futuras para montar um planejamento personalizado.
 - Usar inteligência artificial para recomendar disciplinas alinhadas aos interesses pessoais, como desenvolvimento de games ou outras áreas específicas, com base nas ementas e informações dos cursos da UnB.
