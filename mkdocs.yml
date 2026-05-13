@@ -78,7 +78,6 @@ nav:
   - Administrativo:
       - Contribuição: adm/contribuicao.md
       - Declaração de IA: adm/ia.md
-      - Rastreabilidade: adm/links.md
 
 markdown_extensions:
   # HTML
