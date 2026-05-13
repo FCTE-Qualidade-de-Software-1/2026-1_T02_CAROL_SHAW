@@ -37,7 +37,7 @@ Limites de Validade: Os resultados obtidos refletem exclusivamente o estado do r
 
 # Referências
 
-> SOARES RAMOS, Cristiane. Processo de Avaliação de Qualidade de Software. Brasília: UnB, 2026. Material de aula (slides).
+> SOARES RAMOS, Cristiane. Processo de Avaliação de Qualidade de Software. Brasília: UnB, 2026. Material de aula (slides). Acesso em: 12/05/2026
 
 # Histórico de Versões
 

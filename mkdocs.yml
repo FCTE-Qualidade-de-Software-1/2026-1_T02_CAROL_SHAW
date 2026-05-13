@@ -72,6 +72,7 @@ nav:
 
   - Planejamento (Fase 1):
       - Propósito e Escopo: fase1/proposito_escopo.md
+      - Descrição do Produto: fase1/descricao_produto.md
       - Modelo de Qualidade: fase1/modelo_qualidade.md
       - Características: fase1/caracteristicas.md
 

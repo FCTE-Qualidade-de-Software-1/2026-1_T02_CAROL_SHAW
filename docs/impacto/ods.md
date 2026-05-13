@@ -138,10 +138,10 @@ Essa digitalização favorece a inclusão tecnológica e contribui para o desenv
 
 ## Referências
 
-- UNICEF Brasil. <b>Objetivos de Desenvolvimento Sustentável</b>. Disponível em:  
+> UNICEF Brasil. <b>Objetivos de Desenvolvimento Sustentável</b>. Disponível em:  
   <https://www.unicef.org/brazil/objetivos-de-desenvolvimento-sustentavel>. Acesso em: 12 maio 2026.
 
-- Instituto de Pesquisa Econômica Aplicada (IPEA). <b>ODS 4 – Educação de Qualidade</b>. Disponível em:  
+> Instituto de Pesquisa Econômica Aplicada (IPEA). <b>ODS 4 – Educação de Qualidade</b>. Disponível em:  
   <https://www.ipea.gov.br/ods/ods4.html>. Acesso em: 12 maio 2026.
 
 
