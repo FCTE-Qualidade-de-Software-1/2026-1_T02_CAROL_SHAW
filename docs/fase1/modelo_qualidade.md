@@ -20,7 +20,7 @@ Figura 1 - Diagrama adaptado do modelo ISO/IEC 25010.
 
 ## 3. Escopo
 
-A avaliação será limitada às duas características para esta Fase 1: **Adequação Funcional** e **Manutenibilidade** — em conformidade com a ISO/IEC 25010. As demais características do modelo (p.ex. Usabilidade, Segurança, Portabilidade, Compatibilidade) ficam fora do escopo desta fase.
+A avaliação será limitada às duas características para esta Fase 1: **Adequação Funcional** e **Manutenibilidade** — em conformidade com a ISO/IEC 25010. As demais características do modelo (p.ex. Usabilidade, Segurança, Portabilidade, Compatibilidade) ficam fora do escopo deste trabalho.
 
 ---
 
@@ -37,7 +37,7 @@ A seleção e priorização das características foi realizada utilizando uma ma
 
 ## 5. Adaptação do Modelo
 
-O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características mais relevantes ao propósito desta avaliação. A tabela abaixo apresenta a priorização com as oito características solicitadas, incluindo Impacto, Risco e Complexidade, além de uma prioridade proposta e breve justificativa.
+O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características mais relevantes ao propósito desta avaliação. A tabela abaixo apresenta a priorização das oito características do modelo de acordo com os critérios definidos anteriormente, juntamente com a ênfase baseada na prioridade.
 
 | Característica           |  Impacto   |    Risco    | Complexidade | Prioridade | Justificativa                                                                                                                        |
 | :----------------------- | :--------: | :---------: | :----------: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------- |
@@ -69,7 +69,7 @@ O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características m
 
 ## 6. Características Selecionadas
 
-Foram selecionadas duas características de qualidade de produto, descritas a seguir:
+Foram selecionadas duas características de qualidade de software, descritas a seguir:
 
 ---
 
@@ -139,3 +139,4 @@ Juntas, elas fornecem confiança de que o NoFluxoUNB não apenas funciona corret
 | Versão | Data       | Descrição                                                                              | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 12/05/2026 | Criação da estrutura do Modelo de Qualidade com Adequação Funcional e Manutenibilidade | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| 1.1    | 13/05/2026 | Revisão e ajustes na definição das características e subcaracterísticas                | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
