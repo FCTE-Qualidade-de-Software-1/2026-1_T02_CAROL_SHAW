@@ -2,7 +2,7 @@
 
 # NoFluxoUnB
 
-## Sobre o projeto
+## 1. Sobre o projeto
 
 O projeto NoFluxoUNB tem como objetivo facilitar o planejamento acadêmico dos estudantes da UnB ao oferecer um fluxograma interativo, intuitivo e de fácil uso. Sua aplicação busca resolver a dificuldade frequente dos alunos em identificar matérias equivalentes e organizar suas disciplinas futuras de maneira eficiente. 
 
@@ -12,7 +12,7 @@ Dessa forma, o estudante consegue um planejamento acadêmico assertivo e persona
 
 **Principal usuário do produto**: Alunos da Universidade de Brasília
 
-## Principais funcionalidades
+## 2. Principais funcionalidades
 
 O produto permite:
 
@@ -20,7 +20,7 @@ O produto permite:
 - Selecionar disciplinas futuras para montar um planejamento personalizado.
 - Usar inteligência artificial para recomendar disciplinas alinhadas aos interesses pessoais, como desenvolvimento de games ou outras áreas específicas, com base nas ementas e informações dos cursos da UnB.
 
-## Classificação do tipo de produto
+## 3. Classificação do tipo de produto
 
 De acordo com a norma IEEE 1062, o NoFluxoUnB mesmo sendo um produto desenvolvido para um público específico (alunos da universidade de brasília), ele é classificado como um produto **COTS** *Commercial Off-The-Shelf Software*(Software Comercial de Prateleira) pois:
 
@@ -29,7 +29,7 @@ De acordo com a norma IEEE 1062, o NoFluxoUnB mesmo sendo um produto desenvolvid
 
 Além dessa definição, ele pode ser considerado como um software de inteligencia artificial, de acordo com **Pressman**, visto que utiliza algoritmos não numéricos, para resolver problemas complexos, como é o caso do fluxo personalizado conforme a necessidade do estudante. 
 
-## Documentação disponível 
+## 4. Documentação disponível 
 
 No github do projeto temos acesso às seguintes informações: 
 
@@ -39,7 +39,8 @@ No github do projeto temos acesso às seguintes informações:
 - Backlog 
 - Produt backlog building 
 
-## Referências 
+## 5. Referências 
+
 > SOARES RAMOS, Cristiane. Processo de Avaliação de Produto de Software. Brasília: UnB, 2026. Material de aula (slides). Acesso em: 12/05/2026
 
 > UNB-MDS. 2025-1-NoFluxoUNB. [S. l.], 2025. Disponível em: https://github.com/unb-mds/2025-1-NoFluxoUNB. Acesso em: 12/05/2026.

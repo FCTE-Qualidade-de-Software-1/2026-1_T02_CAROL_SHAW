@@ -110,7 +110,7 @@ As duas características escolhidas são complementares e formam o alicerce de q
 - **Adequação Funcional** valida o "o quê": as operações acadêmicas são executadas corretamente.
 - **Manutenibilidade** valida o "como": o código pode ser mantido, evoluído e confiado para suportar mudanças futuras.
 
-### Justificativa por Stakeholders
+### 7.1 Justificativa por Stakeholders
 
 **Estudantes:** Dependem de Adequação Funcional para tomar decisões acadêmicas corretas (matrícula, trancamento, etc.). Caso o sistema falhe em parsing, matching ou cálculos, o estudante corre o risco de perder semestres ou não progredir no curso. Manutenibilidade garante que o sistema continuará confiável quando novas matrizes ou regras forem adicionadas (novos cursos, reforma curricular).
 
@@ -130,7 +130,7 @@ Juntas, elas fornecem confiança de que o NoFluxoUNB não apenas funciona corret
 
 > 2. SILVA, E.; TAVARES, T. _Avaliação de Qualidade de Software com ISO/IEC 25010_. Métodos e Boas Práticas, 2024.
 
-> 3. NoFluxoUNB Repository. Disponível em: https://github.com/[repositório]. Acesso em: 2026.
+> 3. UNB-MDS. 2025-1-NoFluxoUNB. [S. l.], 2025. Disponível em: https://github.com/unb-mds/2025-1-NoFluxoUNB. Acesso em: 12/05/2026.
 
 ---
 
