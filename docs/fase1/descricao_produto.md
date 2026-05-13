@@ -38,7 +38,7 @@ No github do projeto temos acesso às seguintes informações:
 - Story map 
 - Requisitos 
 - Backlog 
-- Produt backlog building 
+- Product backlog building 
 
 ## 5. Referências 
 
