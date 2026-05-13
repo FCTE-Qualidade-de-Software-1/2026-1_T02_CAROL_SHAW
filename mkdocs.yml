@@ -67,14 +67,13 @@ nav:
   - Home: index.md
 
   - Projeto:
-      - Visão Geral: projeto/visao_geral.md
+      - Visão Geral: fase1/descricao_produto.md
       - Requisitante e Partes Interessadas: projeto/stakeholders.md
 
   - Planejamento (Fase 1):
-      - Propósito e Escopo: fase1/proposito_escopo.md
       - Descrição do Produto: fase1/descricao_produto.md
+      - Propósito e Escopo: fase1/proposito_escopo.md
       - Modelo de Qualidade: fase1/modelo_qualidade.md
-      - Características: fase1/caracteristicas.md
 
   - Sustentabilidade:
       - ODS e Metas: impacto/ods.md
