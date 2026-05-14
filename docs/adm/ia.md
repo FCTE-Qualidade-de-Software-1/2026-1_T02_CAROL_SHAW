@@ -11,5 +11,6 @@ Em conformidade com os critérios éticos da disciplina, declaramos o uso de fer
 | **ChatGPT 5.5**      | Auxílio na elaboração e revisão dos textos da página de ODS em Sustentabilidade.       | O conteúdo foi revisado para garantir clareza e coerência textual.                                                                                                     |
 | **ChatGPT 5.5**      | Auxílio na configuração e estilização do site por meio do arquivo `mkdocs.yml`.        | As alterações sugeridas foram analisadas e ajustadas para assegurar consistência visual, organização da navegação e principalmente que extensões não fossem quebradas. |
 | **Claude Haiku 4.5** | Auxílio durante a elaboração do texto no documento de modelo de qualidade de software. | O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e adequadas ao contexto do projeto.                                           |
+| **Gemini 3 Flash** | Auxílio durante a elaboração do texto no documento de propósito da avaliação e escopo. | O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e adequadas ao contexto do projeto.                                           |
 
 **Nota:** Nenhum ícone, emoji ou figurinha gerada por IA foi mantido no corpo dos relatórios técnicos.
