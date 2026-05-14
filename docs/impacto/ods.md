@@ -118,9 +118,12 @@ O <b>Sistema Nofluxo</b> conecta-se diretamente ao ODS 4 ao utilizar a tecnologi
 Por meio de soluções digitais, o sistema contribui para a transformação da educação, oferecendo recursos que facilitam:
 </div>
 
-- A organização de informações;
-- O compartilhamento de conteúdos;
-- A gestão de processos educacionais.
+- A organização e o compartilhamento de informações relacionadas aos fluxos dos cursos da Universidade de Brasília;
+- A visualização e o planejamento da trajetória acadêmica dos estudantes;
+- A escolha de grades horárias mais aderentes às necessidades e objetivos do usuário;
+- A simplificação do processo de montagem de matrícula;
+- A democratização digital do acesso às informações acadêmicas para diferentes cursos e perfis de estudantes;
+
 
 <div style="text-align: justify; text-indent: 3em; margin-bottom: 0.5rem;">
 Dessa forma, o Nofluxo fortalece práticas educacionais mais dinâmicas e alinhadas às necessidades da sociedade contemporânea.
