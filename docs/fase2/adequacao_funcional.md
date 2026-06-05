@@ -68,8 +68,18 @@ Critérios:
 
 ## Modelo GQM
 
+<figure markdown>
+
 ![Diagrama GQM - Adequação Funcional](../assets/img/GQM-AdequacaoFuncional.svg)
 
+<figcaption>
+
+<b>Figura 1 – GQM de Adequação Funcional</b>
+</br>
+Fonte: Caio Duarte, 2026.
+
+</figcaption>
+</figure>
 
 
 ## Referências
@@ -85,3 +95,4 @@ Critérios:
 | Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 04/06/2026 | Criação da documentação inicial e estruturação | [Vilmar José Fagundes](https://github.com/VilmarFagundes) |  |  |  |
+| 1.0    | 04/06/2026 | Adiciona GQM de adequação funcional | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
