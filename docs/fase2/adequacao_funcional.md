@@ -25,7 +25,9 @@ $$
 Critérios: 
 
 - Desejável (H1 Confirmada): ≥ 90%
+
 - Aceitável: Entre 60% e 89%
+
 - Inaceitável (H1 Refutada): < 60%
 
 ### Q2: Com que frequência ocorrem resultados imprecisos gerados pelo sistema durante a construção do fluxograma com base nos dados do usuário?
@@ -41,7 +43,9 @@ $$
 Critérios: 
 
 - Desejável (H2 Confirmada): ≤ 1%
+
 - Aceitável: Entre 1,1% e 5%
+
 - Inaceitável (H2 Refutada): > 5%
 
 ### Q3: Qual é o percentual de transações processadas que estão de acordo com as regras e normas acadêmicas da UnB?
@@ -57,7 +61,9 @@ $$
 Critérios: 
 
 - Desejável (H1 Confirmada): 100%
+
 - Aceitável: Entre 80% e 99%
+
 - Inaceitável (H1 Refutada): < 80%
 
 ## Modelo GQM
