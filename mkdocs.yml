@@ -72,6 +72,11 @@ nav:
       - Propósito e Escopo: fase1/proposito_escopo.md
       - Modelo de Qualidade: fase1/modelo_qualidade.md
 
+  - Especificação (Fase 2):
+      - Introdução: fase2/introducao.md
+      - Adequação Funcional: fase2/adequacao_funcional.md
+      - Manutenibilidade: fase2/manutenibilidade.md
+
   - Sustentabilidade:
       - ODS e Metas: impacto/ods.md
 
