@@ -23,6 +23,7 @@ $$
 $$
 
 Critérios: 
+
 - Desejável (H1 Confirmada): ≥ 90%
 - Aceitável: Entre 60% e 89%
 - Inaceitável (H1 Refutada): < 60%
@@ -38,6 +39,7 @@ $$
 $$
 
 Critérios: 
+
 - Desejável (H2 Confirmada): ≤ 1%
 - Aceitável: Entre 1,1% e 5%
 - Inaceitável (H2 Refutada): > 5%
@@ -53,6 +55,7 @@ $$
 $$
 
 Critérios: 
+
 - Desejável (H1 Confirmada): 100%
 - Aceitável: Entre 80% e 99%
 - Inaceitável (H1 Refutada): < 80%

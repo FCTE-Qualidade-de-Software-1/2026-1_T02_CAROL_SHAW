@@ -23,6 +23,7 @@ $$
 $$
 
 Critérios:
+
 - Desejável (H1 Confirmada): ≥ 80%
 - Aceitável: Entre 50% e 79%
 - Inaceitável (H1 Refutada): < 50%
@@ -40,6 +41,7 @@ $$
 $$
 
 Critérios:
+
 - Desejável (H2 Confirmada): ≤ 4 horas por modificação
 - Aceitável: Entre 4 e 8 horas por modificação
 - Inaceitável (H2 Refutada): > 8 horas por modificação
@@ -57,6 +59,7 @@ $$
 $$
 
 Critérios:
+
 - Desejável (H3 Confirmada): 100%
 - Aceitável: Entre 80% e 99%
 - Inaceitável (H3 Refutada): < 80%
@@ -74,6 +77,7 @@ $$
 $$
 
 Critérios:
+
 - Desejável (H4 Confirmada): 100%
 - Aceitável: Entre 80% e 99%
 - Inaceitável (H4 Refutada): < 80%
@@ -90,6 +94,7 @@ $$
 $$
 
 Critérios:
+
 - Desejável (H5 Confirmada): ≥ 80%
 - Aceitável: Entre 50% e 79%
 - Inaceitável (H5 Refutada): < 50%
