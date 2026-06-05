@@ -5,7 +5,7 @@
 | Dimensão | Descrição |
 |----------|-----------|
 | Analisar | O NoFluxoUNB |
-| Para o propósito de | Analisar | 
+| Para o propósito de | Avaliar | 
 | Com respeito a | Adequação Funcional | 
 | Do ponto de visto do/a | Equipe de desenvolvimento |
 | No contexto de | Disciplina de Qualidade de Software |
@@ -16,7 +16,7 @@
 
 #### H1: Espera-se que o NoFluxo tenha implementado maior parte dos requisitos elicitados 
 
-#### Métrica 1: 
+#### Métrica 1: CRF (Cobertura de Requisitos Funcionais)
 Fórmula:
 $$
 \frac{\text{n° funções declaradas na especificação de requisitos}}{\text{n° funções ausentes ou incorretas}} \times 100
@@ -34,7 +34,7 @@ Critérios:
 
 #### H2: A frequência de resultados imprecisos no processamento e validação de dados é inferior ou igual a 1% do total de transações.
 
-#### Métrica 2: 
+#### Métrica 2: TDD (Taxa de Divergência de Dados)
 Fórmula:
 $$
 \frac{\text{n° operações reportadas com divergência de dados}}{\text{n° total de operações realizadas no período}} \times 100
@@ -52,7 +52,7 @@ Critérios:
 
 #### H3: O sistema garante 100% de conformidade no processamento de transações relacionadas as diretrizes UnB.
 
-#### Métrica 3: 
+#### Métrica 3: CF (Conformidade Funcional)
 Fórmula:
 $$
 \frac{\text{n° transações de acordo com as normas}}{\text{n° total de transações processadas}} \times 100
@@ -67,6 +67,8 @@ Critérios:
 - Inaceitável (H1 Refutada): < 80%
 
 ## Modelo GQM
+
+![Diagrama GQM - Adequação Funcional](../assets/img/GQM-AdequacaoFuncional.svg)
 
 
 
