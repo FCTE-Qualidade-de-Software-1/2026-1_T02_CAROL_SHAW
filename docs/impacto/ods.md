@@ -82,30 +82,6 @@ O Sistema NoFluxo apresenta alinhamento com algumas metas específicas do <b>ODS
 
     Até 2030, garantir que todos os jovens e adultos estejam alfabetizados, tendo adquirido os conhecimentos básicos em leitura, escrita e matemática.
 
-
-
-??? success "Meta 4.7 — Educação para o desenvolvimento sustentável"
-
-    Garantir que todos os alunos adquiram conhecimentos e habilidades necessárias para promover o desenvolvimento sustentável, por meio da educação para o desenvolvimento sustentável, direitos humanos, igualdade de gênero, cultura de paz, cidadania global e valorização da diversidade cultural.
-
-
-
-??? info "Meta 4.a — Infraestrutura educacional"
-
-    Ofertar infraestrutura física escolar adequada às necessidades da criança, acessível às pessoas com deficiência e sensível ao gênero, que garanta a existência de ambientes de aprendizagem seguros, não violentos, inclusivos e eficazes para todos.
-
-
-
-??? info "Meta 4.b — Bolsas de estudo"
-
-    Até 2020, ampliar em 50% o número de vagas efetivamente preenchidas por alunos dos países em desenvolvimento para o ensino superior, incluindo programas de formação profissional, tecnologia da informação, engenharia e programas científicos no Brasil.
-
-
-
-??? info "Meta 4.c — Formação de professores"
-
-    Até 2030, assegurar que todos os professores da educação básica tenham formação específica na área de conhecimento em que atuam, promovendo a oferta de formação continuada.
-
 ---
 
 ## Justificativa
