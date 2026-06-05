@@ -1,6 +1,6 @@
 # Propósito da Avaliação e Uso Pretendido
 
-A avaliação do software NoFluxoUNB tem como objetivo central diagnosticar a maturidade do produto sob duas perspectivas críticas: a Adequação Funcional, para garantir que o sistema entregue todas as funcionalidades planejadas de forma correta, e a Manutenibilidade, para assegurar que o código permita manutenções e evoluções futuras sem alto custo ou risco de regressão.
+A avaliação do software NoFluxoUNB (versão 2.3.0) tem como objetivo central diagnosticar a maturidade do produto sob duas perspectivas críticas: a Adequação Funcional, para garantir que o sistema entregue todas as funcionalidades planejadas de forma correta, e a Manutenibilidade, para assegurar que o código permita manutenções e evoluções futuras sem alto custo ou risco de regressão.
 
 Os resultados obtidos poderão ser utilizados pela equipe de desenvolvimento para fundamentar as seguintes decisões:
 
@@ -12,7 +12,7 @@ Dessa forma, a avaliação deixa de ser um processo passivo e passa a atuar como
 
 # Escopo
 
-A avaliação do NoFluxoUNB foca na integridade técnica do núcleo do sistema e na conformidade com o planejamento ágil documentado.
+A avaliação da versão 2.3.0 do NoFluxoUNB foca na integridade técnica do núcleo do sistema e na conformidade com o planejamento ágil documentado.
 
 ## 1. Objetos de Avaliação e Profundidade
 
@@ -29,19 +29,18 @@ Análise Técnica de Código (Manutenibilidade): O objeto de análise é o códi
 ## 2. O que fica de fora?
 
 Interface e Performance: Não serão avaliados o design visual (UI) nem a velocidade de resposta do sistema.
-O objetivo atual é garantir que o software funcione conforme os requisitos e que o produto possa ter uma boa manutenibilidade.. Aspectos visuais e de desempenho não serão tratados nesta avaliação.
+O objetivo atual é garantir que o software funcione conforme os requisitos e que o código seja sólido. Aspectos visuais e de desempenho não serão tratados nesta avaliação.
 
 ## 3. Limites de Validade e Plano de Cobertura Progressiva
 
-Limites de Validade: Os resultados obtidos refletem exclusivamente o estado do repositório no commit do dia 13/05/26, afinal a versão 2.3.0 foi lançada no 09/07/25 e de lá pra cá recebeu diversas atualizações e os desenvolvedores não atualizaram a versão. Alterações posteriores na estrutura do PBB ou refatorações de código invalidam as métricas coletadas nesta rodada.
+Limites de Validade: Os resultados obtidos refletem exclusivamente o estado do repositório no commit final da versão 2.3.0. Alterações posteriores na estrutura do PBB ou refatorações de código invalidam as métricas coletadas nesta rodada.
 
 # Referências
 
-> SOARES RAMOS, Cristiane. Processo de Avaliação de Qualidade de Software. Brasília: UnB, 2026. Material de aula (slides). Acesso em: 12/05/2026
+> 1. SOARES RAMOS, Cristiane. Processo de Avaliação de Qualidade de Software. Brasília: UnB, 2026. Material de aula (slides). Acesso em: 12/05/2026
 
 # Histórico de Versões
 
 | Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 12/05/2026 | Escrita da página | [Gabriel Flores](https://github.com/Gabrielfcoelho) |             |                 |                       |
-| 1.1    | 13/05/2026 | Alteração nos limites de validade | [Isaque Camargos](https://github.com/isaqzin) |             |                 |                       |

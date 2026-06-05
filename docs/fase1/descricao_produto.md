@@ -42,9 +42,9 @@ No github do projeto temos acesso às seguintes informações:
 
 ## 5. Referências 
 
-> SOARES RAMOS, Cristiane. Processo de Avaliação de Produto de Software. Brasília: UnB, 2026. Material de aula (slides). Acesso em: 12/05/2026
+> 1. SOARES RAMOS, Cristiane. Processo de Avaliação de Produto de Software. Brasília: UnB, 2026. Material de aula (slides). Acesso em: 12/05/2026
 
-> UNB-MDS. 2025-1-NoFluxoUNB. [S. l.], 2025. Disponível em: https://github.com/unb-mds/2025-1-NoFluxoUNB. Acesso em: 12/05/2026.
+> 2. UNB-MDS. 2025-1-NoFluxoUNB. [S. l.], 2025. Disponível em: https://github.com/unb-mds/2025-1-NoFluxoUNB. Acesso em: 12/05/2026.
 
 ## Histórico de Versões
 
