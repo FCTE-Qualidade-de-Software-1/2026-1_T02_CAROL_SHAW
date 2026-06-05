@@ -64,7 +64,7 @@ plugins:
       lang: pt
 
 nav:
-  - Home: index.md  
+  - Home: index.md
 
   - Planejamento (Fase 1):
       - Descrição do Produto: fase1/descricao_produto.md
@@ -76,6 +76,10 @@ nav:
       - Introdução: fase2/introducao.md
       - Adequação Funcional: fase2/adequacao_funcional.md
       - Manutenibilidade: fase2/manutenibilidade.md
+
+  - Projeto da Avaliação (Fase 3):
+      - Introdução: fase3/introducao.md
+      - Manutenibilidade: fase3/manutenibilidade.md
 
   - Sustentabilidade:
       - ODS e Metas: impacto/ods.md

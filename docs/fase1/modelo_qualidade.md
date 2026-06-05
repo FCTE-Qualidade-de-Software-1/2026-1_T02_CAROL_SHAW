@@ -42,13 +42,13 @@ O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características m
 | Característica           |  Impacto   |    Risco    | Complexidade | Prioridade | Justificativa                                                                                                                        |
 | :----------------------- | :--------: | :---------: | :----------: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------- |
 | Adequação Funcional      |  Crítico   |    Alto     |     Alta     |   **P1**   | Núcleo do produto: parsing, matching e cálculos impactam decisões acadêmicas. Falhas têm consequências diretas para estudantes.      |
-| Eficiência de Desempenho |    Alto    |    Médio    |  Média-Alta  |     P2     | Relevante para responsividade em geração de fluxogramas e processamento de grandes PDFs; afeta experiência e escalabilidade.         |
-| Compatibilidade          | Médio-Alto |    Médio    |    Média     |     P3     | Importante ao integrar com diferentes fontes de dados e consumidores (export/import), porém menos crítico que funcionalidade básica. |
-| Usabilidade              |    Alto    | Baixo-Médio |    Média     |     P3     | Influencia adoção e corretude de uso, mas não bloqueia operações essenciais quando ausente.                                          |
 | Confiabilidade           |  Crítico   |    Alto     |     Alta     |   **P1**   | Necessária para assegurar integridade dos dados e operação consistente (tolerância a falhas, recuperação).                           |
-| Segurança                |  Crítico   | Médio-Alto  |     Alta     |     P2     | Proteção de dados pessoais e integridade — essencial, porém parte pode ser mitigada em fases posteriores.                            |
 | Manutenibilidade         |    Alto    | Médio-Alto  |     Alta     |   **P1**   | Sustentabilidade do projeto: facilidade de alterar regras acadêmicas e adicionar cursos sem regressões.                              |
+| Eficiência de Desempenho |    Alto    |    Médio    |  Média-Alta  |     P2     | Relevante para responsividade em geração de fluxogramas e processamento de grandes PDFs; afeta experiência e escalabilidade.         |
+| Segurança                |  Crítico   | Médio-Alto  |     Alta     |     P2     | Proteção de dados pessoais e integridade — essencial, porém parte pode ser mitigada em fases posteriores.                            |
+| Compatibilidade          | Médio-Alto |    Médio    |    Média     |     P3     | Importante ao integrar com diferentes fontes de dados e consumidores (export/import), porém menos crítico que funcionalidade básica. |
 | Portabilidade            |   Médio    |    Baixo    |    Média     |     P3     | Facilita deploys em diferentes ambientes, mas não é requisito imediato para correção funcional.                                      |
+| Usabilidade              |    Alto    | Baixo-Médio |    Média     |     P3     | Influencia adoção e corretude de uso, mas não bloqueia operações essenciais quando ausente.                                          |
 
 ---
 
@@ -118,7 +118,7 @@ As duas características escolhidas são complementares e formam o alicerce de q
 
 **Desenvolvedores/Equipe Técnica:** Precisam de Adequação Funcional como base de validação (testes de aceitação). Manutenibilidade permite que novos desenvolvedores entendam o código, corrijam defeitos e implementem novas funcionalidades sem introduzir regressões, reduzindo tempo e custo de iterações.
 
-**Sistema Acadêmico UnB (Integração):** Depende de Adequação Funcional para consumir dados consistentes do NoFluxoUNB (scores, equivalências, integralizações). Manutenibilidade garante que o NoFluxoUNB pode ser atualizado sem quebrar contratos de integração ou expor dados com inconsistências.
+**Fontes de Dados da UnB (Insumos):** O NoFluxoUNB **consome** dados oficiais da UnB — históricos escolares em PDF, ementas e matrizes curriculares — por meio de parsing. A Adequação Funcional depende diretamente da integridade desses insumos: mudanças no formato dos PDFs ou nas ementas impactam a Correção Funcional do sistema. A Manutenibilidade garante que o NoFluxoUNB possa ser rapidamente adaptado quando essas fontes externas mudarem, sem introduzir regressões. Vale ressaltar que o sistema oficial da universidade não depende nem consome dados do NoFluxoUNB, que é um projeto acadêmico/de extensão dos estudantes.
 
 Juntas, elas fornecem confiança de que o NoFluxoUNB não apenas funciona corretamente hoje, mas permanecerá confiável, adaptável e sustentável conforme novas matrizes e regras acadêmicas forem integradas ao longo do ciclo de vida do projeto.
 
@@ -140,3 +140,4 @@ Juntas, elas fornecem confiança de que o NoFluxoUNB não apenas funciona corret
 | ------ | ---------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 12/05/2026 | Criação da estrutura do Modelo de Qualidade com Adequação Funcional e Manutenibilidade | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.1    | 13/05/2026 | Revisão e ajustes na definição das características e subcaracterísticas                | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| 1.2    | 05/06/2026 | Correções do Ponto de Controle 1: reordenação da tabela de priorização por nível (P1→P3) e correção da lógica de integração com as fontes de dados da UnB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
