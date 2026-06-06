@@ -1,6 +1,6 @@
 # Manutenibilidade
 
-Esta página apresenta o Plano de Avaliação da característica **Manutenibilidade**, detalhando o método de avaliação, as instruções para o avaliador, os recursos e o ambiente necessários e o cronograma das ações. O plano operacionaliza as métricas definidas na Fase 2 (RA, TMM, CT, CD e IM), garantindo que a coleta de dados na Fase 4 seja **repetível e reprodutível**.
+Esta página apresenta o Plano de Avaliação da característica **Manutenibilidade**, detalhando o método de avaliação, as instruções para o avaliador, os recursos e o ambiente necessários e o cronograma das ações. O plano operacionaliza as métricas definidas na Fase 2 (M1, M2, M3, M4 e M5), garantindo que a coleta de dados na Fase 4 seja **repetível e reprodutível**.
 
 > **Objeto de avaliação:** código-fonte do NoFluxoUNB hospedado no GitHub, considerando o ambiente multi-linguagem (TypeScript no frontend, Python e SQL no backend), no estado do repositório fixado para esta avaliação.
 
@@ -14,11 +14,11 @@ A avaliação da Manutenibilidade combina **análise estática de código** e **
 
 | Métrica | Nome                       | Tipo de método                                | Fonte de dados                                |
 | :------ | :------------------------- | :-------------------------------------------- | :-------------------------------------------- |
-| RA      | Reutilização de Ativos     | Análise estática + inspeção manual            | Código do frontend                            |
-| TMM     | Tempo Médio de Modificação | Análise de histórico / experimento controlado | Issues, commits e registro de tempo           |
-| CT      | Cobertura de Testes        | Inspeção documental + execução de ferramenta  | Especificação de requisitos e suíte de testes |
-| CD      | Cobertura de Diagnóstico   | Inspeção manual                               | Especificação e código de monitoramento/logs  |
-| IM      | Independência Modular      | Análise estática de dependências              | Estrutura de módulos/componentes              |
+| M1      | Execução de reusabilidade     | Análise estática + inspeção manual            | Código do frontend                            |
+| M2     | Complexidade de modificação | Análise de histórico / experimento controlado | Issues, commits e registro de tempo           |
+| M3      | Completude funcional das funções de teste embutidas        | Inspeção documental + execução de ferramenta  | Especificação de requisitos e suíte de testes |
+| M4      | Suficiência das funções de diagnóstico   | Inspeção manual                               | Especificação e código de monitoramento/logs  |
+| M5      | Condensabilidade      | Análise estática de dependências              | Estrutura de módulos/componentes              |
 
 ---
 
@@ -26,62 +26,62 @@ A avaliação da Manutenibilidade combina **análise estática de código** e **
 
 As instruções a seguir descrevem, passo a passo, como obter cada medida. Todos os dados brutos coletados devem ser registrados nos formulários da seção 3 e armazenados no repositório para auditoria.
 
-### 2.1 RA — Reutilização de Ativos
+### 2.1 M1 — Execução de reusabilidade
 
 $$
-RA = \frac{\text{Ativos Reutilizados}}{\text{Total de Ativos}} \times 100
+M1 = \frac{\text{Ativos Reutilizados}}{\text{Total de Ativos}} \times 100
 $$
 
 1. Definir "ativo" como componente de frontend reutilizável (componentes de UI, hooks, funções utilitárias, estilos compartilhados).
 2. Mapear o diretório de componentes do frontend e listar o **total de ativos** existentes.
 3. Para cada ativo, verificar via busca no código (ex.: referências/imports) se ele é utilizado em **dois ou mais** contextos distintos; em caso afirmativo, marcá-lo como **ativo reutilizado**.
 4. Registrar a contagem de ativos reutilizados e o total no formulário.
-5. Calcular RA aplicando a fórmula.
+5. Calcular M1 aplicando a fórmula.
 
-### 2.2 TMM — Tempo Médio de Modificação
+### 2.2 M2 — Complexidade de modificação
 
 $$
-TMM = \frac{\text{Tempo Total de Trabalho}}{\text{Número de Modificações}}
+M2 = \frac{\text{Tempo Total de Trabalho}}{\text{Número de Modificações}}
 $$
 
 1. Selecionar uma amostra de modificações representativas (ex.: correções de bug e pequenas evoluções) a partir das issues/commits do repositório, ou definir um conjunto de tarefas-padrão a serem executadas em experimento controlado.
 2. Para cada modificação, registrar o **tempo útil de trabalho** gasto (em horas), do início da análise até a conclusão e validação.
 3. Somar o tempo de todas as modificações (**Tempo Total de Trabalho**) e contar o **Número de Modificações**.
-4. Calcular TMM aplicando a fórmula.
+4. Calcular M2 aplicando a fórmula.
 
-### 2.3 CT — Cobertura de Testes
+### 2.3 M3 — Completude funcional das funções de teste embutidas
 
 $$
-CT = \frac{\text{Testes Implementados}}{\text{Testes Requeridos na Especificação}} \times 100
+M3 = \frac{\text{Testes Implementados}}{\text{Testes Requeridos na Especificação}} \times 100
 $$
 
 1. Levantar, na especificação de requisitos/documentação do produto, o conjunto de **cenários de teste requeridos**.
 2. Inspecionar a suíte de testes do repositório e identificar os **testes implementados** que cobrem esses cenários.
 3. Quando disponível, executar a ferramenta de cobertura do projeto para apoiar a contagem.
 4. Registrar o número de testes implementados e o número de testes requeridos.
-5. Calcular CT aplicando a fórmula.
+5. Calcular M3 aplicando a fórmula.
 
-### 2.4 CD — Cobertura de Diagnóstico
+### 2.4 M4 — Suficiência das funções de diagnóstico
 
 $$
-CD = \frac{\text{Funções de Diagnóstico Implementadas}}{\text{Funções Exigidas na Especificação}} \times 100
+M4 = \frac{\text{Funções de Diagnóstico Implementadas}}{\text{Funções Exigidas na Especificação}} \times 100
 $$
 
 1. Listar as **funções de diagnóstico, rastreamento de erros e monitoramento** previstas no projeto/especificação (ex.: logging, tratamento de exceções, telemetria, mensagens de erro).
 2. Inspecionar o código e a configuração para identificar quais dessas funções estão **efetivamente implementadas**.
 3. Registrar o número de funções implementadas e o número de funções exigidas.
-4. Calcular CD aplicando a fórmula.
+4. Calcular M4 aplicando a fórmula.
 
-### 2.5 IM — Independência Modular
+### 2.5 M5 — Condensabilidade   
 
 $$
-IM = \frac{\text{Componentes não impactados por mudanças em outros}}{\text{Total de Componentes}} \times 100
+M5 = \frac{\text{Componentes não impactados por mudanças em outros}}{\text{Total de Componentes}} \times 100
 $$
 
 1. Identificar os **componentes/módulos** principais do sistema e elaborar o mapa de dependências entre eles (via ferramenta de análise estática ou inspeção dos imports).
 2. Para cada componente, avaliar se uma alteração em outro componente o afetaria diretamente (acoplamento). Componentes sem dependências de entrada relevantes são considerados **não impactados**.
 3. Registrar o número de componentes não impactados e o total de componentes.
-4. Calcular IM aplicando a fórmula.
+4. Calcular M5 aplicando a fórmula.
 
 ---
 
@@ -106,52 +106,52 @@ As ferramentas abaixo foram selecionadas a partir da **inspeção das dependênc
 
 | Ferramenta                      | Versão/origem no repositório | Finalidade na avaliação                                          | Métricas   |
 | :------------------------------ | :--------------------------- | :--------------------------------------------------------------- | :--------- |
-| **Git + GitHub**                | repositório oficial          | Fixar o commit de referência e obter histórico de commits/issues | TMM, todas |
+| **Git + GitHub**                | repositório oficial          | Fixar o commit de referência e obter histórico de commits/issues | M2, todas |
 | **pnpm** (monorepo, workspaces) | `pnpm@10.12.1`               | Instalar dependências e executar scripts de lint/teste/cobertura | todas      |
 
 #### b) Análise estática e linters
 
 | Ferramenta                                                  | Origem no repositório                           | Finalidade na avaliação                                                     | Métricas |
 | :---------------------------------------------------------- | :---------------------------------------------- | :-------------------------------------------------------------------------- | :------- |
-| **ESLint** (+ `@typescript-eslint`, `eslint-plugin-svelte`) | frontend e backend (`lint`)                     | Identificar code smells e apoiar a contagem de ativos/componentes TS/Svelte | RA, IM   |
-| **svelte-check** e **tsc --noEmit** (`type-check`)          | frontend / backend                              | Verificar consistência de tipos e imports entre módulos                     | IM       |
-| **pylint**                                                  | `.pylintrc` na raiz                             | Análise estática dos serviços Python                                        | RA, IM   |
-| **flake8**, **black**, **isort**, **mypy**                  | `security-and-quality.yml` / `python-tests.yml` | Padronização e checagem estática do código Python                           | RA, IM   |
-| **madge** (TS/JS) e **pydeps** (Python) — _a adotar_        | — (não presente; sugerido)                      | Gerar o grafo de dependências entre módulos para medir acoplamento          | IM       |
+| **ESLint** (+ `@typescript-eslint`, `eslint-plugin-svelte`) | frontend e backend (`lint`)                     | Identificar code smells e apoiar a contagem de ativos/componentes TS/Svelte | M1, M5   |
+| **svelte-check** e **tsc --noEmit** (`type-check`)          | frontend / backend                              | Verificar consistência de tipos e imports entre módulos                     | M5       |
+| **pylint**                                                  | `.pylintrc` na raiz                             | Análise estática dos serviços Python                                        | M1, M5   |
+| **flake8**, **black**, **isort**, **mypy**                  | `security-and-quality.yml` / `python-tests.yml` | Padronização e checagem estática do código Python                           | M1, M5   |
+| **madge** (TS/JS) e **pydeps** (Python) — _a adotar_        | — (não presente; sugerido)                      | Gerar o grafo de dependências entre módulos para medir acoplamento          | M5       |
 
-> Observação: o projeto ainda não possui uma ferramenta dedicada de **grafo de dependências**. Recomenda-se incluir o `madge` (para o código TypeScript/Svelte) e o `pydeps` (para o código Python) para tornar o cálculo de IM objetivo e auditável; na ausência delas, o mapa de dependências é obtido pela inspeção dos `import`/`require` apoiada pelo ESLint e pelo `tsc`.
+> Observação: o projeto ainda não possui uma ferramenta dedicada de **grafo de dependências**. Recomenda-se incluir o `madge` (para o código TypeScript/Svelte) e o `pydeps` (para o código Python) para tornar o cálculo de M5 objetivo e auditável; na ausência delas, o mapa de dependências é obtido pela inspeção dos `import`/`require` apoiada pelo ESLint e pelo `tsc`.
 
 #### c) Testes e cobertura
 
 | Ferramenta                            | Origem no repositório                             | Finalidade na avaliação                                          | Métricas |
 | :------------------------------------ | :------------------------------------------------ | :--------------------------------------------------------------- | :------- |
-| **Jest + ts-jest**                    | backend (`test:coverage`, `jest.config.js`)       | Executar e medir cobertura dos testes do backend TS              | CT       |
-| **Vitest** (+ coverage)               | frontend Svelte (`test:coverage`)                 | Executar e medir cobertura dos testes unitários do frontend      | CT       |
-| **Playwright**                        | frontend (`test:integration`)                     | Testes de integração/E2E como evidência de cobertura de cenários | CT       |
-| **pytest + pytest-cov + pytest-mock** | `tests-python/pytest.ini` (`--cov-fail-under=70`) | Executar e medir cobertura dos serviços Python                   | CT       |
-| **Codecov**                           | `codecov.yml` (alvo 80%)                          | Consolidar e auditar os relatórios de cobertura                  | CT       |
+| **Jest + ts-jest**                    | backend (`test:coverage`, `jest.config.js`)       | Executar e medir cobertura dos testes do backend TS              | M3       |
+| **Vitest** (+ coverage)               | frontend Svelte (`test:coverage`)                 | Executar e medir cobertura dos testes unitários do frontend      | M3       |
+| **Playwright**                        | frontend (`test:integration`)                     | Testes de integração/E2E como evidência de cobertura de cenários | M3       |
+| **pytest + pytest-cov + pytest-mock** | `tests-python/pytest.ini` (`--cov-fail-under=70`) | Executar e medir cobertura dos serviços Python                   | M3       |
+| **Codecov**                           | `codecov.yml` (alvo 80%)                          | Consolidar e auditar os relatórios de cobertura                  | M3       |
 
 #### d) Diagnóstico, logging e monitoramento
 
 | Ferramenta                    | Origem no repositório        | Finalidade na avaliação                                  | Métricas |
 | :---------------------------- | :--------------------------- | :------------------------------------------------------- | :------- |
-| **Winston**                   | backend (`winston`)          | Verificar implementação de logging estruturado           | CD       |
-| **Morgan**                    | backend (`morgan`)           | Verificar registro de requisições HTTP                   | CD       |
-| **Helmet**                    | backend (`helmet`)           | Verificar cabeçalhos de segurança/robustez               | CD       |
-| **psutil**                    | `requirements_monitor.txt`   | Verificar monitoramento de recursos do sistema           | CD       |
-| **logging** / **stack_trace** | app Flutter (`pubspec.yaml`) | Verificar diagnóstico e rastreamento de erros no cliente | CD       |
+| **Winston**                   | backend (`winston`)          | Verificar implementação de logging estruturado           | M4       |
+| **Morgan**                    | backend (`morgan`)           | Verificar registro de requisições HTTP                   | M4       |
+| **Helmet**                    | backend (`helmet`)           | Verificar cabeçalhos de segurança/robustez               | M4       |
+| **psutil**                    | `requirements_monitor.txt`   | Verificar monitoramento de recursos do sistema           | M4       |
+| **logging** / **stack_trace** | app Flutter (`pubspec.yaml`) | Verificar diagnóstico e rastreamento de erros no cliente | M4       |
 
 #### e) Apoio à coleta
 
 | Ferramenta                                                       | Finalidade na avaliação                                                | Métricas |
 | :--------------------------------------------------------------- | :--------------------------------------------------------------------- | :------- |
-| **Documentação do produto** (StoryMap, requisitos, backlog, PBB) | Referência dos cenários de teste e das funções de diagnóstico exigidas | CT, CD   |
-| **GitHub Actions** (workflows de CI)                             | Evidência reprodutível da execução de lint/testes/cobertura            | CT, IM   |
+| **Documentação do produto** (StoryMap, requisitos, backlog, PBB) | Referência dos cenários de teste e das funções de diagnóstico exigidas | M3, M4   |
+| **GitHub Actions** (workflows de CI)                             | Evidência reprodutível da execução de lint/testes/cobertura            | M3, M5   |
 | **Planilha de coleta / formulários**                             | Registro auditável dos dados brutos                                    | todas    |
 
 ### 3.4 Massa de dados
 
-Para esta característica, a "massa de dados" corresponde ao próprio **código-fonte e à documentação** do NoFluxoUNB no commit de referência, além do histórico de issues/commits utilizado na amostragem da métrica TMM. Não há necessidade de dados-exemplo de execução, uma vez que a avaliação é majoritariamente estática.
+Para esta característica, a "massa de dados" corresponde ao próprio **código-fonte e à documentação** do NoFluxoUNB no commit de referência, além do histórico de issues/commits utilizado na amostragem da métrica M2. Não há necessidade de dados-exemplo de execução, uma vez que a avaliação é majoritariamente estática.
 
 ### 3.5 Formulários de coleta
 
@@ -166,9 +166,9 @@ O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as at
 | Etapa | Atividade (a executar na Fase 4)                                                           | Métricas | Responsável | Data de execução |
 | :---- | :---------------------------------------------------------------------------------------- | :------- | :---------- | :--------------- |
 | 1     | Preparação do ambiente: clonar repositório no commit de referência e instalar ferramentas | —        |             | 07/06/2026 |
-| 2     | Coleta estática: mapear ativos e componentes; calcular RA e IM                            | RA, IM   |             | 07/06/2026 |
-| 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular CT e CD         | CT, CD   |             | 08/06/2026 |
-| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular TMM           | TMM      |             | 09/06/2026 |
+| 2     | Coleta estática: mapear ativos e componentes; calcular M1 e M5                            | M1, M5   |             | 07/06/2026 |
+| 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular M3 e M4         | M3, M4   |             | 08/06/2026 |
+| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular M2           | M2      |             | 09/06/2026 |
 | 5     | Consolidação dos dados brutos e formulários no repositório                                | todas    |             | 09/06/2026 |
 | 6     | Verificação cruzada dos resultados e preparação para a Fase 4                             | todas    |             | 10/06/2026 |
 
@@ -176,7 +176,7 @@ O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as at
 
 ## 5. Consistência com a Fase 2
 
-Cada elemento deste plano deriva diretamente da especificação da Fase 2: os métodos e ferramentas foram escolhidos para coletar exatamente as métricas RA, TMM, CT, CD e IM e permitir a comparação com seus respectivos níveis de pontuação e critérios de julgamento. O ambiente (acesso ao código, histórico de commits e documentação) garante a disponibilidade dos dados necessários para todas as medições, assegurando rastreabilidade entre o que foi especificado e o que será executado na Fase 4.
+Cada elemento deste plano deriva diretamente da especificação da Fase 2: os métodos e ferramentas foram escolhidos para coletar exatamente as métricas M1, M2, M3, M4 e M5 e permitir a comparação com seus respectivos níveis de pontuação e critérios de julgamento. O ambiente (acesso ao código, histórico de commits e documentação) garante a disponibilidade dos dados necessários para todas as medições, assegurando rastreabilidade entre o que foi especificado e o que será executado na Fase 4.
 
 ---
 

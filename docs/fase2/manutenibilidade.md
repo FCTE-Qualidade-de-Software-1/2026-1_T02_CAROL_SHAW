@@ -56,7 +56,7 @@ Critérios:
 
 #### H3: Espera-se que a equipe tenha implementado 100% dos cenários de teste definidos na especificação dos requisitos da aplicação.
 
-#### Métrica 3: Completude funcional das funções de teste mbutidas
+#### Métrica 3: Completude funcional das funções de teste embutidas
 Fórmula:
 $$
 \frac{\text{Testes Implementados}}{\text{Testes Requeridos na Especificação}} \times 100
@@ -110,7 +110,23 @@ Critérios:
 - Inaceitável (H5 Refutada): < 50%
 
 
-## 8. Referências Bibliográficas
+## Modelo GQM
+
+<figure markdown>
+
+![Diagrama GQM - manutenibilidade](../assets/img/gqm_manutenibilidade.png)
+
+<figcaption>
+
+<b>Figura 1 – GQM de Manutenibilidade</b>
+</br>
+Fonte: Isaque Camargos, 2026.
+
+</figcaption>
+</figure>
+
+
+## Referências Bibliográficas
 
 > 1. ISO/IEC 25010:2023. Características e subcaracterísticas de qualidade de software. Disponível em: https://www.iso.org/standard/82998.html. Acesso em: 4 de junho de 2026.
 
