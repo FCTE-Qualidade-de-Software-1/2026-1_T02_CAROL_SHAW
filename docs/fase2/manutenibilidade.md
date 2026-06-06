@@ -16,7 +16,7 @@
 
 #### H1: Espera-se que o NoFluxoUnB apresente um alto grau de reaproveitamento de componentes e ativos no frontend.
 
-#### Métrica 1: RA (Reutilização de Ativos)
+#### Métrica 1: Execução de reusabilidade
 Fórmula:
 $$
 \frac{\text{Ativos Reutilizados}}{\text{Total de Ativos}} \times 100
@@ -36,7 +36,7 @@ Critérios:
 
 #### H2: Espera-se que a equipe do NoFluxoUnB leve, em média, menos de 4 horas úteis para realizar uma modificação no sistema.
 
-#### Métrica 2: TMM (Tempo Médio de Modificação)
+#### Métrica 2: Complexidade de modificação
 Fórmula:
 $$
 \frac{\text{Tempo Total de Trabalho}}{\text{Número de Modificações}}
@@ -56,7 +56,7 @@ Critérios:
 
 #### H3: Espera-se que a equipe tenha implementado 100% dos cenários de teste definidos na especificação dos requisitos da aplicação.
 
-#### Métrica 3: CT (Cobertura de Testes)
+#### Métrica 3: Completude funcional das funções de teste mbutidas
 Fórmula:
 $$
 \frac{\text{Testes Implementados}}{\text{Testes Requeridos na Especificação}} \times 100
@@ -76,7 +76,7 @@ Critérios:
 
 #### H4: Espera-se que o NoFluxoUnB implemente integralmente as funcionalidades de diagnóstico, rastreamento de erros e monitoramento previstas no projeto.
 
-#### Métrica 4: CD (Cobertura de Diagnóstico)
+#### Métrica 4: Suficiência das funções de diagnóstico
 Fórmula:
 $$
 \frac{\text{Funções de Diagnóstico Implementadas}}{\text{Funções Exigidas na Especificação}} \times 100
@@ -95,7 +95,7 @@ Critérios:
 
 #### H5: Espera-se que o NoFluxoUnB possua alta modularidade, de modo que alterações em um componente tenham impacto mínimo nos demais.
 
-#### Métrica 5: IM (Independência Modular)
+#### Métrica 5: Condensabilidade
 Fórmula:
 $$
 \frac{\text{Componentes não impactados por mudanças em outros}}{\text{Total de Componentes}} \times 100
