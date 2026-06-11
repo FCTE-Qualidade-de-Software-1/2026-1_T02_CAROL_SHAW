@@ -18,7 +18,7 @@
 | Caio Ferreira Duarte                   | 231026901 | 16,67%                                                                          | 16,67%                      |
 | Gabriel Flores Coelho                  | 231026358 | 16,67%                                                                          | 16,67%                      |
 | Gustavo Oki de Freitas Rodrigues Leite | 231034716 | 16,67%                                                                          | 16,67%                      |
-| Isaque Camargos Nascimento             | 231011515 | 16,67%                                                                          | 16,67%                      |
+| Isaque Camargos Nascimento             | 231011515 | Execução de toda fase 2 relacionada à manutenibilidade         | 16,67%                      |
 | Matheus de Alcântara da Silva Campos   | 231026509 | Planejamento da avaliação da manutenibilidade e redação da introdução da Fase 3 | 16,67%                      |
 | Vilmar José Fagundes dos Passos Júnior | 231026590 | 16,67%                                                                          | 16,67%                      |
 

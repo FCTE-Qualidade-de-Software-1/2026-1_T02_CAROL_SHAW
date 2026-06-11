@@ -113,7 +113,7 @@ Critérios:
 ## Modelo GQM
 
 <figure markdown>
-
+    
 ![Diagrama GQM - manutenibilidade](../assets/img/gqm_manutenibilidade.png)
 
 <figcaption>
