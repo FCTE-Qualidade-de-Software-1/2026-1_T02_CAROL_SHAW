@@ -37,7 +37,7 @@ A seleção e priorização das características foi realizada utilizando uma ma
 
 ## 5. Adaptação do Modelo
 
-O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características mais relevantes ao propósito desta avaliação. A tabela abaixo apresenta a priorização das oito características do modelo de acordo com os critérios definidos anteriormente, juntamente com a ênfase baseada na prioridade.
+O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características mais relevantes ao propósito desta avaliação. A **Tabela 1** apresenta a priorização das oito características do modelo de acordo com os critérios definidos anteriormente.
 
 | Característica           |  Impacto   |    Risco    | Complexidade | Prioridade | Justificativa                                                                                                                        |
 | :----------------------- | :--------: | :---------: | :----------: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,9 +50,13 @@ O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características m
 | Portabilidade            |   Médio    |    Baixo    |    Média     |     P3     | Facilita deploys em diferentes ambientes, mas não é requisito imediato para correção funcional.                                      |
 | Usabilidade              |    Alto    | Baixo-Médio |    Média     |     P3     | Influencia adoção e corretude de uso, mas não bloqueia operações essenciais quando ausente.                                          |
 
+<p align="center">Tabela 1 - "Matriz de priorização das características de qualidade (Impacto × Risco × Complexidade)" Autor: Matheus de Alcântara</p>
+
 ---
 
 ## Tabela de Ênfase por Priorização
+
+A **Tabela 2** apresenta a ênfase (escala de 1 a 5) atribuída a cada característica conforme o seu nível de prioridade.
 
 | Característica           | Prioridade | Ênfase (1 a 5) |
 | ------------------------ | :--------: | :------------: |
@@ -64,6 +68,8 @@ O modelo padrão ISO/IEC 25010 foi adaptado para priorizar as características m
 | Compatibilidade          |     P3     |       3        |
 | Portabilidade            |     P3     |       3        |
 | Usabilidade              |     P3     |       4        |
+
+<p align="center">Tabela 2 - "Ênfase atribuída a cada característica de qualidade por nível de prioridade" Autor: Matheus de Alcântara</p>
 
 ---
 
@@ -136,8 +142,12 @@ Juntas, elas fornecem confiança de que o NoFluxoUNB não apenas funciona corret
 
 ## **Histórico de Versão**
 
-| Versão | Data       | Descrição                                                                              | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
-| ------ | ---------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
-| 1.0    | 12/05/2026 | Criação da estrutura do Modelo de Qualidade com Adequação Funcional e Manutenibilidade | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
-| 1.1    | 13/05/2026 | Revisão e ajustes na definição das características e subcaracterísticas                | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+O histórico de alterações desta página é apresentado na **Tabela 3**.
+
+| Versão | Data       | Descrição                                                                                                                                                 | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 12/05/2026 | Criação da estrutura do Modelo de Qualidade com Adequação Funcional e Manutenibilidade                                                                    | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| 1.1    | 13/05/2026 | Revisão e ajustes na definição das características e subcaracterísticas                                                                                   | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.2    | 05/06/2026 | Correções do Ponto de Controle 1: reordenação da tabela de priorização por nível (P1→P3) e correção da lógica de integração com as fontes de dados da UnB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+
+<p align="center">Tabela 3 - "Histórico de versões" Autor: Matheus de Alcântara</p>

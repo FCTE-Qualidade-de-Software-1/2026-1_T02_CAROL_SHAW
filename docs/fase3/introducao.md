@@ -28,6 +28,10 @@ O Plano de Avaliação aqui descrito mantém rastreabilidade direta com a Fase 2
 
 ## Histórico de Versões
 
+O histórico de alterações desta página é apresentado na **Tabela 1**.
+
 | Versão | Data       | Descrição                                              | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 05/06/2026 | Criação da introdução da Fase 3 (Projetar a Avaliação) | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+
+<p align="center">Tabela 1 - "Histórico de versões" Autor: Matheus de Alcântara</p>

@@ -12,13 +12,17 @@ A avaliação da Manutenibilidade combina **análise estática de código** e **
 
 ### 1.1 Visão geral por métrica
 
-| Métrica | Nome                       | Tipo de método                                | Fonte de dados                                |
-| :------ | :------------------------- | :-------------------------------------------- | :-------------------------------------------- |
-| M1      | Execução de reusabilidade     | Análise estática + inspeção manual            | Código do frontend                            |
-| M2     | Complexidade de modificação | Análise de histórico / experimento controlado | Issues, commits e registro de tempo           |
-| M3      | Completude funcional das funções de teste embutidas        | Inspeção documental + execução de ferramenta  | Especificação de requisitos e suíte de testes |
-| M4      | Suficiência das funções de diagnóstico   | Inspeção manual                               | Especificação e código de monitoramento/logs  |
-| M5      | Condensabilidade      | Análise estática de dependências              | Estrutura de módulos/componentes              |
+A **Tabela 1** resume, para cada métrica, o tipo de método de avaliação e a fonte de dados utilizada.
+
+| Métrica | Nome                                                | Tipo de método                                | Fonte de dados                                |
+| :------ | :-------------------------------------------------- | :-------------------------------------------- | :-------------------------------------------- |
+| M1      | Execução de reusabilidade                           | Análise estática + inspeção manual            | Código do frontend                            |
+| M2      | Complexidade de modificação                         | Análise de histórico / experimento controlado | Issues, commits e registro de tempo           |
+| M3      | Completude funcional das funções de teste embutidas | Inspeção documental + execução de ferramenta  | Especificação de requisitos e suíte de testes |
+| M4      | Suficiência das funções de diagnóstico              | Inspeção manual                               | Especificação e código de monitoramento/logs  |
+| M5      | Condensabilidade                                    | Análise estática de dependências              | Estrutura de módulos/componentes              |
+
+<p align="center">Tabela 1 - "Visão geral do método de avaliação por métrica de Manutenibilidade" Autor: Matheus de Alcântara</p>
 
 ---
 
@@ -72,7 +76,7 @@ $$
 3. Registrar o número de funções implementadas e o número de funções exigidas.
 4. Calcular M4 aplicando a fórmula.
 
-### 2.5 M5 — Condensabilidade   
+### 2.5 M5 — Condensabilidade
 
 $$
 M5 = \frac{\text{Componentes não impactados por mudanças em outros}}{\text{Total de Componentes}} \times 100
@@ -100,16 +104,22 @@ A avaliação será conduzida pelos membros da equipe atuando como avaliadores. 
 
 ### 3.3 Software e ferramentas
 
-As ferramentas abaixo foram selecionadas a partir da **inspeção das dependências e configurações reais do repositório do NoFluxoUNB** (`package.json`, `requirements.txt`, `.pylintrc`, `jest.config.js`, `pytest.ini`, `codecov.yml` e os workflows em `.github/workflows/`). Priorizou-se reutilizar o ferramental que o próprio projeto já adota, garantindo reprodutibilidade.
+As ferramentas abaixo foram selecionadas a partir da **inspeção das dependências e configurações reais do repositório do NoFluxoUNB** (`package.json`, `requirements.txt`, `.pylintrc`, `jest.config.js`, `pytest.ini`, `codecov.yml` e os workflows em `.github/workflows/`). Priorizou-se reutilizar o ferramental que o próprio projeto já adota, garantindo reprodutibilidade. Elas estão agrupadas por finalidade nas **Tabelas 2 a 6**.
 
 #### a) Ambiente e gestão de código
 
-| Ferramenta                      | Versão/origem no repositório | Finalidade na avaliação                                          | Métricas   |
-| :------------------------------ | :--------------------------- | :--------------------------------------------------------------- | :--------- |
+A **Tabela 2** lista as ferramentas de ambiente e gestão de código.
+
+| Ferramenta                      | Versão/origem no repositório | Finalidade na avaliação                                          | Métricas  |
+| :------------------------------ | :--------------------------- | :--------------------------------------------------------------- | :-------- |
 | **Git + GitHub**                | repositório oficial          | Fixar o commit de referência e obter histórico de commits/issues | M2, todas |
-| **pnpm** (monorepo, workspaces) | `pnpm@10.12.1`               | Instalar dependências e executar scripts de lint/teste/cobertura | todas      |
+| **pnpm** (monorepo, workspaces) | `pnpm@10.12.1`               | Instalar dependências e executar scripts de lint/teste/cobertura | todas     |
+
+<p align="center">Tabela 2 - "Ferramentas de ambiente e gestão de código" Autor: Matheus de Alcântara</p>
 
 #### b) Análise estática e linters
+
+A **Tabela 3** apresenta as ferramentas de análise estática e linters.
 
 | Ferramenta                                                  | Origem no repositório                           | Finalidade na avaliação                                                     | Métricas |
 | :---------------------------------------------------------- | :---------------------------------------------- | :-------------------------------------------------------------------------- | :------- |
@@ -119,9 +129,13 @@ As ferramentas abaixo foram selecionadas a partir da **inspeção das dependênc
 | **flake8**, **black**, **isort**, **mypy**                  | `security-and-quality.yml` / `python-tests.yml` | Padronização e checagem estática do código Python                           | M1, M5   |
 | **madge** (TS/JS) e **pydeps** (Python) — _a adotar_        | — (não presente; sugerido)                      | Gerar o grafo de dependências entre módulos para medir acoplamento          | M5       |
 
+<p align="center">Tabela 3 - "Ferramentas de análise estática e linters" Autor: Matheus de Alcântara</p>
+
 > Observação: o projeto ainda não possui uma ferramenta dedicada de **grafo de dependências**. Recomenda-se incluir o `madge` (para o código TypeScript/Svelte) e o `pydeps` (para o código Python) para tornar o cálculo de M5 objetivo e auditável; na ausência delas, o mapa de dependências é obtido pela inspeção dos `import`/`require` apoiada pelo ESLint e pelo `tsc`.
 
 #### c) Testes e cobertura
+
+A **Tabela 4** apresenta as ferramentas de testes e cobertura.
 
 | Ferramenta                            | Origem no repositório                             | Finalidade na avaliação                                          | Métricas |
 | :------------------------------------ | :------------------------------------------------ | :--------------------------------------------------------------- | :------- |
@@ -131,7 +145,11 @@ As ferramentas abaixo foram selecionadas a partir da **inspeção das dependênc
 | **pytest + pytest-cov + pytest-mock** | `tests-python/pytest.ini` (`--cov-fail-under=70`) | Executar e medir cobertura dos serviços Python                   | M3       |
 | **Codecov**                           | `codecov.yml` (alvo 80%)                          | Consolidar e auditar os relatórios de cobertura                  | M3       |
 
+<p align="center">Tabela 4 - "Ferramentas de testes e cobertura" Autor: Matheus de Alcântara</p>
+
 #### d) Diagnóstico, logging e monitoramento
+
+A **Tabela 5** apresenta as ferramentas de diagnóstico, logging e monitoramento.
 
 | Ferramenta                    | Origem no repositório        | Finalidade na avaliação                                  | Métricas |
 | :---------------------------- | :--------------------------- | :------------------------------------------------------- | :------- |
@@ -141,13 +159,19 @@ As ferramentas abaixo foram selecionadas a partir da **inspeção das dependênc
 | **psutil**                    | `requirements_monitor.txt`   | Verificar monitoramento de recursos do sistema           | M4       |
 | **logging** / **stack_trace** | app Flutter (`pubspec.yaml`) | Verificar diagnóstico e rastreamento de erros no cliente | M4       |
 
+<p align="center">Tabela 5 - "Ferramentas de diagnóstico, logging e monitoramento" Autor: Matheus de Alcântara</p>
+
 #### e) Apoio à coleta
+
+A **Tabela 6** apresenta os recursos de apoio à coleta.
 
 | Ferramenta                                                       | Finalidade na avaliação                                                | Métricas |
 | :--------------------------------------------------------------- | :--------------------------------------------------------------------- | :------- |
 | **Documentação do produto** (StoryMap, requisitos, backlog, PBB) | Referência dos cenários de teste e das funções de diagnóstico exigidas | M3, M4   |
 | **GitHub Actions** (workflows de CI)                             | Evidência reprodutível da execução de lint/testes/cobertura            | M3, M5   |
 | **Planilha de coleta / formulários**                             | Registro auditável dos dados brutos                                    | todas    |
+
+<p align="center">Tabela 6 - "Recursos de apoio à coleta" Autor: Matheus de Alcântara</p>
 
 ### 3.4 Massa de dados
 
@@ -161,16 +185,18 @@ Para cada métrica, registrar no repositório uma tabela com: identificador da m
 
 ## 4. Cronograma de Avaliação
 
-O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as atividades de coleta e análise da Manutenibilidade serão **executadas na Fase 4**. Ou seja, nesta fase apenas se planeja a agenda; a obtenção das medidas, a comparação com os critérios e o julgamento ocorrerão na Fase 4, conforme este cronograma. Toda a execução está prevista para o período de **07/06/2026 a 10/06/2026**.
+O cronograma da **Tabela 7** é parte do planejamento da Fase 3 e define **quando** as atividades de coleta e análise da Manutenibilidade serão **executadas na Fase 4**. Ou seja, nesta fase apenas se planeja a agenda; a obtenção das medidas, a comparação com os critérios e o julgamento ocorrerão na Fase 4, conforme este cronograma. Toda a execução está prevista para o período de **07/06/2026 a 10/06/2026**.
 
-| Etapa | Atividade (a executar na Fase 4)                                                           | Métricas | Responsável | Data de execução |
+| Etapa | Atividade (a executar na Fase 4)                                                          | Métricas | Responsável | Data de execução |
 | :---- | :---------------------------------------------------------------------------------------- | :------- | :---------- | :--------------- |
-| 1     | Preparação do ambiente: clonar repositório no commit de referência e instalar ferramentas | —        |             | 07/06/2026 |
-| 2     | Coleta estática: mapear ativos e componentes; calcular M1 e M5                            | M1, M5   |             | 07/06/2026 |
-| 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular M3 e M4         | M3, M4   |             | 08/06/2026 |
-| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular M2           | M2      |             | 09/06/2026 |
-| 5     | Consolidação dos dados brutos e formulários no repositório                                | todas    |             | 09/06/2026 |
-| 6     | Verificação cruzada dos resultados e preparação para a Fase 4                             | todas    |             | 10/06/2026 |
+| 1     | Preparação do ambiente: clonar repositório no commit de referência e instalar ferramentas | —        |             | 07/06/2026       |
+| 2     | Coleta estática: mapear ativos e componentes; calcular M1 e M5                            | M1, M5   |             | 07/06/2026       |
+| 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular M3 e M4         | M3, M4   |             | 08/06/2026       |
+| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular M2            | M2       |             | 09/06/2026       |
+| 5     | Consolidação dos dados brutos e formulários no repositório                                | todas    |             | 09/06/2026       |
+| 6     | Verificação cruzada dos resultados e preparação para a Fase 4                             | todas    |             | 10/06/2026       |
+
+<p align="center">Tabela 7 - "Cronograma de execução da avaliação de Manutenibilidade (Fase 4)" Autor: Matheus de Alcântara</p>
 
 ---
 
@@ -192,8 +218,12 @@ Cada elemento deste plano deriva diretamente da especificação da Fase 2: os m�
 
 ## Histórico de Versões
 
+O histórico de alterações desta página é apresentado na **Tabela 8**.
+
 | Versão | Data       | Descrição                                                                             | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Manutenibilidade                         | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.1    | 05/06/2026 | Especificação das ferramentas reais a partir da inspeção do repositório do NoFluxoUNB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.2    | 05/06/2026 | Definição do cronograma de execução (07/06 a 10/06/2026)                              | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+
+<p align="center">Tabela 8 - "Histórico de versões da página Plano de Avaliação" Autor: Matheus de Alcântara</p>
