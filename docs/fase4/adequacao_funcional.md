@@ -64,17 +64,61 @@ A matriz completa de inspeção está disponível em [Evidência da CRF](evidenc
 
 ### 1.2 TDD - Taxa de Divergência de Dados
 
+#### 1.2.1 - Definição do conjunto de operações-padrão para o experimento
+Afim de obter a Taxa de Divergência de Dados (TDD) foram listadas as seguintes operações a serem realizadas: login, importar histórico, verificação do fluxograma, consulta de pré-requisitos de disciplinas conhecidas (Algoritmo e Programação de Computadores, Estrutura de Dados e Algoritmos 1 e Estrutura de Dados e ALgoritmos 2) e geração de recomendação para perfis acadêmicos pré definidos. No caso, será testado apenas um perfil acadêmico:
+
+- **Contexto acadêmico:** estudante de Engenharia de Software com bom desempenho em disciplinas de programação, algoritmos, estrutura de dados e matemática aplicada.
+- **Objetivo principal:** escolher disciplinas que maximizem aprofundamento técnico, formação em desenvolvimento de software e preparo para áreas como engenharia de dados, backend, inteligência artificial ou infraestrutura.
+- **Preferências de recomendação:** prioriza disciplinas com alta carga prática, forte relação com pré-requisitos técnicos e maior alinhamento com conteúdos de implementação, raciocínio lógico e resolução de problemas.
+
+#### 1.2.2 Saída esperada das operações
+
+1. Login: login realizado com sucesso e redirecionamento automatico para a página de escolha de curso.
+2. Importar histórico: importação realizada com sucesso.
+3. Geração do fluxograma: geração de um fluxograma que represente corretamente o curso e as disciplinas cursadas pelo discente até aquele momento.
+4. Consulta de pré-requisitos: Algoritmo e Programação de Computadores (APC) não deve ter pré-requisitos, Estrutura de Dados e Algoritmos 1 (EDA-1) deve ter APC como pré-requisito e Estrutura de Dados e ALgoritmos 2 (EDA-2) deve ter EDA-1 como pré-requisitos.
+5. Geração de recomendação: é esperado que o sistema gere recomendações customizadas para o perfil de aluno, sendo disciplinas disponiveis para cursar e dentro da área de interesse.
+
+#### 1.2.3 Execução das operações
+
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/pcNCkT13_kI"
+  title="Vídeo do YouTube"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+
+#### 1.2.4 Análise e comparação das saídas
+
+1. Login: conforme o esperado.
+2. Importar histórico: conforme o esperado.
+3. Geração do fluxograma: o fluxograma está correto de acordo com a matriz curricular, porém inclui disciplinas que não estão sendo ofertadas, como Qualidade de Software 2 e Compiladores 2.
+4. Consulta de pré-requisitos: conforme o esperado.
+5. Geração de recomendação: o sistema recomenda disciplinas customizadas pelo histórico e interesses apenas quando solicitado explicitamente, caso contrário parece recomendar todas as disciplinas optativas do curso de Engenharia de Software ranqueadas por interesse, além de recomendar disciplinas as quais não estão sendo ofertadas.
+
+#### 1.2.5 Medidas obtidas
+
+- **Total de Operações Realizadas:** 5
+- **Operações com Divergência:** 2
+
+#### 1.2.6 Cálculo da métrica TDD
+
+
 $$
 TDD = \frac{\text{operações com divergência}}{\text{total de operações realizadas}} \times 100
 $$
 
-- Históricos acadêmicos disponíveis: **11 documentos**;
-- Históricos de Engenharia de Software da matriz 6360/1: **6 documentos, correspondentes a 5 matrículas únicas**;
-- Referência curricular oficial disponível: **currículo 2017.1 do SIGAA**;
-- Amostra mínima planejada: **30 operações de cursos de diferentes centros da UnB**;
-- Situação: **não calculada e inconclusiva**.
+$$
+TDD = \frac{\text{2}}{\text{5}} \times 100 = 40\%
+$$
 
-Os documentos disponíveis viabilizaram a execução da CF para uma matriz curricular específica. Contudo, a amostra não contempla cursos de diferentes centros nem as consultas de pré-requisitos e recomendações previstas para a TDD. Dessa forma, não foi calculada uma TDD parcial, pois seu resultado seria incompatível com o plano amostral definido na Fase 3.
+#### 1.2.7 Análise e Conclusão 
+
+Após o a execução da avaliação e cálculo das métricas é possível perceber que o sistema NoFluxo funciona na maior parte das operações como o esperado, no entanto as operações relacionadas com as disciplinas da unb parecem estar defasadas por conta da fonte de dados. O sistema usa como base todas as disciplinas optativas cadastradas no curso de Engenharia de Software porém muitas delas foram alteradas ou não estão mais sendo ofertadas. A métrica de 40% obtida, conforme estipulado anteriormente na fase 2, se enquadra no critério **Inaceitável: > 5%**, portanto a hipótese H2 foi refultada o que mostra que o sistema apresenta falhas quanto a correção funcional pois recomenda matérias indisponíveis o que pode afetar o uso do NoFluxo para planejamento de grades.
 
 ### 1.3 CF - Conformidade Funcional
 
@@ -234,3 +278,4 @@ Para concluir a TDD, deve-se ampliar a massa de dados para os cursos, centros e 
 | 1.2 | 11/06/2026 | Registro do problema de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.3 | 12/06/2026 | Execução da CF para o currículo 6360/1 - 2017.1 | [Caio Duarte](https://github.com/caioduart3) |
 | 1.4 | 12/06/2026 | Deduplicação da amostra e inclusão da conformidade do período letivo atual | [Caio Duarte](https://github.com/caioduart3)  |
+| 1.5 | 12/06/2026 | Cálculo da TDD,registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
