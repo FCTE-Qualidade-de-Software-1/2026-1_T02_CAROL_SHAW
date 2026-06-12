@@ -88,7 +88,9 @@ nav:
       - Manutenibilidade: fase4/manutenibilidade.md
       - Evidências:
           - Rastreabilidade da CRF: fase4/evidencias/crf.md
+          - Execução da CF: fase4/evidencias/cf.md
           - Inventário da M1: fase4/evidencias/m1.md
+          - Mapa de Dependências da M5: fase4/evidencias/m5.md
           - Execução dos Testes: fase4/evidencias/testes.md
 
   - Sustentabilidade:

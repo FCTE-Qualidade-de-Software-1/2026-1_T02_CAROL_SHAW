@@ -36,13 +36,13 @@ A **Tabela 2** consolida a viabilidade e o resultado das métricas.
 | Característica | Métrica | Resultado | Classificação | Situação |
 | :------------- | :------ | :-------- | :------------ | :------- |
 | Adequação Funcional | CRF | 60,00% (9 de 15 requisitos) | Aceitável | Avaliada |
-| Adequação Funcional | TDD | Não calculada | Inconclusiva | Sem operações e saídas esperadas |
-| Adequação Funcional | CF | Não calculada | Inconclusiva | Sem normas e transações de referência |
+| Adequação Funcional | TDD | Não calculada | Inconclusiva | Amostra incompatível com o plano |
+| Adequação Funcional | CF | 70,00% (21 de 30 transações) | Inaceitável | Avaliada |
 | Manutenibilidade | M1 | 28,43% (29 de 102 ativos) | Inaceitável | Avaliada |
 | Manutenibilidade | M2 | Não calculada | Inconclusiva | Sem registros de tempo útil |
 | Manutenibilidade | M3 | Não calculada | Inconclusiva | Sem cenários de teste requeridos |
 | Manutenibilidade | M4 | Não calculada | Inconclusiva | Sem lista de funções exigidas |
-| Manutenibilidade | M5 | Não calculada | Inconclusiva | Sem critério objetivo de impacto |
+| Manutenibilidade | M5 | 37,28% (107 de 287 componentes) | Inaceitável | Avaliada |
 
 <p align="center">Tabela 2 - Situação consolidada das métricas da Fase 4. Fonte: Equipe Carol Shaw, 2026.</p>
 
@@ -71,13 +71,15 @@ Os detalhes estão nas páginas de [Adequação Funcional](adequacao_funcional.m
 
 ## 5. Relação com o Propósito da Avaliação
 
-O propósito definido na Fase 1 é apoiar a priorização do backlog e a gestão do débito técnico. Os resultados obtidos indicam três prioridades fundamentadas:
+O propósito definido na Fase 1 é apoiar a priorização do backlog e a gestão do débito técnico. Os resultados obtidos indicam cinco prioridades fundamentadas:
 
 1. revisar a especificação funcional para decompor requisitos compostos em capacidades atômicas e verificáveis;
 2. completar os requisitos funcionais parcialmente implementados ou ausentes, pois a CRF atingiu apenas o limite inferior da faixa aceitável;
-3. ampliar o reaproveitamento dos ativos de frontend, pois a M1 ficou abaixo do limite de 50%.
+3. corrigir as divergências da matriz 6360/1, especialmente a natureza de `FGA0146`, o reconhecimento de componentes cumpridos e equivalentes e a apresentação do semestre atual;
+4. ampliar o reaproveitamento dos ativos de frontend, pois a M1 ficou abaixo do limite de 50%;
+5. reduzir o acoplamento das rotas e eliminar os três ciclos identificados na análise da M5.
 
-As demais decisões dependem de coleta adicional. Em especial, TDD e CF exigem massa de dados com resultados esperados e normas acadêmicas oficiais; M2 exige registro de tempo; e M3, M4 e M5 exigem denominadores que não estão definidos nos artefatos disponíveis.
+As demais decisões dependem de coleta adicional. Em especial, a TDD exige uma massa de dados compatível com os cursos e tipos de operação definidos na Fase 3; M2 exige registro de tempo; e M3 e M4 exigem denominadores que não estão definidos nos artefatos disponíveis.
 
 ---
 
@@ -85,11 +87,13 @@ As demais decisões dependem de coleta adicional. Em especial, TDD e CF exigem m
 
 - A CRF considera a presença e a aderência estática da implementação; não abrange testes funcionais ponta a ponta em ambiente integrado.
 - Parte dos requisitos funcionais não é atômica e reúne comportamentos independentes. A CRF considera o requisito completo como unidade binária, o que reduz a precisão da medida em casos de implementação parcial.
-- Ausência de históricos acadêmicos de teste com resultados oficiais esperados.
-- Ausência de um conjunto versionado de regras acadêmicas da UnB suficiente para TDD e CF.
+- A CF abrange somente a estrutura curricular de Engenharia de Software 6360/1, vigente desde 2017.1.
+- A amostra da CF contém cinco matrículas únicas; o documento mais antigo da matrícula `211029503` foi excluído.
+- A massa disponível não cobre a variedade de cursos e operações planejada para a TDD.
+- Regras de pré-requisito, limites de matrícula e prazos de conclusão não foram exercitados na CF.
+- A M5 mede dependências internas diretas no nível de arquivo; não estima impacto semântico nem dependências de execução não expressas por imports.
 - A especificação não enumera cenários de teste nem funções de diagnóstico requeridas.
 - Não há registros de tempo útil por modificação.
-- O método de M5 não define de forma inequívoca o que constitui impacto entre componentes.
 - O commit avaliado difere da tag `V2.3.0` citada na Fase 1.
 
 ---
@@ -112,3 +116,6 @@ As demais decisões dependem de coleta adicional. Em especial, TDD e CF exigem m
 | 1.1 | 11/06/2026 | Identificação do commit, consolidação das medidas e registro das limitações | Equipe Carol Shaw |  |  |  |
 | 1.2 | 11/06/2026 | Revisão da redação acadêmica da página | Equipe Carol Shaw |  |  |  |
 | 1.3 | 11/06/2026 | Inclusão da limitação de atomicidade da especificação funcional | Equipe Carol Shaw |  |  |  |
+| 1.4 | 12/06/2026 | Consolidação do resultado da CF para o currículo 6360/1 - 2017.1 | Equipe Carol Shaw |  |  |  |
+| 1.5 | 12/06/2026 | Atualização da CF após deduplicação e verificação do semestre atual | Equipe Carol Shaw |  |  |  |
+| 1.6 | 12/06/2026 | Consolidação do resultado da M5 | Equipe Carol Shaw |  |  |  |
