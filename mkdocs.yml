@@ -87,11 +87,13 @@ nav:
       - Adequação Funcional: fase4/adequacao_funcional.md
       - Manutenibilidade: fase4/manutenibilidade.md
       - Evidências:
-          - Rastreabilidade da CRF: fase4/evidencias/crf.md
-          - Execução da CF: fase4/evidencias/cf.md
-          - Inventário da M1: fase4/evidencias/m1.md
-          - Mapa de Dependências da M5: fase4/evidencias/m5.md
-          - Execução dos Testes: fase4/evidencias/testes.md
+          - Adequação Funcional:
+              - Rastreabilidade da CRF: fase4/evidencias/adequacao_funcional/crf.md
+              - Execução da CF: fase4/evidencias/adequacao_funcional/cf.md
+          - Manutenibilidade:
+              - Inventário da M1: fase4/evidencias/manutenibilidade/m1.md
+              - Execução e Viabilidade da M3: fase4/evidencias/manutenibilidade/m3.md
+              - Dependências do Backend - M5: fase4/evidencias/manutenibilidade/m5.md
 
   - Sustentabilidade:
       - ODS e Metas: impacto/ods.md

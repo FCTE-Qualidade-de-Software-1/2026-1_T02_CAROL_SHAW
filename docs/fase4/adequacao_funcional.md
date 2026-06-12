@@ -1,8 +1,8 @@
 # Adequação Funcional
 
-Esta página registra a execução da avaliação de **Adequação Funcional** no commit `ba6db878b9dfa36fb034916612c4cf58ddf43475`, mantendo rastreabilidade com as métricas CRF, TDD e CF especificadas na Fase 2 e com os procedimentos da Fase 3.
+Esta página apresenta a execução da avaliação de **Adequação Funcional** sobre o commit [`ba6db878b9dfa36fb034916612c4cf58ddf43475`](https://github.com/unb-mds/2025-1-NoFluxoUNB/commit/ba6db878b9dfa36fb034916612c4cf58ddf43475) do [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB). A análise preserva a rastreabilidade com as métricas CRF, TDD e CF especificadas na Fase 2 e com os procedimentos definidos na Fase 3.
 
-> **Resultado:** a CRF atingiu 60,00%, classificada como aceitável, e a CF atingiu 70,00%, classificada como inaceitável. A TDD não foi calculada porque a massa disponível não atende ao desenho amostral definido na Fase 3.
+> **Resultado:** a CRF atingiu 60,00% e foi classificada como aceitável; a CF atingiu 70,00% e foi classificada como inaceitável. A TDD permaneceu inconclusiva porque a massa de dados disponível não atende ao desenho amostral estabelecido na Fase 3.
 
 ---
 
@@ -10,16 +10,16 @@ Esta página registra a execução da avaliação de **Adequação Funcional** n
 
 ### 1.1 CRF - Cobertura de Requisitos Funcionais
 
-Foram identificados 15 requisitos funcionais de primeiro nível em `documentacao/planejamento/Requivitos/requisitos.md`. Cada requisito foi classificado como:
+Foram identificados 15 requisitos funcionais de primeiro nível no documento [`documentacao/planejamento/Requivitos/requisitos.md`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/documentacao/planejamento/Requivitos/requisitos.md). Cada requisito foi classificado segundo uma das seguintes situações:
 
 - **implementado:** todos os comportamentos descritos possuem evidência no código;
 - **ausente/incorreto:** não há implementação ou existe apenas parte do comportamento exigido.
 
-Requisitos parcialmente implementados foram contabilizados como ausentes/incorretos, conforme o método da Fase 3.
+Conforme o método estabelecido na Fase 3, requisitos parcialmente implementados foram contabilizados como ausentes ou incorretos.
 
 #### 1.1.1 Problema identificado na especificação
 
-Durante a avaliação, observou-se que alguns requisitos não atendem ao princípio da **atomicidade**, pois reúnem comportamentos que podem ser implementados e verificados separadamente. Um requisito atômico deve representar uma única capacidade e permitir uma classificação objetiva entre implementado e não implementado.
+Alguns requisitos não atendem ao princípio da **atomicidade**, pois agregam comportamentos que podem ser implementados e verificados de forma independente. Um requisito atômico deve representar uma única capacidade funcional e possibilitar uma classificação objetiva entre atendimento e não atendimento.
 
 O RF05, por exemplo, reúne quatro capacidades:
 
@@ -28,9 +28,9 @@ O RF05, por exemplo, reúne quatro capacidades:
 3. apresentar as equivalências;
 4. informar o número de tentativas ou reprovações.
 
-As três primeiras capacidades estão implementadas, enquanto a quarta não está. Como todas pertencem ao mesmo requisito, o RF05 recebeu a classificação **ausente/incorreto**, apesar de sua implementação parcial. Situação semelhante ocorre em requisitos que combinam cálculo e exibição, dados atuais e históricos ou múltiplos resultados acadêmicos.
+As três primeiras capacidades possuem evidências de implementação, enquanto a quarta permanece ausente. Como todas integram o mesmo requisito, o RF05 foi classificado como **ausente/incorreto**, apesar do atendimento parcial. A mesma limitação ocorre em requisitos que combinam cálculo e apresentação, dados atuais e históricos ou diferentes resultados acadêmicos.
 
-Essa estrutura prejudica a imparcialidade da CRF: a classificação binária desconsidera partes implementadas, enquanto uma classificação positiva desconsideraria partes ausentes. O resultado de 60,00% foi mantido para preservar o método definido nas Fases 2 e 3, que utiliza os 15 requisitos de primeiro nível como unidade de contagem. Portanto, o valor representa a cobertura integral dos requisitos compostos, e não o percentual de capacidades funcionais individuais implementadas.
+Essa estrutura reduz a precisão da CRF. A classificação binária desconsidera as capacidades implementadas quando o requisito é avaliado negativamente; em sentido oposto, uma classificação positiva ocultaria capacidades ainda ausentes. O resultado de 60,00% foi mantido para preservar o método definido nas Fases 2 e 3, cuja unidade de contagem corresponde aos 15 requisitos de primeiro nível. Assim, o valor expressa a cobertura integral dos requisitos compostos, e não o percentual de capacidades funcionais individuais implementadas.
 
 Para avaliações futuras, os requisitos compostos devem ser decompostos em requisitos atômicos, identificados individualmente e acompanhados de critérios de aceitação próprios.
 
@@ -49,7 +49,7 @@ $$
 | Funções ausentes ou incorretas | 6 |
 | CRF | 60,00% |
 
-<p align="center">Tabela 1 - Memória de cálculo da CRF. Fonte: Equipe Carol Shaw, 2026.</p>
+<p align="center">Tabela 1 - Memória de cálculo da CRF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 Os seis itens ausentes ou incompletos são:
 
@@ -58,9 +58,9 @@ Os seis itens ausentes ou incompletos são:
 3. exibição de semestres restantes com base no tempo máximo do curso;
 4. exibição dos trancamentos detectados;
 5. identificação de mudança de curso já ocorrida, com curso anterior, data e aproveitamentos;
-6. recomendação por IA cobrindo conjuntamente cursos, disciplinas, histórico e preferências pessoais.
+6. recomendação baseada em inteligência artificial que considere, de forma conjunta, cursos, disciplinas, histórico acadêmico e preferências pessoais.
 
-A matriz completa de inspeção está disponível em [Evidência da CRF](evidencias/crf.md).
+A matriz completa de inspeção está disponível em [Evidência da CRF](evidencias/adequacao_funcional/crf.md).
 
 ### 1.2 TDD - Taxa de Divergência de Dados
 
@@ -72,9 +72,9 @@ $$
 - Históricos de Engenharia de Software da matriz 6360/1: **6 documentos, correspondentes a 5 matrículas únicas**;
 - Referência curricular oficial disponível: **currículo 2017.1 do SIGAA**;
 - Amostra mínima planejada: **30 operações de cursos de diferentes centros da UnB**;
-- Resultado: **não calculado**.
+- Situação: **não calculada e inconclusiva**.
 
-Os documentos disponíveis permitiram executar a CF para uma matriz curricular específica. Entretanto, não cobrem cursos de diferentes centros nem as consultas de pré-requisitos e recomendações previstas para a TDD. Por esse motivo, os dados não foram reutilizados para produzir uma TDD parcial incompatível com o plano da Fase 3.
+Os documentos disponíveis viabilizaram a execução da CF para uma matriz curricular específica. Contudo, a amostra não contempla cursos de diferentes centros nem as consultas de pré-requisitos e recomendações previstas para a TDD. Dessa forma, não foi calculada uma TDD parcial, pois seu resultado seria incompatível com o plano amostral definido na Fase 3.
 
 ### 1.3 CF - Conformidade Funcional
 
@@ -82,7 +82,7 @@ $$
 CF = \frac{\text{transações em conformidade}}{\text{total de transações processadas}} \times 100
 $$
 
-A referência normativa foi a estrutura curricular do curso de Engenharia de Software da FCTE, código `6360/1`, vigente desde `2017.1`, registrada no arquivo do SIGAA disponível em `spec/`. Essa estrutura estabelece:
+A referência normativa adotada foi a estrutura curricular do curso de Engenharia de Software da FCTE, código `6360/1`, vigente desde `2017.1`, registrada no arquivo `spec/SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas.html`. Essa estrutura estabelece:
 
 - carga horária total mínima de 3.480 horas;
 - carga horária obrigatória de 2.580 horas;
@@ -90,7 +90,7 @@ A referência normativa foi a estrutura curricular do curso de Engenharia de Sof
 - 39 componentes obrigatórios;
 - relação dos componentes obrigatórios e optativos por nível.
 
-Embora a pasta de históricos do NoFluxoUNB contenha documentos de outros cursos e matrículas, a CF considera somente Engenharia de Software, pois a referência disponível é específica da estrutura curricular `6360/1 - 2017.1`. Entre os seis documentos desse curso, dois pertencem à matrícula `211029503`; foi mantido apenas o mais recente, emitido em 29/06/2024. Assim, a amostra possui cinco matrículas únicas.
+Embora o [diretório de históricos](https://github.com/unb-mds/2025-1-NoFluxoUNB/tree/ba6db878b9dfa36fb034916612c4cf58ddf43475/test_historicos/historicos) contenha documentos de outros cursos e matrículas, a CF abrange somente Engenharia de Software, pois a referência normativa disponível corresponde especificamente à estrutura curricular `6360/1 - 2017.1`. Dos seis documentos desse curso, dois pertencem à matrícula `211029503`; para evitar duplicidade, foi mantido apenas o documento mais recente, emitido em 29/06/2024. A amostra final contém, portanto, cinco matrículas únicas.
 
 Para cada histórico, o PDF foi processado na página de importação do NoFluxoUNB e foram verificadas seis transações atômicas:
 
@@ -101,7 +101,7 @@ Para cada histórico, o PDF foi processado na página de importação do NoFluxo
 5. reconhecimento das equivalências registradas no histórico;
 6. apresentação do período letivo atual informado no histórico.
 
-Os casos foram vinculados aos históricos no formato solicitado:
+Para assegurar a rastreabilidade da coleta, os históricos foram identificados pelos casos H01 a H05:
 
 | Caso | Histórico |
 | :--- | :-------- |
@@ -111,7 +111,7 @@ Os casos foram vinculados aos históricos no formato solicitado:
 | H04 | `historico_222037700` |
 | H05 | `historico_231026330` |
 
-<p align="center">Tabela 2 - Identificação dos históricos da CF. Fonte: Equipe Carol Shaw, 2026.</p>
+<p align="center">Tabela 2 - Identificação dos históricos da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 | Verificação | Transações | Em conformidade | Não conformes |
 | :----------- | ---------: | --------------: | ------------: |
@@ -123,11 +123,11 @@ Os casos foram vinculados aos históricos no formato solicitado:
 | Período letivo atual | 5 | 0 | 5 |
 | **Total** | **30** | **21** | **9** |
 
-<p align="center">Tabela 3 - Consolidação das transações da CF. Fonte: Equipe Carol Shaw, 2026.</p>
+<p align="center">Tabela 3 - Consolidação das transações da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
-Todos os cinco históricos apresentaram divergência no campo exibido como **Semestre Atual**. O histórico fornece o período letivo atual como posição ordinal do estudante no curso, enquanto o NoFluxoUNB apresenta o ano e período da disciplina com situação `MATR`. Portanto, o rótulo da interface não reproduz o dado de origem.
+Todos os cinco históricos apresentaram divergência no campo exibido como **Semestre Atual**. O documento acadêmico informa o período letivo atual como posição ordinal do estudante no curso, enquanto o NoFluxoUNB apresenta o ano e o período da disciplina com situação `MATR`. Desse modo, o rótulo da interface não corresponde ao significado do dado exibido.
 
-Os valores encontrados em cada histórico e os valores exibidos pelo sistema estão registrados na [evidência da verificação do Período Letivo Atual](evidencias/cf.md#evidencia-periodo-letivo-atual).
+Os valores encontrados em cada histórico e os valores exibidos pelo sistema estão registrados na [evidência da verificação do Período Letivo Atual](evidencias/adequacao_funcional/cf.md#evidencia-periodo-letivo-atual).
 
 Também foram identificadas divergências curriculares em dois históricos:
 
@@ -145,9 +145,9 @@ $$
 | Transações não conformes | 9 |
 | CF | 70,00% |
 
-<p align="center">Tabela 4 - Memória de cálculo da CF. Fonte: Equipe Carol Shaw, 2026.</p>
+<p align="center">Tabela 4 - Memória de cálculo da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
-A coleta detalhada, os resultados por histórico e a relação das regras utilizadas estão disponíveis em [Evidência da CF](evidencias/cf.md).
+A coleta detalhada, os resultados por histórico e a relação das regras utilizadas estão disponíveis em [Evidência da CF](evidencias/adequacao_funcional/cf.md).
 
 ---
 
@@ -159,9 +159,9 @@ A coleta detalhada, os resultados por histórico e a relação das regras utiliz
 | TDD | <= 1% | 1,1% a 5% | > 5% | Não calculado | Inconclusiva |
 | CF | 100% | 80% a 99% | < 80% | 70,00% | Inaceitável |
 
-<p align="center">Tabela 5 - Comparação das métricas de Adequação Funcional com os critérios da Fase 2. Fonte: Equipe Carol Shaw, 2026.</p>
+<p align="center">Tabela 5 - Comparação das métricas de Adequação Funcional com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
-A CRF está exatamente no limite inferior da faixa aceitável e 30 pontos percentuais abaixo do nível desejável. A CF ficou 10 pontos percentuais abaixo do limite aceitável e 30 pontos percentuais abaixo do nível desejável de 100%. A classificação da CRF representa a cobertura integral dos 15 requisitos de primeiro nível e é influenciada pela presença de requisitos não atômicos.
+A CRF situa-se no limite inferior da faixa aceitável e 30 pontos percentuais abaixo do nível desejável. A CF, por sua vez, ficou 10 pontos percentuais abaixo do limite de aceitabilidade e 30 pontos percentuais abaixo do nível desejável de 100%. A interpretação da CRF deve considerar que a unidade de análise corresponde aos 15 requisitos de primeiro nível e que parte deles não é atômica.
 
 ---
 
@@ -169,21 +169,21 @@ A CRF está exatamente no limite inferior da faixa aceitável e 30 pontos percen
 
 ### Q1. Quão completa está a implementação de acordo com as especificações de requisitos?
 
-**Resposta:** 60,00% dos requisitos funcionais estão integralmente representados no código avaliado. O resultado é aceitável, mas não confirma H1 no nível desejável.
+**Resposta:** 60,00% dos requisitos funcionais estão integralmente representados no código avaliado. Embora aceitável segundo o critério definido, o resultado não confirma a hipótese H1 no nível desejável.
 
 ### Q2. Com que frequência ocorrem resultados imprecisos durante a construção do fluxograma?
 
-**Resposta:** inconclusiva. Sem o conjunto controlado de operações e saídas esperadas previsto para a TDD, a métrica não pode ser calculada e H2 não pode ser confirmada ou refutada.
+**Resposta:** inconclusiva. A ausência do conjunto controlado de operações e saídas esperadas previsto para a TDD impede o cálculo da métrica e, consequentemente, a confirmação ou refutação da hipótese H2.
 
 ### Q3. Qual é o percentual de transações processadas de acordo com as regras e normas acadêmicas da UnB?
 
-**Resposta:** 70,00% das transações processadas para o currículo de Engenharia de Software `6360/1 - 2017.1` ficaram de acordo com a estrutura publicada no SIGAA e com os dados dos históricos. O resultado é inaceitável e não confirma H3.
+**Resposta:** 70,00% das transações processadas para o currículo de Engenharia de Software `6360/1 - 2017.1` apresentaram conformidade com a estrutura publicada no SIGAA e com os dados dos históricos. O resultado é inaceitável e não confirma a hipótese H3.
 
 ---
 
 ## 4. Julgamento e Ações de Melhoria
 
-O NoFluxoUNB implementa autenticação, upload e leitura de histórico, consulta curricular, cálculo de progresso e indicadores, carga horária complementar, simulação de mudança de curso e persistência do histórico de envios. Entretanto, a cobertura funcional permanece no menor valor aceitável e a conformidade funcional apresentou nove divergências em 30 transações.
+O [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB) implementa autenticação, envio e leitura de histórico, consulta curricular, cálculo de progresso e indicadores, tratamento de carga horária complementar, simulação de mudança de curso e persistência dos envios realizados. Apesar dessas capacidades, a cobertura funcional permaneceu no limite inferior da faixa aceitável, e a conformidade funcional apresentou nove divergências em 30 transações.
 
 As ações prioritárias derivadas da avaliação funcional são:
 
@@ -207,9 +207,8 @@ Para concluir a TDD, deve-se ampliar a massa de dados para os cursos, centros e 
 - [Propósito e Escopo - Fase 1](../fase1/proposito_escopo.md)
 - [Especificação da Adequação Funcional - Fase 2](../fase2/adequacao_funcional.md)
 - [Plano da Adequação Funcional - Fase 3](../fase3/adequacao_funcional.md)
-- [Evidência da CRF](evidencias/crf.md)
-- [Evidência da CF](evidencias/cf.md)
-- [Evidências de Testes](evidencias/testes.md)
+- [Evidência da CRF](evidencias/adequacao_funcional/crf.md)
+- [Evidência da CF](evidencias/adequacao_funcional/cf.md)
 - [Visão Geral da Fase 4](introducao.md)
 
 ---
@@ -220,7 +219,7 @@ Para concluir a TDD, deve-se ampliar a massa de dados para os cursos, centros e 
 >
 > 2. SOARES RAMOS, Cristiane. Projeto Final da Disciplina: Avaliação da Qualidade de Produto de Software. Brasília: UnB, 2026. Enunciado do trabalho final. Acesso em: 11/06/2026.
 >
-> 3. UNB-MDS. 2025-1-NoFluxoUNB. Disponível em: https://github.com/unb-mds/2025-1-NoFluxoUNB. Acesso em: 11/06/2026.
+> 3. UNB-MDS. [2025-1-NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB). Acesso em: 11/06/2026.
 >
 > 4. UNIVERSIDADE DE BRASÍLIA. SIGAA: estrutura curricular de Engenharia de Software/FCTE, código 6360/1, vigência 2017.1. Acesso em: 12/06/2026.
 
@@ -228,11 +227,10 @@ Para concluir a TDD, deve-se ampliar a massa de dados para os cursos, centros e 
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) | Revisor(es) | Data de Revisão | Alterações Realizadas |
-| :----- | :--- | :-------- | :-------- | :----------- | :--------------- | :-------------------- |
-| 1.0 | 11/06/2026 | Registro inicial da execução da avaliação de Adequação Funcional | Equipe Carol Shaw |  |  |  |
-| 1.1 | 11/06/2026 | Cálculo da CRF, julgamento e registro das métricas inviáveis | Equipe Carol Shaw |  |  |  |
-| 1.2 | 11/06/2026 | Revisão da redação acadêmica da página | Equipe Carol Shaw |  |  |  |
-| 1.3 | 11/06/2026 | Registro do problema de atomicidade dos requisitos funcionais | Equipe Carol Shaw |  |  |  |
-| 1.4 | 12/06/2026 | Execução da CF para o currículo 6360/1 - 2017.1 | Equipe Carol Shaw |  |  |  |
-| 1.5 | 12/06/2026 | Deduplicação da amostra e inclusão da conformidade do período letivo atual | Equipe Carol Shaw |  |  |  |
+| Versão | Data | Descrição | Autor(es) |
+| :----- | :--- | :-------- | :-------- |
+| 1.0 | 11/06/2026 | Registro inicial da execução da avaliação de Adequação Funcional | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.1 | 11/06/2026 | Cálculo da CRF, julgamento e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.2 | 11/06/2026 | Registro do problema de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.3 | 12/06/2026 | Execução da CF para o currículo 6360/1 - 2017.1 | [Caio Duarte](https://github.com/caioduart3) |
+| 1.4 | 12/06/2026 | Deduplicação da amostra e inclusão da conformidade do período letivo atual | [Caio Duarte](https://github.com/caioduart3)  |
