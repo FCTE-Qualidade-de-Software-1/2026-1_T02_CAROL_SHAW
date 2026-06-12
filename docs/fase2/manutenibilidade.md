@@ -34,7 +34,7 @@ Critérios:
 
 ### Q2: Qual é o esforço médio de tempo necessário para realizar modificações no sistema?
 
-#### H2: Espera-se que a equipe do NoFluxoUnB leve, em média, menos de 4 horas úteis para realizar uma modificação no sistema.
+#### H2: Espera-se que a equipe do NoFluxoUnB leve, em média, menos de 4 dias para realizar uma modificação no sistema.
 
 #### Métrica 2: Complexidade de modificação
 Fórmula:
@@ -44,11 +44,11 @@ $$
 
 Critérios:
 
-- Desejável (H2 Confirmada): ≤ 4 horas por modificação
+- Desejável (H2 Confirmada): ≤ 4 dias por modificação
 
-- Aceitável: Entre 4 e 8 horas por modificação
+- Aceitável: Entre 4 e 8 dias por modificação
 
-- Inaceitável (H2 Refutada): > 8 horas por modificação
+- Inaceitável (H2 Refutada): > 8 dias por modificação
 
 ---
 

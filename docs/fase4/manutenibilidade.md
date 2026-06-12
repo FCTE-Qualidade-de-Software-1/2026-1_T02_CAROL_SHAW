@@ -43,15 +43,41 @@ A relação dos 29 ativos reutilizados e suas contagens de contextos está em [E
 
 ### 1.2 M2 - Complexidade de modificação
 
+#### 1.2.1 Seleção de amostra de modificações e registro de tempo gasto
+
+Para a realização do cálculo desta métrica foi selecionada uma amostra de modificações representativas recentes. As amostras foram obtidas no repositório do projeto no GitHub [NoFluxo](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues?q=is%3Aissue%20state%3Aclosed) e representam as issues fechadas durante o primeiro semestre de 2026.
+
+| Issue | Abertura | Fechamento| Status | tempo em dias |
+| ----- | -------- | --------- | ------ | ------------- |
+|[[EPIC] Atualização da função do Darcy AI](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/116)                          |02/04/2026|03/04/2026|implementado| 1 |
+|[[FEAT] Implementar Recomendação Automática de Grade](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/101)               |03/03/2026|11/03/2026|não implementado| NaN |
+|[[FEAT] Criar Organizador de Grade para Próximo Semestre](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/100)           |03/03/2026|11/03/2026|não implementado| NaN |
+|[[FEAT/SPRINTS] Implementar Analytics de Vagas por Semestre](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/99)        |03/03/2026|11/03/2026|não implementado| NaN |
+|[[UPDATE] Refatoração sobre nós](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/98)                                    |03/03/2026|06/04/2026|implementado| 3 |
+|[[FEAT/SPRINTS] Validação e Padronização dos Fluxogramas Acadêmicos](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/97)|03/03/2026|11/03/2026|implementado| 8 |
+|[[FEAT/SPRINTS] Implementação e Otimização do Agente de IA](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/96)         |25/02/1026|12/03/2026|implementado| 15 |
+
+<p align="center">Tabela 2 - Dados brutos da M2 obtidos no Repositório do GitHub do NoFluxo. Fonte: Gabriel Flores, 2026.</p>
+
+
+#### 1.2.2 Consolidação das medidas obtidas
+
+- **Número de Modificações:** 4
+- **Tempo Total de Trabalho:** 27
+
+#### 1.2.3 Cálculo M2
+
 $$
 M2 = \frac{\text{tempo total de trabalho}}{\text{número de modificações}}
 $$
 
-- Registros de início, fim e tempo útil: **não disponíveis**;
-- Amostra controlada de modificações: **não disponível**;
-- Situação: **não calculada e inconclusiva**.
+$$
+M2 = \frac{\text{27}}{\text{4}}= 6{,}75
+$$
 
-As datas registradas no [histórico de commits](https://github.com/unb-mds/2025-1-NoFluxoUNB/commits/main/) não representam o tempo efetivo dedicado a cada modificação. Por esse motivo, não foram utilizadas como aproximação do esforço de trabalho.
+#### 1.2.4 Análise e Conclusão
+
+Após o cálculo da métrica M2 quanto a manutenabilidade é possível concluir que o time de desenvolvimento do NoFluxo leva em média 6,75 dias para concluir cada issue o que se enquadra como aceitável de acordo com os critérios estabelecidos na fase 2.
 
 ### 1.3 M3 - Completude funcional das funções de teste embutidas
 
@@ -69,15 +95,49 @@ Os comandos, resultados e motivos que impedem o cálculo estão registrados na [
 
 ### 1.4 M4 - Suficiência das funções de diagnóstico
 
+#### 1.4.1 Lista de funções de diagnóstico
+
+Funções de diagnóstico previstas:
+1. Tratamento de Exceções: Lidar com falhas estruturais ou PDFs corrompidos no "Parser PDF".
+
+2. Monitoramento de Performance: Garantir tempo de resposta inferior a 5 segundos (para fluxograma, geração de grade e parser).
+
+3. Alertas Visuais: Mensagens de erro e avisos sobre disciplinas críticas na interface.
+
+4. Monitoramento de Integração: Configuração de pipeline CI/CD (GitHub Actions) para rastrear erros de build.
+
+#### 1.4.2 Funções de diagnóstico encontradas
+
+| Função Implementada | Localização no Repositório (Exemplos) | Categoria | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Custom Logger Service** | `no_fluxo_backend/src/logger.ts` | Logging | Sistema estruturado para registrar eventos, avisos e erros críticos do servidor Node.js. |
+| **Controller Request Logger** | `no_fluxo_backend/src/utils/controller_logger.ts` | Logging / Tracing | Rastreamento específico de requisições HTTP e latência nas rotas (fluxograma, cursos, etc). |
+| **File-based AI Agent Logs** | `logs/ai_agent.log` | Logging | Persistência de logs do comportamento do Agente de IA e integração RAGFlow em arquivo físico. |
+| **Global Error Route** | `no_fluxo_frontend_svelte/src/routes/+error.svelte` | Tratamento de Erro | Captura falhas críticas de roteamento ou exceções não tratadas e renderiza uma página de erro amigável. |
+| **Authentication Error Boundary** | `.../components/auth/AuthErrorBoundary.svelte` | Tratamento de Erro | Impede que erros durante o processo de comunicação com o Supabase crashem o app inteiro. |
+| **Parser Exception Handling** | `no_fluxo_backend/parse-pdf/pdf_parser_final.py` | Tratamento de Erro | Blocos try/except para evitar que PDFs ilegíveis interrompam o processamento de históricos. |
+| **Toasts de Feedback (UI)** | `no_fluxo_frontend_svelte/src/lib/utils/toast.ts` | Mensagem de Erro | Componente dinâmico para avisar o usuário de forma visual sobre falhas de rede ou validação no frontend. |
+| **Alertas de Segurança (UI)** | `.../components/ui/AuthErrorAlert.svelte` | Mensagem de Erro | Renderização visual específica para credenciais inválidas ou acesso não autorizado. |
+| **Grafana Logs Dashboard** | `kubernetes_docs/.../apps-logs-dashboard.json` | Monitoramento | Telemetria para visualização centralizada dos logs dos containers da aplicação. |
+| **Grafana Node/Build Dashboard** | `kubernetes_docs/.../node-connectivity-dashboard.json` | Monitoramento | Telemetria para monitorar latência, quedas de rede e desempenho de infraestrutura. |
+| **Shell Memory Monitor** | `no_fluxo_backend/monitor_memory.sh` | Monitoramento | Script utilitário em bash para auditoria ativa do consumo de memória do servidor. |
+| **Code Coverage Telemetry** | `codecov.yml (raiz)` | Monitoramento / CI | Rastreamento automatizado da porcentagem de código validada por testes automatizados. |
+
+<p align="center">Tabela 3 - Dados brutos da M4 obtidos no Repositório do GitHub do NoFluxo. Fonte: Gabriel Flores, 2026.</p>
+
+#### 1.4.3 Cáculo M4
+
 $$
 M4 = \frac{\text{funções de diagnóstico implementadas}}{\text{funções exigidas na especificação}} \times 100
 $$
 
-- Mecanismos implementados: **registro estruturado com [Winston](https://github.com/winstonjs/winston), logger por controlador, registros em arquivo, tratamento global de exceções e endpoints de verificação de integridade**;
-- Funções exigidas na especificação: **não enumeradas**;
-- Situação: **não calculada e inconclusiva**.
+$$
+M4 = \frac{\text{12}}{\text{4}} \times 100 = 300\%
+$$
 
-A presença desses mecanismos demonstra capacidade de diagnóstico, mas não permite medir sua completude sem uma relação normativa das funções requeridas.
+#### 1.4.4 Análise e Conclusão
+
+Após o cálculo da métrica M4 quanto a manutenabilidade é possível concluir que o time de desenvolvimento do NoFluxo possui mais funções de monitoramento implementadas do que especificadas o que demonstra bastante completude e se enquandra no critério **Desejável:>=100%** .
 
 ### 1.5 M5 - Condensabilidade
 
@@ -97,7 +157,7 @@ $$
 | :--------- | ----------: | --------------: | ----------: | ----------------: |
 | Backend TypeScript | 20 | 6 | 14 | 51 |
 
-<p align="center">Tabela 2 - Dados brutos da M5 no backend. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 4 - Dados brutos da M5 no backend. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 O resultado de 30,00% indica que 14 dos 20 componentes do backend possuem ao menos uma dependência interna direta. Não foram identificadas dependências circulares no escopo avaliado.
 
@@ -115,7 +175,7 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 | M4 | 100% | 80% a 99% | < 80% | Não calculado | Inconclusiva |
 | M5 | >= 80% | 50% a 79% | < 50% | 30,00% (backend) | Inaceitável |
 
-<p align="center">Tabela 3 - Comparação das métricas de Manutenibilidade com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 5 - Comparação das métricas de Manutenibilidade com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 ---
 
@@ -129,7 +189,7 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 | Q4. Quão completa está a implementação de monitoramento e diagnóstico? | M4 | Inconclusiva | H4 não confirmada nem refutada |
 | Q5. Quão independentes são os componentes do sistema? | M5 | No backend, 30,00%, classificação inaceitável | H5 refutada no escopo avaliado |
 
-<p align="center">Tabela 4 - Respostas às questões GQM de Manutenibilidade. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 5 - Respostas às questões GQM de Manutenibilidade. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 ---
 
@@ -185,3 +245,4 @@ As ações fundamentadas pelas evidências são:
 | 1.2 | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.3 | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.4 | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.5 | 12/06/2026 | Cálculo das métricas M2 e M4,registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
