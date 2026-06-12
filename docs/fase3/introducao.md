@@ -32,6 +32,6 @@ O histórico de alterações desta página é apresentado na **Tabela 1**.
 
 | Versão | Data       | Descrição                                              | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
-| 1.0    | 05/06/2026 | Criação da introdução da Fase 3 (Projetar a Avaliação) | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| 1.0    | 05/06/2026 | Criação da introdução da Fase 3 (Projetar a Avaliação) | [Matheus de Alcântara](https://github.com/matheusdealcantara) |    [Vilmar José Fagundes](https://github.com/VilmarFagundes)      |   12/06/2026      |      Nenhuma alteração            |
 
 <p align="center">Tabela 1 - "Histórico de versões" Autor: Matheus de Alcântara</p>
