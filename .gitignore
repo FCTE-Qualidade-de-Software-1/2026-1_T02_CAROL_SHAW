@@ -1,1 +1,20 @@
+# Arquivos de especificacao locais
 /spec/
+
+# Saida gerada pelo MkDocs
+/site/
+
+# Ambientes virtuais Python
+/.venv/
+/venv/
+/env/
+
+# Caches e artefatos Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Configuracoes locais do editor
+/.vscode/
