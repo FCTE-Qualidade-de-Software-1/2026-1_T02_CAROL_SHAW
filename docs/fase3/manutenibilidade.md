@@ -185,16 +185,16 @@ Para cada métrica, registrar no repositório uma tabela com: identificador da m
 
 ## 4. Cronograma de Avaliação
 
-O cronograma da **Tabela 7** é parte do planejamento da Fase 3 e define **quando** as atividades de coleta e análise da Manutenibilidade serão **executadas na Fase 4**. Ou seja, nesta fase apenas se planeja a agenda; a obtenção das medidas, a comparação com os critérios e o julgamento ocorrerão na Fase 4, conforme este cronograma. Toda a execução está prevista para o período de **07/06/2026 a 10/06/2026**.
+O cronograma da **Tabela 7** é parte do planejamento da Fase 3 e define **quando** as atividades de coleta e análise da Manutenibilidade serão **executadas na Fase 4**. Ou seja, nesta fase apenas se planeja a agenda; a obtenção das medidas, a comparação com os critérios e o julgamento ocorrerão na Fase 4, conforme este cronograma. Toda a execução está prevista para o período de **07/06/2026 a 12/06/2026**.
 
 | Etapa | Atividade (a executar na Fase 4)                                                          | Métricas | Responsável | Data de execução |
 | :---- | :---------------------------------------------------------------------------------------- | :------- | :---------- | :--------------- |
 | 1     | Preparação do ambiente: clonar repositório no commit de referência e instalar ferramentas | —        |             | 07/06/2026       |
-| 2     | Coleta estática: mapear ativos e componentes; calcular M1 e M5                            | M1, M5   |             | 07/06/2026       |
-| 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular M3 e M4         | M3, M4   |             | 08/06/2026       |
-| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular M2            | M2       |             | 09/06/2026       |
-| 5     | Consolidação dos dados brutos e formulários no repositório                                | todas    |             | 09/06/2026       |
-| 6     | Verificação cruzada dos resultados e preparação para a Fase 4                             | todas    |             | 10/06/2026       |
+| 2     | Coleta estática: mapear ativos e componentes; calcular M1 e M5                            | M1, M5   |             | 08/06/2026       |
+| 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular M3 e M4         | M3, M4   |             | 09/06/2026       |
+| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular M2            | M2       |             | 10/06/2026       |
+| 5     | Consolidação dos dados brutos e formulários no repositório                                | todas    |             | 11/06/2026       |
+| 6     | Verificação cruzada dos resultados e preparação para a Fase 4                             | todas    |             | 12/06/2026       |
 
 <p align="center">Tabela 7 - "Cronograma de execução da avaliação de Manutenibilidade (Fase 4)" Autor: Matheus de Alcântara</p>
 
@@ -225,5 +225,6 @@ O histórico de alterações desta página é apresentado na **Tabela 8**.
 | 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Manutenibilidade                         | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.1    | 05/06/2026 | Especificação das ferramentas reais a partir da inspeção do repositório do NoFluxoUNB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.2    | 05/06/2026 | Definição do cronograma de execução (07/06 a 10/06/2026)                              | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| 1.3    | 05/06/2026 | Ajuste do cronograma de execução para o período de 07/06 a 12/06/2026                 | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 
 <p align="center">Tabela 8 - "Histórico de versões da página Plano de Avaliação" Autor: Matheus de Alcântara</p>
