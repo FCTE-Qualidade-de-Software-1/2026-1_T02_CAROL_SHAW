@@ -82,6 +82,15 @@ nav:
       - Adequação Funcional: fase3/adequacao_funcional.md
       - Manutenibilidade: fase3/manutenibilidade.md
 
+  - Execução da Avaliação (Fase 4):
+      - Introdução: fase4/introducao.md
+      - Adequação Funcional: fase4/adequacao_funcional.md
+      - Manutenibilidade: fase4/manutenibilidade.md
+      - Evidências:
+          - Rastreabilidade da CRF: fase4/evidencias/crf.md
+          - Inventário da M1: fase4/evidencias/m1.md
+          - Execução dos Testes: fase4/evidencias/testes.md
+
   - Sustentabilidade:
       - ODS e Metas: impacto/ods.md
 
