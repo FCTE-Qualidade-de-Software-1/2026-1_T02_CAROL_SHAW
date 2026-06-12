@@ -13,6 +13,7 @@ Em conformidade com os critérios éticos da disciplina, declaramos o uso de fer
 | **Claude Haiku 4.5** | Auxílio durante a elaboração do texto no documento de modelo de qualidade de software.| O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e adequadas ao contexto do projeto.|
 | **Gemini 3 Flash**   | Auxílio durante a elaboração do texto no documento de propósito da avaliação e escopo.| O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e adequadas ao contexto do projeto.|
 | **Claude Opus 4.8**  | Auxílio durante a elaboração do Projeto de Avaliação para a característica de Manutenibilidade, redação do texto de introdução e do conteúdo desta etapa. | O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e corretas em relação aos critérios de avaliação e rastreabilidade com a fase 2. |
+| **Gemini 3.1 Pro** | Auxílio para inspecionar o repositório e encontrar funções de diagnóstico para calcular a métrica  M4 | As funções encontradas foram inspecionadas com base no caminho indicado |
 
 
 **Nota:** Nenhum ícone, emoji ou figurinha gerada por IA foi mantido no corpo dos relatórios técnicos.

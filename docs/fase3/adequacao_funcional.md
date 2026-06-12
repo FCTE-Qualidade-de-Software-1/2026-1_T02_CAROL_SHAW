@@ -19,6 +19,8 @@ A avaliação da Adequação Funcional combina **inspeção documental**, **exec
 | TDD     | Taxa de Divergência de Dados    | Execução de casos de teste + análise de resultados  | Sessões de teste com dados acadêmicos conhecidos                    |
 | CF      | Conformidade Funcional          | Execução de transações-padrão + verificação de saída | Regras e normas acadêmicas da UnB documentadas                      |
 
+<p align="center">Tabela 1 - "Visão geral do método de avaliação por métrica de Adequação Funcional" Autor: Gustavo Oki</p>
+
 ---
 
 ## 2. Instruções para o Avaliador
@@ -98,6 +100,9 @@ A avaliação será conduzida pelos membros da equipe atuando como avaliadores. 
 | **pnpm** (monorepo, workspaces)     | `pnpm@10.12.1`                      | Instalar dependências e iniciar o ambiente local (se aplicável)| todas          |
 | **Docker / Supabase CLI** (opcional)| conforme configuração do repositório | Subir banco de dados local para testes controlados           | TDD, CF         |
 
+<p align="center">Tabela 2 - "Ferramentas de ambiente de execução" Autor: Gustavo Oki</p>
+
+
 #### b) Apoio à inspeção documental
 
 | Ferramenta / Artefato                              | Finalidade na avaliação                                                          | Métricas  |
@@ -106,6 +111,8 @@ A avaliação será conduzida pelos membros da equipe atuando como avaliadores. 
 | **Grade curricular e pré-requisitos do SIGAA/DAC** | Referência das normas acadêmicas da UnB para validação de TDD e CF              | TDD, CF   |
 | **Documentação do produto** (README, wiki do repo) | Compreensão do escopo e das funcionalidades implementadas                        | CRF       |
 
+<p align="center">Tabela 3 - "Ferramentas de apoio à inspeção documental" Autor: Gustavo Oki</p>
+
 #### c) Registro e análise dos resultados
 
 | Ferramenta                              | Finalidade na avaliação                                                          | Métricas     |
@@ -113,6 +120,8 @@ A avaliação será conduzida pelos membros da equipe atuando como avaliadores. 
 | **Planilha de coleta** (Google Sheets / Excel) | Registro dos resultados de cada operação/transação e cálculo das métricas | CRF, TDD, CF |
 | **GitHub Actions** (workflows de CI)    | Evidência reprodutível da execução dos testes automatizados existentes           | CRF          |
 | **Jest + Playwright** (testes E2E)      | Apoio à verificação de comportamento de funções durante a coleta de CRF          | CRF          |
+
+<p align="center">Tabela 4 - "Ferramentas de registro e análise dos resultados" Autor: Gustavo Oki</p>
 
 ### 3.4 Massa de dados
 
@@ -142,6 +151,8 @@ O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as at
 | 6     | Consolidação dos dados brutos e formulários no repositório                                                    | todas       |             | 09/06/2026       |
 | 7     | Verificação cruzada dos resultados e preparação para a Fase 4                                                 | todas       |             | 10/06/2026       |
 
+Tabela 5 - "Cronograma de execução da avaliação de Adequação Funcional (Fase 4)" Autor: Gustavo Oki
+
 ---
 
 ## 5. Consistência com a Fase 2
@@ -153,6 +164,8 @@ Cada elemento deste plano deriva diretamente da especificação da Fase 2: os m�
 | CRF     | ≥ 90%                       | Entre 60% e 89%             | < 60%                         |
 | TDD     | ≤ 1%                        | Entre 1,1% e 5%             | > 5%                          |
 | CF      | 100%                        | Entre 80% e 99%             | < 80%                         |
+
+Tabela 6 - "Critérios definidos na fase 2" Autor: Gustavo Oki
 
 ---
 
@@ -175,4 +188,6 @@ Cada elemento deste plano deriva diretamente da especificação da Fase 2: os m�
 | Versão | Data       | Descrição                                                          | Autor(es) | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------------------------------------------ | --------- | ----------- | --------------- | --------------------- |
 | 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Adequação Funcional   |     [Gustavo Oki](https://github.com/GustOki)      |             |                 |                       |
-| 1.1    | 05/06/2026 | Especificação das ferramentas e definição do cronograma de execução (07/06 a 10/06/2026)   |     [Gustavo Oki](https://github.com/GustOki)      |             |                 |                       |
+| 1.1    | 05/06/2026 | Especificação das ferramentas e definição do cronograma de execução (07/06 a 10/06/2026)   |     [Gustavo Oki](https://github.com/GustOki)      |[Vilmar José Fagundes](https://github.com/VilmarFagundes)      |   12/06/2026      |  Ajuste na formatação do arquivo e adição de legendas  |
+
+<p align="center">Tabela 7 - "Histórico de versões" Autor: Vilmar José</p>

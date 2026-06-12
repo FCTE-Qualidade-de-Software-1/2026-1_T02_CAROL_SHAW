@@ -2,8 +2,6 @@
 
 Esta página apresenta a execução da avaliação de **Adequação Funcional** sobre o commit [`ba6db878b9dfa36fb034916612c4cf58ddf43475`](https://github.com/unb-mds/2025-1-NoFluxoUNB/commit/ba6db878b9dfa36fb034916612c4cf58ddf43475) do [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB). A análise preserva a rastreabilidade com as métricas CRF, TDD e CF especificadas na Fase 2 e com os procedimentos definidos na Fase 3.
 
-> **Resultado:** a CRF atingiu 60,00% e foi classificada como aceitável; a CF atingiu 70,00% e foi classificada como inaceitável. A TDD permaneceu inconclusiva porque a massa de dados disponível não atende ao desenho amostral estabelecido na Fase 3.
-
 ---
 
 ## 1. Obtenção das Medidas
@@ -81,16 +79,7 @@ Afim de obter a Taxa de Divergência de Dados (TDD) foram listadas as seguintes 
 
 #### 1.2.3 Execução das operações
 
-
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/pcNCkT13_kI"
-  title="Vídeo do YouTube"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
+[Vídeo de execução das operações](https://www.youtube.com/embed/pcNCkT13_kI)
 
 #### 1.2.4 Análise e comparação das saídas
 
@@ -200,7 +189,7 @@ A coleta detalhada, os resultados por histórico e a relação das regras utiliz
 | Métrica | Desejável | Aceitável | Inaceitável | Resultado | Classificação |
 | :------ | :-------- | :-------- | :----------- | :-------- | :------------ |
 | CRF | >= 90% | 60% a 89% | < 60% | 60,00% | Aceitável |
-| TDD | <= 1% | 1,1% a 5% | > 5% | Não calculado | Inconclusiva |
+| TDD | <= 1% | 1,1% a 5% | > 5% | 40% | Inaceitável |
 | CF | 100% | 80% a 99% | < 80% | 70,00% | Inaceitável |
 
 <p align="center">Tabela 5 - Comparação das métricas de Adequação Funcional com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
@@ -217,7 +206,7 @@ A CRF situa-se no limite inferior da faixa aceitável e 30 pontos percentuais ab
 
 ### Q2. Com que frequência ocorrem resultados imprecisos durante a construção do fluxograma?
 
-**Resposta:** inconclusiva. A ausência do conjunto controlado de operações e saídas esperadas previsto para a TDD impede o cálculo da métrica e, consequentemente, a confirmação ou refutação da hipótese H2.
+**Resposta:** 40% dos resultados das operações foram imprecisos. O sistema recomenda muitas disciplinas indisponíveis. O resultado é inaceitável.
 
 ### Q3. Qual é o percentual de transações processadas de acordo com as regras e normas acadêmicas da UnB?
 
@@ -242,7 +231,7 @@ As ações prioritárias derivadas da avaliação funcional são:
 9. revisar o casamento de componentes cumpridos e equivalentes, especialmente os casos `MAT0031` com situação `CUMP` e `MAT0025` cumprida por `MAT0137`;
 10. exibir como semestre atual o valor do campo `Período Letivo Atual` do histórico ou alterar o rótulo para indicar que o valor representa o ano e período da matrícula mais recente.
 
-Para concluir a TDD, deve-se ampliar a massa de dados para os cursos, centros e tipos de operação previstos na Fase 3. A CF pode ser ampliada posteriormente para pré-requisitos, limites de matrícula e outras matrizes curriculares, desde que cada regra seja acompanhada da respectiva fonte institucional.
+Por fim, para diminuir a **Taxa de Divergência de Dados** é preciso atualizar as bases de dados nas quais o sistema procura as disciplinas disponíveis ou buscar novas fontes de dados, além de resolver problemas de conexão com o assistente feito com base no Darcy AI .
 
 ---
 
@@ -253,6 +242,7 @@ Para concluir a TDD, deve-se ampliar a massa de dados para os cursos, centros e 
 - [Plano da Adequação Funcional - Fase 3](../fase3/adequacao_funcional.md)
 - [Evidência da CRF](evidencias/adequacao_funcional/crf.md)
 - [Evidência da CF](evidencias/adequacao_funcional/cf.md)
+- [Especificações das Funcionalidades](evidencias/adequacao_funcional/especificacao_funcionalidades.md)
 - [Visão Geral da Fase 4](introducao.md)
 
 ---
