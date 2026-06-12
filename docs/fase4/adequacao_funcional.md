@@ -2,8 +2,6 @@
 
 Esta página apresenta a execução da avaliação de **Adequação Funcional** sobre o commit [`ba6db878b9dfa36fb034916612c4cf58ddf43475`](https://github.com/unb-mds/2025-1-NoFluxoUNB/commit/ba6db878b9dfa36fb034916612c4cf58ddf43475) do [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB). A análise preserva a rastreabilidade com as métricas CRF, TDD e CF especificadas na Fase 2 e com os procedimentos definidos na Fase 3.
 
-> **Resultado:** a CRF atingiu 60,00% e foi classificada como aceitável; a CF atingiu 70,00% e foi classificada como inaceitável. A TDD permaneceu inconclusiva porque a massa de dados disponível não atende ao desenho amostral estabelecido na Fase 3.
-
 ---
 
 ## 1. Obtenção das Medidas

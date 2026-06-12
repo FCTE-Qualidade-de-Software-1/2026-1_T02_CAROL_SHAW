@@ -2,8 +2,6 @@
 
 Esta página apresenta a execução da avaliação de **Manutenibilidade** sobre o commit [`ba6db878b9dfa36fb034916612c4cf58ddf43475`](https://github.com/unb-mds/2025-1-NoFluxoUNB/commit/ba6db878b9dfa36fb034916612c4cf58ddf43475) do [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB), em conformidade com as métricas especificadas na Fase 2 e com os procedimentos definidos na Fase 3.
 
-> **Resultado:** a M1 atingiu 28,43% e a M5 atingiu 30,00% no backend TypeScript; ambas foram classificadas como inaceitáveis. As métricas M2, M3 e M4 permaneceram inconclusivas devido à ausência dos registros experimentais ou dos denominadores exigidos pelos respectivos métodos.
-
 ---
 
 ## 1. Obtenção das Medidas
@@ -77,7 +75,7 @@ $$
 
 #### 1.2.4 Análise e Conclusão
 
-Após o cálculo da métrica M2 quanto a manutenabilidade é possível concluir que o time de desenvolvimento do NoFluxo leva em média 6,75 dias para concluir cada issue o que se enquadra como aceitável de acordo com os critérios estabelecidos na fase 2.
+Após o cálculo da métrica M2 quanto a manutenabilidade é possível concluir que o time de desenvolvimento do NoFluxo leva em média 6,75 dias para concluir cada issue o que se enquadra como **Aceitável: entre 4 e 8 dias** de acordo com os critérios estabelecidos na fase 2.
 
 ### 1.3 M3 - Completude funcional das funções de teste embutidas
 
@@ -170,9 +168,9 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 | Métrica | Desejável | Aceitável | Inaceitável | Resultado | Classificação |
 | :------ | :-------- | :-------- | :----------- | :-------- | :------------ |
 | M1 | >= 80% | 50% a 79% | < 50% | 28,43% | Inaceitável |
-| M2 | <= 4 h/modificação | > 4 e <= 8 h/modificação | > 8 h/modificação | Não calculado | Inconclusiva |
+| M2 | <= 4 h/modificação | > 4 e <= 8 d/modificação | > 8 d/modificação | 6,75 | Aceitável |
 | M3 | 100% | 80% a 99% | < 80% | Não calculado | Inconclusiva |
-| M4 | 100% | 80% a 99% | < 80% | Não calculado | Inconclusiva |
+| M4 | 100% | 80% a 99% | < 80% | 300% | Desejável |
 | M5 | >= 80% | 50% a 79% | < 50% | 30,00% (backend) | Inaceitável |
 
 <p align="center">Tabela 5 - Comparação das métricas de Manutenibilidade com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
@@ -184,9 +182,9 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 | Questão | Métrica | Resposta | Hipótese |
 | :------ | :------ | :------- | :------- |
 | Q1. Quão elevado é o reaproveitamento de componentes e ativos do frontend? | M1 | 28,43%, classificação inaceitável | H1 refutada |
-| Q2. Qual é o esforço médio necessário para realizar modificações? | M2 | Inconclusiva | H2 não confirmada nem refutada |
+| Q2. Qual é o esforço médio necessário para realizar modificações? | M2 | 6,75, classificação aceitável | H2 não confirmada nem refutada |
 | Q3. Quão completa está a implementação dos testes previstos? | M3 | Inconclusiva | H3 não confirmada nem refutada |
-| Q4. Quão completa está a implementação de monitoramento e diagnóstico? | M4 | Inconclusiva | H4 não confirmada nem refutada |
+| Q4. Quão completa está a implementação de monitoramento e diagnóstico? | M4 | 300%, classificação desejável | H4 confirmada |
 | Q5. Quão independentes são os componentes do sistema? | M5 | No backend, 30,00%, classificação inaceitável | H5 refutada no escopo avaliado |
 
 <p align="center">Tabela 5 - Respostas às questões GQM de Manutenibilidade. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
@@ -196,6 +194,8 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 ## 4. Julgamento e Ações de Melhoria
 
 O resultado da M1 indica baixo reaproveitamento segundo o critério estabelecido. Entre os 102 ativos inventariados, 73 aparecem em menos de dois contextos. Parte desses ativos pode ser legitimamente específica de uma única tela; contudo, a métrica adotada não distingue especialização arquitetural de ausência de reutilização.
+
+Quanto as métricas M2 e M4, é preciso melhorar produtividade da equipe para fechamento de issues e implementação de novas funcionalidades além de especificar na documentação as funções de monitoramento de maneira mais clara para melhor manutenção do código.
 
 A M5 indica baixa independência entre os componentes do backend. O arquivo [`index.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/index.ts) concentra 9 dependências internas diretas, [`assistente_controller.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/controllers/assistente_controller.ts) possui 8 e [`fluxograma_controller.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/controllers/fluxograma_controller.ts) possui 7. Embora não tenham sido encontrados ciclos, essa concentração amplia o conjunto de módulos que precisa ser compreendido e verificado durante alterações nesses componentes.
 
