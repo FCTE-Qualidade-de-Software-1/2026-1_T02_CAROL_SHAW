@@ -14,6 +14,7 @@ Em conformidade com os critérios éticos da disciplina, declaramos o uso de fer
 | **Gemini 3 Flash**   | Auxílio durante a elaboração do texto no documento de propósito da avaliação e escopo.| O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e adequadas ao contexto do projeto.|
 | **Claude Opus 4.8**  | Auxílio durante a elaboração do Projeto de Avaliação para a característica de Manutenibilidade, redação do texto de introdução e do conteúdo desta etapa. | O texto gerado foi revisado para garantir que as informações fossem precisas, relevantes e corretas em relação aos critérios de avaliação e rastreabilidade com a fase 2. |
 | **Gemini 3.1 Pro** | Auxílio para inspecionar o repositório e encontrar funções de diagnóstico para calcular a métrica  M4 | As funções encontradas foram inspecionadas com base no caminho indicado |
+| **Codex (GPT-5)** | Auxílio na escrita e na inspeção do repositório para a elaboração dos documentos [M1](../fase4/evidencias/manutenibilidade/m1.md), [M3](../fase4/evidencias/manutenibilidade/m3.md), [M5](../fase4/evidencias/manutenibilidade/m5.md) e [CRF](../fase4/evidencias/adequacao_funcional/crf.md). | Os artefatos gerados foram revisados e comprovados por meio de  evidências visuais. |
 
 
 **Nota:** Nenhum ícone, emoji ou figurinha gerada por IA foi mantido no corpo dos relatórios técnicos.
