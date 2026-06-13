@@ -6,93 +6,68 @@ Esta página apresenta a execução da avaliação de **Manutenibilidade** sobre
 
 ## 1. Obtenção das Medidas
 
-### 1.1 M1 - Execução de reusabilidade
+### 1.1 M1 - Reusabilidade de componentes
 
-Para a M1, o inventário adotou as seguintes unidades de análise:
+O inventário foi elaborado exclusivamente a partir do diretório `no_fluxo_frontend_svelte/src/lib/components`. Foram aplicadas as seguintes regras:
 
-- cada componente Svelte fora das famílias de UI;
-- cada família de UI com arquivo público `index.ts`, contada como um ativo;
-- cada módulo de hook, utilitário ou action;
-- cada folha de estilo compartilhada.
+1. componentes Svelte independentes foram contados por arquivo;
+2. componentes internos de uma família em `components/ui/<familia>/` foram agrupados pelo módulo público `index.ts`;
+3. arquivos fora da pasta `components` não foram incluídos;
+4. um componente foi considerado reutilizado quando importado por dois ou mais arquivos de contexto distintos;
+5. imports internos de uma família de UI não foram considerados contexto externo.
 
-Os arquivos internos de uma mesma família de interface não foram contabilizados separadamente. Um ativo foi classificado como reutilizado quando era importado por dois ou mais arquivos pertencentes a contextos distintos.
-
-$$
-M1 = \frac{\text{ativos reutilizados}}{\text{total de ativos}} \times 100
-$$
+A identificação dos contextos de importação foi realizada com a extensão Svelte no ambiente de desenvolvimento, conforme demonstrado no vídeo disponível na [Evidência da M1](evidencias/manutenibilidade/m1.md).
 
 $$
-M1 = \frac{29}{102} \times 100 = 28{,}43\%
+M1 = \frac{\text{componentes reutilizados}}{\text{total de componentes inventariados}} \times 100
 $$
 
-| Tipo de ativo | Total | Reutilizados |
-| :------------ | ----: | ------------: |
-| Componentes Svelte independentes | 68 | 20 |
-| Famílias de componentes de UI | 14 | 1 |
-| Hooks | 3 | 0 |
-| Utilitários | 12 | 6 |
-| Actions | 4 | 2 |
-| Estilos compartilhados | 1 | 0 |
-| **Total** | **102** | **29** |
+$$
+M1 = \frac{21}{82} \times 100 = 25{,}61\%
+$$
 
-<p align="center">Tabela 1 - Dados brutos da M1 por tipo de ativo. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+| Tipo de componente | Total | Reutilizados | Não reutilizados |
+| :----------------- | ----: | ------------: | ----------------: |
+| Componentes Svelte independentes | 68 | 20 | 48 |
+| Famílias de componentes de UI | 14 | 1 | 13 |
+| **Total** | **82** | **21** | **61** |
 
-Como verificação estática complementar, foi utilizado o [Knip 6.16.1](https://knip.dev/), que possui suporte a projetos [Svelte](https://knip.dev/reference/plugins/svelte) e [SvelteKit](https://knip.dev/reference/plugins/sveltekit). O comando abaixo foi executado a partir do diretório `no_fluxo_frontend_svelte`:
+<p align="center">Tabela 1 - Dados brutos da M1 por tipo de componente. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
-```powershell
-npx.cmd --yes knip@6.16.1 --production --files
-```
+A relação dos 21 componentes reutilizados, dos 61 componentes abaixo do limiar e suas contagens de contextos está na [Evidência da M1](evidencias/manutenibilidade/m1.md).
 
-O Knip sinalizou 77 arquivos como não alcançados a partir dos pontos de entrada reconhecidos, dos quais 74 estavam em `src/lib`. Esse resultado foi utilizado para apoiar a identificação de candidatos sem uso, mas não compôs diretamente o numerador ou o denominador da M1.
+### 1.2 M2 - Tempo médio de resolução de modificações
 
-O relatório possui as seguintes limitações em relação ao método da métrica:
+#### 1.2.1 Seleção da amostra
 
-- o Knip classifica arquivos não utilizados, enquanto a M1 conta ativos reutilizados por dois ou mais contextos;
-- a ferramenta não informa diretamente a quantidade de arquivos distintos que importam cada ativo;
-- cada arquivo interno de uma família de UI é analisado separadamente, enquanto a M1 agrupa a família pelo módulo público `index.ts`; entre os arquivos sinalizados, 46 pertenciam a essas famílias;
-- arquivos auxiliares, gerados ou vinculados por convenções do framework podem exigir configuração adicional e revisão manual.
+Foram examinadas issues fechadas durante o primeiro semestre de 2026 no repositório do [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues?q=is%3Aissue%20state%3Aclosed).
 
-Portanto, o Knip foi adotado como evidência auxiliar de análise estática. O resultado de 29 ativos reutilizados em 102 permaneceu fundamentado no inventário e na inspeção dos contextos de importação definidos para a M1.
-
-A relação dos 29 ativos reutilizados e suas contagens de contextos está em [Evidência da M1](evidencias/manutenibilidade/m1.md).
-
-### 1.2 M2 - Complexidade de modificação
-
-#### 1.2.1 Seleção de amostra de modificações e registro de tempo gasto
-
-Para a realização do cálculo desta métrica foi selecionada uma amostra de modificações representativas recentes. As amostras foram obtidas no repositório do projeto no GitHub [NoFluxo](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues?q=is%3Aissue%20state%3Aclosed) e representam as issues fechadas durante o primeiro semestre de 2026.
-
-| Issue | Abertura | Fechamento| Status | tempo em dias |
-| ----- | -------- | --------- | ------ | ------------- |
-|[[EPIC] Atualização da função do Darcy AI](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/116)                          |02/04/2026|03/04/2026|implementado| 1 |
-|[[FEAT] Implementar Recomendação Automática de Grade](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/101)               |03/03/2026|11/03/2026|não implementado| NaN |
-|[[FEAT] Criar Organizador de Grade para Próximo Semestre](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/100)           |03/03/2026|11/03/2026|não implementado| NaN |
-|[[FEAT/SPRINTS] Implementar Analytics de Vagas por Semestre](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/99)        |03/03/2026|11/03/2026|não implementado| NaN |
-|[[UPDATE] Refatoração sobre nós](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/98)                                    |03/03/2026|06/04/2026|implementado| 3 |
-|[[FEAT/SPRINTS] Validação e Padronização dos Fluxogramas Acadêmicos](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/97)|03/03/2026|11/03/2026|implementado| 8 |
-|[[FEAT/SPRINTS] Implementação e Otimização do Agente de IA](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/96)         |25/02/1026|12/03/2026|implementado| 15 |
+| Issue | Status | Tempo registrado |
+| :---- | :----- | ---------------: |
+| [[EPIC] Atualização da função do Darcy AI](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/116) | Implementado | 1 dia |
+| [[FEAT] Implementar Recomendação Automática de Grade](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/101) | Não implementado | Não contabilizado |
+| [[FEAT] Criar Organizador de Grade para Próximo Semestre](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/100) | Não implementado | Não contabilizado |
+| [[FEAT/SPRINTS] Implementar Analytics de Vagas por Semestre](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/99) | Não implementado | Não contabilizado |
+| [[UPDATE] Refatoração sobre nós](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/98) | Implementado | 3 dias |
+| [[FEAT/SPRINTS] Validação e Padronização dos Fluxogramas Acadêmicos](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/97) | Implementado | 8 dias |
+| [[FEAT/SPRINTS] Implementação e Otimização do Agente de IA](https://github.com/unb-mds/2025-1-NoFluxoUNB/issues/96) | Implementado | 15 dias |
 
 <p align="center">Tabela 2 - Dados brutos da M2 obtidos no Repositório do GitHub do NoFluxo. Fonte: Gabriel Flores, 2026.</p>
 
 
-#### 1.2.2 Consolidação das medidas obtidas
-
-- **Número de Modificações:** 4
-- **Tempo Total de Trabalho:** 27
-
-#### 1.2.3 Cálculo M2
+#### 1.2.2 Cálculo
 
 $$
-M2 = \frac{\text{tempo total de trabalho}}{\text{número de modificações}}
+M2 = \frac{\text{tempo total de resolução das modificações implementadas}}{\text{número de modificações implementadas}}
 $$
 
+Foram contabilizadas quatro modificações implementadas, com tempos registrados de 1, 3, 8 e 15 dias:
+
 $$
-M2 = \frac{\text{27}}{\text{4}}= 6{,}75
+M2 = \frac{1 + 3 + 8 + 15}{4} = \frac{27}{4} = 6{,}75 \text{ dias por modificação}
 $$
 
-#### 1.2.4 Análise e Conclusão
-
-Após o cálculo da métrica M2 quanto a manutenabilidade é possível concluir que o time de desenvolvimento do NoFluxo leva em média 6,75 dias para concluir cada issue o que se enquadra como **Aceitável: entre 4 e 8 dias** de acordo com os critérios estabelecidos na fase 2.
+O resultado de **6,75 dias por modificação** está na faixa aceitável, acima de 4 e até 8 dias. A medida representa o tempo de resolução registrado na amostra e não o esforço ativo dedicado exclusivamente à implementação.
 
 ### 1.3 M3 - Completude funcional das funções de teste embutidas
 
@@ -113,13 +88,11 @@ Os comandos, resultados e motivos que impedem o cálculo estão registrados na [
 #### 1.4.1 Lista de funções de diagnóstico
 
 Funções de diagnóstico previstas:
-1. Tratamento de Exceções: Lidar com falhas estruturais ou PDFs corrompidos no "Parser PDF".
 
-2. Monitoramento de Performance: Garantir tempo de resposta inferior a 5 segundos (para fluxograma, geração de grade e parser).
-
-3. Alertas Visuais: Mensagens de erro e avisos sobre disciplinas críticas na interface.
-
-4. Monitoramento de Integração: Configuração de pipeline CI/CD (GitHub Actions) para rastrear erros de build.
+1. Tratamento de Exceções: lidar com falhas estruturais ou PDFs corrompidos no parser de PDF.
+2. Monitoramento de Performance: garantir tempo de resposta inferior a 5 segundos para fluxograma, geração de grade e parser.
+3. Alertas Visuais: apresentar mensagens de erro e avisos sobre disciplinas críticas na interface.
+4. Monitoramento de Integração: utilizar o pipeline de CI/CD do GitHub Actions para rastrear erros de build.
 
 #### 1.4.2 Funções de diagnóstico encontradas
 
@@ -140,43 +113,43 @@ Funções de diagnóstico previstas:
 
 <p align="center">Tabela 3 - Dados brutos da M4 obtidos no Repositório do GitHub do NoFluxo. Fonte: Gabriel Flores, 2026.</p>
 
-#### 1.4.3 Cáculo M4
+#### 1.4.3 Cálculo da M4
 
 $$
 M4 = \frac{\text{funções de diagnóstico implementadas}}{\text{funções exigidas na especificação}} \times 100
 $$
 
 $$
-M4 = \frac{\text{12}}{\text{4}} \times 100 = 300\%
+M4 = \frac{12}{4} \times 100 = 300\%
 $$
 
-#### 1.4.4 Análise e Conclusão
+#### 1.4.4 Análise e conclusão
 
-Após o cálculo da métrica M4 quanto a manutenabilidade é possível concluir que o time de desenvolvimento do NoFluxo possui mais funções de monitoramento implementadas do que especificadas o que demonstra bastante completude e se enquandra no critério **Desejável:>=100%** .
+Foram identificadas 12 funções de diagnóstico e monitoramento para quatro funções previstas. O resultado da M4 foi de **300%**, classificado como **desejável**, confirmando a hipótese H4.
 
-### 1.5 M5 - Condensabilidade
+### 1.5 M5 - Independência de componentes
 
-O mapa de dependências internas foi obtido por análise estática dos arquivos `.ts` de produção localizados em [`no_fluxo_backend/src/`](https://github.com/unb-mds/2025-1-NoFluxoUNB/tree/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src). Foram excluídos testes, arquivos de declaração, código gerado e dependências externas. Um componente foi classificado como **não dependente** quando não importava outro componente interno do backend.
+O mapa de dependências internas foi obtido por análise estática dos arquivos `.ts` de produção localizados em [`no_fluxo_backend/src/`](https://github.com/unb-mds/2025-1-NoFluxoUNB/tree/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src). Foram excluídos testes, arquivos de declaração, código gerado e dependências externas. Um componente foi classificado como **sem dependências internas** quando não importava outro componente do backend.
 
 O escopo foi restringido ao backend porque o [Madge 8.0.0](https://github.com/pahen/madge) processou diretamente todos os módulos TypeScript e produziu resultados reproduzíveis por linha de comando. No frontend, as ferramentas examinadas não resolveram de forma confiável as importações declaradas nos componentes `.svelte`. Nos serviços Python, o [Pydeps](https://pydeps.readthedocs.io/) não construiu o grafo em razão de nomes e caminhos incompatíveis com sua resolução de módulos. A exclusão desses subsistemas evita que a medida dependa de conversões, renomeações ou programas auxiliares não previstos no procedimento.
 
 $$
-M5 = \frac{\text{componentes não dependentes}}{\text{total de componentes}} \times 100
+M5 = \frac{\text{componentes sem dependências internas}}{\text{total de componentes avaliados}} \times 100
 $$
 
 $$
 M5 = \frac{6}{20} \times 100 = 30{,}00\%
 $$
 
-| Subsistema | Componentes | Não dependentes | Dependentes | Relações internas |
+| Subsistema | Componentes | Sem dependências internas | Com dependências internas | Relações internas |
 | :--------- | ----------: | --------------: | ----------: | ----------------: |
 | Backend TypeScript | 20 | 6 | 14 | 51 |
 
 <p align="center">Tabela 4 - Dados brutos da M5 no backend. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
-O resultado de 30,00% indica que 14 dos 20 componentes do backend possuem ao menos uma dependência interna direta. Não foram identificadas dependências circulares no escopo avaliado.
+O resultado de 30,00% indica que 6 dos 20 componentes não importam outros arquivos internos, enquanto 14 possuem ao menos uma dependência interna direta. Não foram identificadas dependências circulares no escopo avaliado.
 
-O mapa, as ferramentas, as relações de maior concentração e os componentes não dependentes estão em [Evidência da M5](evidencias/manutenibilidade/m5.md).
+O mapa, as ferramentas, as relações de maior concentração e os componentes sem dependências internas estão em [Evidência da M5](evidencias/manutenibilidade/m5.md).
 
 ---
 
@@ -184,8 +157,8 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 
 | Métrica | Desejável | Aceitável | Inaceitável | Resultado | Classificação |
 | :------ | :-------- | :-------- | :----------- | :-------- | :------------ |
-| M1 | >= 80% | 50% a 79% | < 50% | 28,43% | Inaceitável |
-| M2 | <= 4 h/modificação | > 4 e <= 8 d/modificação | > 8 d/modificação | 6,75 | Aceitável |
+| M1 | >= 80% | 50% a 79% | < 50% | 25,61% | Inaceitável |
+| M2 | <= 4 dias/modificação | > 4 e <= 8 dias/modificação | > 8 dias/modificação | 6,75 dias/modificação | Aceitável |
 | M3 | 100% | 80% a 99% | < 80% | Não calculado | Inconclusiva |
 | M4 | 100% | 80% a 99% | < 80% | 300% | Desejável |
 | M5 | >= 80% | 50% a 79% | < 50% | 30,00% (backend) | Inaceitável |
@@ -198,33 +171,33 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes n
 
 | Questão | Métrica | Resposta | Hipótese |
 | :------ | :------ | :------- | :------- |
-| Q1. Quão elevado é o reaproveitamento de componentes e ativos do frontend? | M1 | 28,43%, classificação inaceitável | H1 refutada |
-| Q2. Qual é o esforço médio necessário para realizar modificações? | M2 | 6,75, classificação aceitável | H2 não confirmada nem refutada |
+| Q1. Quão elevado é o reaproveitamento dos componentes do frontend? | M1 | 25,61%, classificação inaceitável | H1 refutada |
+| Q2. Qual é o tempo médio necessário para concluir modificações? | M2 | 6,75 dias por modificação, classificação aceitável | H2 não confirmada |
 | Q3. Quão completa está a implementação dos testes previstos? | M3 | Inconclusiva | H3 não confirmada nem refutada |
 | Q4. Quão completa está a implementação de monitoramento e diagnóstico? | M4 | 300%, classificação desejável | H4 confirmada |
-| Q5. Quão independentes são os componentes do sistema? | M5 | No backend, 30,00%, classificação inaceitável | H5 refutada no escopo avaliado |
+| Q5. Qual é a proporção de componentes sem dependências internas diretas? | M5 | No backend, 30,00%, classificação inaceitável | H5 refutada no escopo avaliado |
 
-<p align="center">Tabela 5 - Respostas às questões GQM de Manutenibilidade. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 6 - Respostas às questões GQM de Manutenibilidade. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 ---
 
 ## 4. Julgamento e Ações de Melhoria
 
-O resultado da M1 indica baixo reaproveitamento segundo o critério estabelecido. Entre os 102 ativos inventariados, 73 aparecem em menos de dois contextos. Parte desses ativos pode ser legitimamente específica de uma única tela; contudo, a métrica adotada não distingue especialização arquitetural de ausência de reutilização.
+O resultado da M1 indica baixo reaproveitamento segundo o critério estabelecido. Entre os 82 componentes inventariados, 61 aparecem em menos de dois contextos. Parte desses componentes pode ser legitimamente específica de uma única tela; contudo, a métrica adotada não distingue especialização arquitetural de ausência de reutilização.
 
-Quanto as métricas M2 e M4, é preciso melhorar produtividade da equipe para fechamento de issues e implementação de novas funcionalidades além de especificar na documentação as funções de monitoramento de maneira mais clara para melhor manutenção do código.
+A M2 apresentou resultado aceitável, com média de 6,75 dias por modificação implementada. Como a hipótese H2 estabelece o nível desejável de até 4 dias, ela não foi confirmada. A M3 permanece inconclusiva porque a especificação não enumera os cenários de teste requeridos. A M4 atingiu 300%, resultado classificado como desejável.
 
-A M5 indica baixa independência entre os componentes do backend. O arquivo [`index.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/index.ts) concentra 9 dependências internas diretas, [`assistente_controller.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/controllers/assistente_controller.ts) possui 8 e [`fluxograma_controller.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/controllers/fluxograma_controller.ts) possui 7. Embora não tenham sido encontrados ciclos, essa concentração amplia o conjunto de módulos que precisa ser compreendido e verificado durante alterações nesses componentes.
+A M5 indica baixa independência de importação entre os componentes do backend. O arquivo [`index.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/index.ts) importa 9 componentes internos, [`assistente_controller.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/controllers/assistente_controller.ts) importa 8 e [`fluxograma_controller.ts`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src/controllers/fluxograma_controller.ts) importa 7. Embora não tenham sido encontrados ciclos, essa concentração amplia o conjunto de módulos que precisa ser compreendido durante alterações nesses componentes.
 
 As ações fundamentadas pelas evidências são:
 
-1. revisar os 73 ativos não reutilizados e remover os que não possuem import;
+1. revisar os 61 componentes não reutilizados e remover os que não possuem imports;
 2. consolidar padrões repetidos de formulários, modais e layouts em componentes compartilhados;
 3. manter famílias de UI expostas por módulos públicos e documentar seu uso;
 4. criar a matriz de cenários requeridos para permitir o cálculo de M3;
 5. adicionar testes de frontend e corrigir os 10 erros identificados pelo `svelte-check`;
-6. definir a lista mínima de diagnóstico exigida para M4;
-7. registrar tempo útil em tarefas futuras para viabilizar M2;
+6. documentar com maior clareza as funções de diagnóstico previstas;
+7. manter o registro padronizado do tempo de resolução das issues;
 8. revisar as responsabilidades de `index.ts`, `assistente_controller.ts` e `fluxograma_controller.ts`;
 9. reduzir dependências diretas dos controladores por meio das camadas e interfaces já existentes no backend;
 10. manter a verificação de ciclos no processo de integração para preservar o resultado atual de ausência de dependências circulares.
@@ -262,5 +235,9 @@ As ações fundamentadas pelas evidências são:
 | 1.2 | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.3 | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.4 | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.5 | 12/06/2026 | Inclusão do Knip como análise estática complementar da M1 e registro de suas limitações | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.6 | 12/06/2026 | Cálculo das métricas M2 e M4,registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.6 | 12/06/2026 | Cálculo das métricas M2 e M4, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.7 | 13/06/2026 | Correção da M1 e revisão das métricas M2 e M4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.8 | 13/06/2026 | Adequação da definição da M2 ao tempo de resolução utilizado na execução | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.9 | 13/06/2026 | Sincronização das medidas e do escopo com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.10 | 13/06/2026 | Restauração do cálculo e da classificação original da M4 conforme o commit 443ee2e | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.11 | 13/06/2026 | Alinhamento da M1 à inspeção de referências dos componentes | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |

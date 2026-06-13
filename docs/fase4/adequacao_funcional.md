@@ -62,8 +62,9 @@ A matriz completa de inspeção está disponível em [Evidência da CRF](evidenc
 
 ### 1.2 TDD - Taxa de Divergência de Dados
 
-#### 1.2.1 - Definição do conjunto de operações-padrão para o experimento
-Afim de obter a Taxa de Divergência de Dados (TDD) foram listadas as seguintes operações a serem realizadas: login, importar histórico, verificação do fluxograma, consulta de pré-requisitos de disciplinas conhecidas (Algoritmo e Programação de Computadores, Estrutura de Dados e Algoritmos 1 e Estrutura de Dados e ALgoritmos 2) e geração de recomendação para perfis acadêmicos pré definidos. No caso, será testado apenas um perfil acadêmico:
+#### 1.2.1 Definição das operações-padrão
+
+Para obter a Taxa de Divergência de Dados (TDD), foram executadas cinco operações: login, importação de histórico, verificação do fluxograma, consulta de pré-requisitos e geração de recomendação. A recomendação foi avaliada com um perfil acadêmico:
 
 - **Contexto acadêmico:** estudante de Engenharia de Software com bom desempenho em disciplinas de programação, algoritmos, estrutura de dados e matemática aplicada.
 - **Objetivo principal:** escolher disciplinas que maximizem aprofundamento técnico, formação em desenvolvimento de software e preparo para áreas como engenharia de dados, backend, inteligência artificial ou infraestrutura.
@@ -71,11 +72,11 @@ Afim de obter a Taxa de Divergência de Dados (TDD) foram listadas as seguintes 
 
 #### 1.2.2 Saída esperada das operações
 
-1. Login: login realizado com sucesso e redirecionamento automatico para a página de escolha de curso.
+1. Login: autenticação realizada com sucesso e redirecionamento automático para a página de escolha de curso.
 2. Importar histórico: importação realizada com sucesso.
 3. Geração do fluxograma: geração de um fluxograma que represente corretamente o curso e as disciplinas cursadas pelo discente até aquele momento.
-4. Consulta de pré-requisitos: Algoritmo e Programação de Computadores (APC) não deve ter pré-requisitos, Estrutura de Dados e Algoritmos 1 (EDA-1) deve ter APC como pré-requisito e Estrutura de Dados e ALgoritmos 2 (EDA-2) deve ter EDA-1 como pré-requisitos.
-5. Geração de recomendação: é esperado que o sistema gere recomendações customizadas para o perfil de aluno, sendo disciplinas disponiveis para cursar e dentro da área de interesse.
+4. Consulta de pré-requisitos: Algoritmos e Programação de Computadores (APC) não deve ter pré-requisitos; Estruturas de Dados e Algoritmos 1 (EDA1) deve ter APC como pré-requisito; e Estruturas de Dados e Algoritmos 2 (EDA2) deve ter EDA1 como pré-requisito.
+5. Geração de recomendação: o sistema deve recomendar disciplinas disponíveis para matrícula e alinhadas ao perfil acadêmico informado.
 
 #### 1.2.3 Execução das operações
 
@@ -83,16 +84,20 @@ Afim de obter a Taxa de Divergência de Dados (TDD) foram listadas as seguintes 
 
 #### 1.2.4 Análise e comparação das saídas
 
-1. Login: conforme o esperado.
-2. Importar histórico: conforme o esperado.
-3. Geração do fluxograma: o fluxograma está correto de acordo com a matriz curricular, porém inclui disciplinas que não estão sendo ofertadas, como Qualidade de Software 2 e Compiladores 2.
-4. Consulta de pré-requisitos: conforme o esperado.
-5. Geração de recomendação: o sistema recomenda disciplinas customizadas pelo histórico e interesses apenas quando solicitado explicitamente, caso contrário parece recomendar todas as disciplinas optativas do curso de Engenharia de Software ranqueadas por interesse, além de recomendar disciplinas as quais não estão sendo ofertadas.
+| Operação | Resultado | Situação |
+| :------- | :-------- | :------- |
+| Login | Autenticação e redirecionamento realizados | Conforme |
+| Importação de histórico | Histórico processado com sucesso | Conforme |
+| Geração do fluxograma | Fluxograma gerado, mas com disciplinas sem oferta atual, como Qualidade de Software 2 e Compiladores 2 | Divergente |
+| Consulta de pré-requisitos | Relações de APC, EDA1 e EDA2 apresentadas conforme o esperado | Conforme |
+| Geração de recomendação | Recomendações incluem disciplinas sem oferta atual e dependem de solicitação explícita para considerar o perfil | Divergente |
+
+<p align="center">Tabela 2 - Resultado das operações utilizadas na TDD. Fonte: Gabriel Flores, 2026.</p>
 
 #### 1.2.5 Medidas obtidas
 
-- **Total de Operações Realizadas:** 5
-- **Operações com Divergência:** 2
+- **Total de operações realizadas:** 5;
+- **Operações com divergência:** 2.
 
 #### 1.2.6 Cálculo da métrica TDD
 
@@ -107,7 +112,9 @@ $$
 
 #### 1.2.7 Análise e Conclusão 
 
-Após o a execução da avaliação e cálculo das métricas é possível perceber que o sistema NoFluxo funciona na maior parte das operações como o esperado, no entanto as operações relacionadas com as disciplinas da unb parecem estar defasadas por conta da fonte de dados. O sistema usa como base todas as disciplinas optativas cadastradas no curso de Engenharia de Software porém muitas delas foram alteradas ou não estão mais sendo ofertadas. A métrica de 40% obtida, conforme estipulado anteriormente na fase 2, se enquadra no critério **Inaceitável: > 5%**, portanto a hipótese H2 foi refultada o que mostra que o sistema apresenta falhas quanto a correção funcional pois recomenda matérias indisponíveis o que pode afetar o uso do NoFluxo para planejamento de grades.
+O cálculo de 40% enquadra-se no critério **Inaceitável: > 5%**, refutando a hipótese H2 na amostra executada. O resultado se restringe às cinco operações e ao único perfil acadêmico avaliados.
+
+As divergências indicam defasagem na fonte de dados de disciplinas. O sistema considera optativas que foram alteradas ou não estão mais sendo ofertadas, o que pode comprometer o planejamento de grades.
 
 ### 1.3 CF - Conformidade Funcional
 
@@ -144,7 +151,7 @@ Para assegurar a rastreabilidade da coleta, os históricos foram identificados p
 | H04 | `historico_222037700` |
 | H05 | `historico_231026330` |
 
-<p align="center">Tabela 2 - Identificação dos históricos da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 3 - Identificação dos históricos da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 | Verificação | Transações | Em conformidade | Não conformes |
 | :----------- | ---------: | --------------: | ------------: |
@@ -156,7 +163,7 @@ Para assegurar a rastreabilidade da coleta, os históricos foram identificados p
 | Período letivo atual | 5 | 0 | 5 |
 | **Total** | **30** | **21** | **9** |
 
-<p align="center">Tabela 3 - Consolidação das transações da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 4 - Consolidação das transações da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 Todos os cinco históricos apresentaram divergência no campo exibido como **Semestre Atual**. O documento acadêmico informa o período letivo atual como posição ordinal do estudante no curso, enquanto o NoFluxoUNB apresenta o ano e o período da disciplina com situação `MATR`. Desse modo, o rótulo da interface não corresponde ao significado do dado exibido.
 
@@ -178,7 +185,7 @@ $$
 | Transações não conformes | 9 |
 | CF | 70,00% |
 
-<p align="center">Tabela 4 - Memória de cálculo da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 5 - Memória de cálculo da CF. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
 A coleta detalhada, os resultados por histórico e a relação das regras utilizadas estão disponíveis em [Evidência da CF](evidencias/adequacao_funcional/cf.md).
 
@@ -192,9 +199,9 @@ A coleta detalhada, os resultados por histórico e a relação das regras utiliz
 | TDD | <= 1% | 1,1% a 5% | > 5% | 40% | Inaceitável |
 | CF | 100% | 80% a 99% | < 80% | 70,00% | Inaceitável |
 
-<p align="center">Tabela 5 - Comparação das métricas de Adequação Funcional com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
+<p align="center">Tabela 6 - Comparação das métricas de Adequação Funcional com os critérios da Fase 2. Fonte: Caio Duarte e Gabriel Flores, 2026.</p>
 
-A CRF situa-se no limite inferior da faixa aceitável e 30 pontos percentuais abaixo do nível desejável. A CF, por sua vez, ficou 10 pontos percentuais abaixo do limite de aceitabilidade e 30 pontos percentuais abaixo do nível desejável de 100%. A interpretação da CRF deve considerar que a unidade de análise corresponde aos 15 requisitos de primeiro nível e que parte deles não é atômica.
+A CRF situa-se no limite inferior da faixa aceitável. A TDD supera em 35 pontos percentuais o limite máximo da faixa aceitável, enquanto a CF ficou 10 pontos percentuais abaixo do limite de aceitabilidade. A interpretação deve considerar a atomicidade limitada dos requisitos da CRF, a amostra de cinco operações da TDD e o escopo da CF restrito à estrutura curricular `6360/1 - 2017.1`.
 
 ---
 
@@ -206,7 +213,7 @@ A CRF situa-se no limite inferior da faixa aceitável e 30 pontos percentuais ab
 
 ### Q2. Com que frequência ocorrem resultados imprecisos durante a construção do fluxograma?
 
-**Resposta:** 40% dos resultados das operações foram imprecisos. O sistema recomenda muitas disciplinas indisponíveis. O resultado é inaceitável.
+**Resposta:** duas das cinco operações apresentaram divergência, resultando em TDD de 40,00%. O resultado é inaceitável para a amostra executada.
 
 ### Q3. Qual é o percentual de transações processadas de acordo com as regras e normas acadêmicas da UnB?
 
@@ -216,7 +223,7 @@ A CRF situa-se no limite inferior da faixa aceitável e 30 pontos percentuais ab
 
 ## 4. Julgamento e Ações de Melhoria
 
-O [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB) implementa autenticação, envio e leitura de histórico, consulta curricular, cálculo de progresso e indicadores, tratamento de carga horária complementar, simulação de mudança de curso e persistência dos envios realizados. Apesar dessas capacidades, a cobertura funcional permaneceu no limite inferior da faixa aceitável, e a conformidade funcional apresentou nove divergências em 30 transações.
+O [NoFluxoUNB](https://github.com/unb-mds/2025-1-NoFluxoUNB) implementa autenticação, envio e leitura de histórico, consulta curricular, cálculo de progresso e indicadores, tratamento de carga horária complementar, simulação de mudança de curso e persistência dos envios realizados. Apesar dessas capacidades, a CRF permaneceu no limite inferior da faixa aceitável, a TDD foi inaceitável em duas das cinco operações e a CF apresentou nove divergências em 30 transações.
 
 As ações prioritárias derivadas da avaliação funcional são:
 
@@ -231,7 +238,7 @@ As ações prioritárias derivadas da avaliação funcional são:
 9. revisar o casamento de componentes cumpridos e equivalentes, especialmente os casos `MAT0031` com situação `CUMP` e `MAT0025` cumprida por `MAT0137`;
 10. exibir como semestre atual o valor do campo `Período Letivo Atual` do histórico ou alterar o rótulo para indicar que o valor representa o ano e período da matrícula mais recente.
 
-Por fim, para diminuir a **Taxa de Divergência de Dados** é preciso atualizar as bases de dados nas quais o sistema procura as disciplinas disponíveis ou buscar novas fontes de dados, além de resolver problemas de conexão com o assistente feito com base no Darcy AI .
+Para diminuir a **Taxa de Divergência de Dados**, é necessário atualizar as fontes de oferta de disciplinas, restringir as recomendações às matérias disponíveis e estabilizar a integração com o assistente Darcy AI.
 
 ---
 
@@ -268,4 +275,6 @@ Por fim, para diminuir a **Taxa de Divergência de Dados** é preciso atualizar 
 | 1.2 | 11/06/2026 | Registro do problema de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.3 | 12/06/2026 | Execução da CF para o currículo 6360/1 - 2017.1 | [Caio Duarte](https://github.com/caioduart3) |
 | 1.4 | 12/06/2026 | Deduplicação da amostra e inclusão da conformidade do período letivo atual | [Caio Duarte](https://github.com/caioduart3)  |
-| 1.5 | 12/06/2026 | Cálculo da TDD,registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.5 | 12/06/2026 | Cálculo da TDD, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.6 | 13/06/2026 | Registro da limitação amostral da TDD após auditoria dos cálculos | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| 1.7 | 13/06/2026 | Sincronização dos resultados e limitações com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |

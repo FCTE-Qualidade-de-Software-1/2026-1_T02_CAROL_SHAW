@@ -12,15 +12,17 @@
 
 ## Questões, Hipóteses e  Métricas
 
-### Q1: Quão elevado é o reaproveitamento de componentes e ativos já existentes no frontend?
+### Q1: Quão elevado é o reaproveitamento dos componentes do frontend?
 
-#### H1: Espera-se que o NoFluxoUnB apresente um alto grau de reaproveitamento de componentes e ativos no frontend.
+#### H1: Espera-se que o NoFluxoUnB apresente um alto grau de reaproveitamento dos componentes do frontend.
 
-#### Métrica 1: Execução de reusabilidade
+#### Métrica 1: Reusabilidade de componentes
 Fórmula:
 $$
-\frac{\text{Ativos Reutilizados}}{\text{Total de Ativos}} \times 100
+\frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Inventariados}} \times 100
 $$
+
+O inventário considera os componentes em `src/lib/components`. Componentes Svelte independentes são contados por arquivo, e cada família de UI é agrupada pelo módulo público `index.ts`.
 
 Critérios:
 
@@ -32,21 +34,23 @@ Critérios:
 
 ---
 
-### Q2: Qual é o esforço médio de tempo necessário para realizar modificações no sistema?
+### Q2: Qual é o tempo médio necessário para concluir modificações no sistema?
 
-#### H2: Espera-se que a equipe do NoFluxoUnB leve, em média, menos de 4 dias para realizar uma modificação no sistema.
+#### H2: Espera-se que as modificações implementadas no NoFluxoUnB sejam concluídas, em média, em até 4 dias.
 
-#### Métrica 2: Complexidade de modificação
+#### Métrica 2: Tempo médio de resolução de modificações
 Fórmula:
 $$
-\frac{\text{Tempo Total de Trabalho}}{\text{Número de Modificações}}
+\frac{\text{Tempo Total de Resolução das Modificações Implementadas}}{\text{Número de Modificações Implementadas}}
 $$
+
+O tempo de resolução corresponde ao valor, em dias, registrado para cada issue implementada da amostra. Issues encerradas sem implementação não integram o numerador nem o denominador.
 
 Critérios:
 
 - Desejável (H2 Confirmada): ≤ 4 dias por modificação
 
-- Aceitável: Entre 4 e 8 dias por modificação
+- Aceitável: Acima de 4 e até 8 dias por modificação
 
 - Inaceitável (H2 Refutada): > 8 dias por modificação
 
@@ -91,14 +95,14 @@ Critérios:
 - Inaceitável (H4 Refutada): < 80%
 
 
-### Q5: Quão independente é a estrutura modular do sistema diante de modificações em seus componentes?
+### Q5: Qual é a proporção de componentes sem dependências internas diretas?
 
-#### H5: Espera-se que o NoFluxoUnB possua alta modularidade, de modo que alterações em um componente tenham impacto mínimo nos demais.
+#### H5: Espera-se que ao menos 80% dos componentes avaliados não importem outros componentes internos.
 
-#### Métrica 5: Condensabilidade
+#### Métrica 5: Independência de componentes
 Fórmula:
 $$
-\frac{\text{Componentes não impactados por mudanças em outros}}{\text{Total de Componentes}} \times 100
+\frac{\text{Componentes sem Dependências Internas}}{\text{Total de Componentes Avaliados}} \times 100
 $$
 
 Critérios:
@@ -144,3 +148,6 @@ Fonte: Isaque Camargos, 2026.
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 04/06/2026 | Criação da documentação inicial e estruturação | [Vilmar José Fagundes](https://github.com/VilmarFagundes) |  |  |  |
 | 1.1    | 04/06/2026 | Escrita de todo o documento | [Isaque Camargos Nascimento](https://github.com/isaqzin) |  |  |  |
+| 1.2    | 13/06/2026 | Adequação da M2 ao tempo de resolução registrado na execução | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.3    | 13/06/2026 | Alinhamento do escopo da M1 e da definição da M5 às evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.4    | 13/06/2026 | Restauração da definição original da M4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |

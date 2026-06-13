@@ -34,12 +34,12 @@ CRF = \frac{\text{n° funções declaradas na especificação de requisitos} - \
 $$
 
 1. Levantar a **lista completa de funções** declaradas na especificação de requisitos do NoFluxoUNB (StoryMap, backlog, PBB ou documento equivalente no repositório).
-2. Para cada função listada, verificar na interface da aplicação e/ou no código-fonte se ela está **implementada e operacional**. Registrar como "ausente" se não existir implementação, e como "incorreta" se o comportamento divergir do especificado.
+2. Para cada um dos 15 requisitos funcionais de primeiro nível, verificar no código-fonte e nas evidências visuais se todos os comportamentos descritos possuem implementação. Registrar como "ausente/incorreto" quando não houver implementação ou quando apenas parte do requisito estiver atendida.
 3. Somar o número de funções **ausentes ou incorretas**.
 4. Registrar o total de funções declaradas e o total de funções ausentes/incorretas no formulário de coleta.
 5. Calcular CRF aplicando a fórmula.
 
-> **Atenção:** a inspeção deve cobrir as quatro funcionalidades centrais do produto — visualização do fluxograma curricular, recomendação de disciplinas por chatbot, visualização de pré-requisitos/correquisitos e comparação de integralização entre cursos.
+> **Limitação:** a CRF registra presença e aderência estática. A disponibilidade operacional das funcionalidades depende de validação ponta a ponta em ambiente integrado.
 
 ---
 
@@ -49,14 +49,14 @@ $$
 TDD = \frac{\text{n° operações reportadas com divergência de dados}}{\text{n° total de operações realizadas no período}} \times 100
 $$
 
-1. Definir um conjunto de **operações-padrão** para o experimento: upload de histórico acadêmico (PDF) e verificação do fluxograma gerado, consultas de pré-requisitos de disciplinas conhecidas e geração de recomendações para perfis acadêmicos predefinidos.
+1. Executar cinco **operações-padrão**: login, importação de histórico acadêmico, verificação do fluxograma gerado, consulta dos pré-requisitos de APC, EDA1 e EDA2 e geração de recomendação para um perfil acadêmico predefinido de Engenharia de Software.
 2. Para cada operação, preparar antecipadamente a **saída esperada** (resultado correto) com base nos dados oficiais da UnB (grade curricular, pré-requisitos publicados no SIGAA).
 3. Executar cada operação no sistema e registrar a **saída obtida**.
 4. Comparar a saída obtida com a saída esperada. Marcar a operação como **divergente** se houver discrepância em qualquer dado relevante (disciplina errada, carga horária incorreta, pré-requisito omitido ou equivocado, etc.).
 5. Registrar o número total de operações realizadas e o número de operações com divergência.
 6. Calcular TDD aplicando a fórmula.
 
-> **Nota sobre a amostra:** recomenda-se executar ao menos 30 operações, cobrindo cursos de diferentes centros da UnB, para que o resultado seja estatisticamente representativo.
+> **Limitação:** a amostra de cinco operações e um perfil acadêmico permite avaliar os casos executados, mas não representa todos os cursos, perfis e operações suportados pelo produto.
 
 ---
 
@@ -66,12 +66,15 @@ $$
 CF = \frac{\text{n° transações de acordo com as normas}}{\text{n° total de transações processadas}} \times 100
 $$
 
-1. Levantar e documentar o conjunto de **regras e normas acadêmicas da UnB** relevantes ao NoFluxoUNB: regras de pré-requisito, limite de créditos por semestre, regras de dupla-habilitação, fluxos curriculares vigentes por curso, entre outras.
-2. Definir um conjunto de **transações-padrão** que exercitem essas regras (ex.: tentativa de matricular disciplina sem pré-requisito cumprido, geração de fluxo para curso recém-reestruturado, comparação de integralização entre dois cursos).
-3. Executar cada transação no sistema e registrar o **resultado produzido**.
-4. Verificar se o resultado está em conformidade com a norma correspondente. Registrar como **em conformidade** ou **não conforme**.
-5. Registrar o total de transações processadas e o número de transações em conformidade.
-6. Calcular CF aplicando a fórmula.
+1. Adotar como referência a estrutura curricular de Engenharia de Software `6360/1 - 2017.1` publicada no SIGAA.
+2. Selecionar os históricos de Engenharia de Software disponíveis e remover documentos duplicados da mesma matrícula, mantendo o mais recente.
+3. Processar cada histórico pela página de importação do NoFluxoUNB.
+4. Para cada histórico, verificar seis transações independentes: identificação da matriz, cargas horárias, conjunto de 39 componentes obrigatórios, situação dos componentes, equivalências e período letivo atual.
+5. Registrar cada transação como **em conformidade** ou **não conforme**.
+6. Somar o total de transações e o número de transações em conformidade.
+7. Calcular a CF aplicando a fórmula.
+
+> **Limitação:** o resultado abrange somente a estrutura `6360/1 - 2017.1` e não inclui regras de matrícula, limites semestrais ou prazos de conclusão.
 
 ---
 
@@ -125,11 +128,12 @@ A avaliação será conduzida pelos membros da equipe atuando como avaliadores. 
 
 ### 3.4 Massa de dados
 
-A avaliação da Adequação Funcional requer **dados acadêmicos reais ou sintéticos** que representem situações típicas de uso:
+A massa de dados da Adequação Funcional é composta por:
 
-- **Históricos acadêmicos em PDF:** ao menos três perfis distintos de estudantes (ingressante, veterano em fase intermediária e concludente), de cursos diferentes, para testar o upload e a geração do fluxograma personalizado.
-- **Lista de disciplinas com pré-requisitos conhecidos:** extraída do SIGAA/DAC, para validar a exibição correta de dependências.
-- **Conjunto de transações-padrão documentadas:** definidas previamente pelo avaliador com a saída esperada descrita, para garantir a comparabilidade dos resultados.
+- 15 requisitos funcionais de primeiro nível para a CRF;
+- cinco operações funcionais e um perfil acadêmico de Engenharia de Software para a TDD;
+- cinco históricos acadêmicos únicos de Engenharia de Software para a CF;
+- estrutura curricular `6360/1 - 2017.1` e lista oficial de 39 componentes obrigatórios como referência normativa.
 
 ### 3.5 Formulários de coleta
 
@@ -189,5 +193,6 @@ Tabela 6 - "Critérios definidos na fase 2" Autor: Gustavo Oki
 | ------ | ---------- | ------------------------------------------------------------------ | --------- | ----------- | --------------- | --------------------- |
 | 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Adequação Funcional   |     [Gustavo Oki](https://github.com/GustOki)      |             |                 |                       |
 | 1.1    | 05/06/2026 | Especificação das ferramentas e definição do cronograma de execução (07/06 a 10/06/2026)   |     [Gustavo Oki](https://github.com/GustOki)      |[Vilmar José Fagundes](https://github.com/VilmarFagundes)      |   12/06/2026      |  Ajuste na formatação do arquivo e adição de legendas  |
+| 1.2    | 13/06/2026 | Alinhamento dos métodos e das amostras às evidências obtidas na Fase 4 | [Caio Duarte](https://github.com/caioduart3) | | | |
 
 <p align="center">Tabela 7 - "Histórico de versões" Autor: Vilmar José</p>

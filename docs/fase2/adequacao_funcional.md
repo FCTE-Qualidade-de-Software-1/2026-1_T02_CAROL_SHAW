@@ -19,7 +19,7 @@
 #### Métrica 1: CRF (Cobertura de Requisitos Funcionais)
 Fórmula:
 $$
-\frac{\text{n° funções declaradas na especificação de requisitos}}{\text{n° funções ausentes ou incorretas}} \times 100
+\frac{\text{n° funções declaradas} - \text{n° funções ausentes ou incorretas}}{\text{n° funções declaradas}} \times 100
 $$
 
 Critérios: 
@@ -30,9 +30,9 @@ Critérios:
 
 - Inaceitável (H1 Refutada): < 60%
 
-### Q2: Com que frequência ocorrem resultados imprecisos gerados pelo sistema durante a construção do fluxograma com base nos dados do usuário?
+### Q2: Com que frequência ocorrem divergências nas operações funcionais avaliadas?
 
-#### H2: A frequência de resultados imprecisos no processamento e validação de dados é inferior ou igual a 1% do total de transações.
+#### H2: A frequência de operações com divergência de dados é inferior ou igual a 1% do total de operações avaliadas.
 
 #### Métrica 2: TDD (Taxa de Divergência de Dados)
 Fórmula:
@@ -60,11 +60,11 @@ $$
 
 Critérios: 
 
-- Desejável (H1 Confirmada): 100%
+- Desejável (H3 Confirmada): 100%
 
 - Aceitável: Entre 80% e 99%
 
-- Inaceitável (H1 Refutada): < 80%
+- Inaceitável (H3 Refutada): < 80%
 
 ## Modelo GQM
 
@@ -96,3 +96,5 @@ Fonte: Caio Duarte, 2026.
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 04/06/2026 | Criação da documentação inicial e estruturação | [Vilmar José Fagundes](https://github.com/VilmarFagundes) |  |  |  |
 | 1.0    | 04/06/2026 | Adiciona GQM de adequação funcional | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.1    | 13/06/2026 | Correção da fórmula da CRF e da identificação da hipótese da CF | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.2    | 13/06/2026 | Alinhamento da questão e da hipótese da TDD às operações executadas | [Caio Duarte](https://github.com/caioduart3) |  |  |  |

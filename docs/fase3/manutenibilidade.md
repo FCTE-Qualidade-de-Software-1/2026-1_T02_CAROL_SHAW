@@ -2,7 +2,7 @@
 
 Esta página apresenta o Plano de Avaliação da característica **Manutenibilidade**, detalhando o método de avaliação, as instruções para o avaliador, os recursos e o ambiente necessários e o cronograma das ações. O plano operacionaliza as métricas definidas na Fase 2 (M1, M2, M3, M4 e M5), garantindo que a coleta de dados na Fase 4 seja **repetível e reprodutível**.
 
-> **Objeto de avaliação:** código-fonte do NoFluxoUNB hospedado no GitHub, considerando o ambiente multi-linguagem (TypeScript no frontend, Python e SQL no backend), no estado do repositório fixado para esta avaliação.
+> **Objeto de avaliação:** componentes do frontend Svelte, histórico de issues, suítes de testes, mecanismos de diagnóstico e arquivos TypeScript do backend, no estado do repositório fixado para esta avaliação.
 
 ---
 
@@ -16,11 +16,11 @@ A **Tabela 1** resume, para cada métrica, o tipo de método de avaliação e a 
 
 | Métrica | Nome                                                | Tipo de método                                | Fonte de dados                                |
 | :------ | :-------------------------------------------------- | :-------------------------------------------- | :-------------------------------------------- |
-| M1      | Execução de reusabilidade                           | Análise estática + inspeção manual            | Código do frontend                            |
-| M2      | Complexidade de modificação                         | Análise de histórico / experimento controlado | Issues, commits e registro de tempo           |
+| M1      | Reusabilidade de componentes                        | Inspeção de referências/imports               | `src/lib/components` do frontend              |
+| M2      | Tempo médio de resolução de modificações            | Análise do histórico de issues                | Issues implementadas e tempo registrado       |
 | M3      | Completude funcional das funções de teste embutidas | Inspeção documental + execução de ferramenta  | Especificação de requisitos e suíte de testes |
 | M4      | Suficiência das funções de diagnóstico              | Inspeção manual                               | Especificação e código de monitoramento/logs  |
-| M5      | Condensabilidade                                    | Análise estática de dependências              | Estrutura de módulos/componentes              |
+| M5      | Independência de componentes                        | Análise estática de dependências              | Arquivos TypeScript do backend                |
 
 <p align="center">Tabela 1 - "Visão geral do método de avaliação por métrica de Manutenibilidade" Autor: Matheus de Alcântara</p>
 
@@ -30,28 +30,33 @@ A **Tabela 1** resume, para cada métrica, o tipo de método de avaliação e a 
 
 As instruções a seguir descrevem, passo a passo, como obter cada medida. Todos os dados brutos coletados devem ser registrados nos formulários da seção 3 e armazenados no repositório para auditoria.
 
-### 2.1 M1 — Execução de reusabilidade
+### 2.1 M1 — Reusabilidade de componentes
 
 $$
-M1 = \frac{\text{Ativos Reutilizados}}{\text{Total de Ativos}} \times 100
+M1 = \frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Inventariados}} \times 100
 $$
 
-1. Definir "ativo" como componente de frontend reutilizável (componentes de UI, hooks, funções utilitárias, estilos compartilhados).
-2. Mapear o diretório de componentes do frontend e listar o **total de ativos** existentes.
-3. Para cada ativo, verificar via busca no código (ex.: referências/imports) se ele é utilizado em **dois ou mais** contextos distintos; em caso afirmativo, marcá-lo como **ativo reutilizado**.
-4. Registrar a contagem de ativos reutilizados e o total no formulário.
-5. Calcular M1 aplicando a fórmula.
+1. Inventariar os componentes localizados em `no_fluxo_frontend_svelte/src/lib/components`.
+2. Contar cada componente Svelte independente por arquivo.
+3. Agrupar os componentes internos de cada família `components/ui/<familia>/` pelo módulo público `index.ts`.
+4. Classificar como reutilizado o componente importado por dois ou mais arquivos de contextos distintos, desconsiderando imports internos da própria família de UI.
+5. Registrar a contagem de componentes reutilizados e o total inventariado.
+6. Calcular M1 aplicando a fórmula.
 
-### 2.2 M2 — Complexidade de modificação
+### 2.2 M2 — Tempo médio de resolução de modificações
 
 $$
-M2 = \frac{\text{Tempo Total de Trabalho}}{\text{Número de Modificações}}
+M2 = \frac{\text{Tempo Total de Resolução das Modificações Implementadas}}{\text{Número de Modificações Implementadas}}
 $$
 
-1. Selecionar uma amostra de modificações representativas (ex.: correções de bug e pequenas evoluções) a partir das issues/commits do repositório, ou definir um conjunto de tarefas-padrão a serem executadas em experimento controlado.
-2. Para cada modificação, registrar o **tempo útil de trabalho** gasto (em horas), do início da análise até a conclusão e validação.
-3. Somar o tempo de todas as modificações (**Tempo Total de Trabalho**) e contar o **Número de Modificações**.
-4. Calcular M2 aplicando a fórmula.
+1. Selecionar uma amostra de issues fechadas no período definido para a avaliação.
+2. Classificar cada issue como **implementada** ou **não implementada**.
+3. Para cada issue implementada, registrar o tempo de resolução em dias utilizado na coleta.
+4. Excluir do cálculo as issues encerradas sem implementação.
+5. Somar os tempos registrados das issues implementadas e contar o número dessas modificações.
+6. Calcular a M2 aplicando a fórmula.
+
+> **Limitação:** a métrica representa o tempo de resolução registrado para as issues da amostra. Ela não mede exclusivamente o esforço ativo da equipe nem separa períodos de espera, revisão ou bloqueio.
 
 ### 2.3 M3 — Completude funcional das funções de teste embutidas
 
@@ -65,6 +70,8 @@ $$
 4. Registrar o número de testes implementados e o número de testes requeridos.
 5. Calcular M3 aplicando a fórmula.
 
+> Se a especificação não enumerar os cenários de teste requeridos ou não houver rastreabilidade com os testes implementados, classificar a M3 como **não calculada e inconclusiva**.
+
 ### 2.4 M4 — Suficiência das funções de diagnóstico
 
 $$
@@ -76,16 +83,17 @@ $$
 3. Registrar o número de funções implementadas e o número de funções exigidas.
 4. Calcular M4 aplicando a fórmula.
 
-### 2.5 M5 — Condensabilidade
+### 2.5 M5 — Independência de componentes
 
 $$
-M5 = \frac{\text{Componentes não impactados por mudanças em outros}}{\text{Total de Componentes}} \times 100
+M5 = \frac{\text{Componentes sem Dependências Internas}}{\text{Total de Componentes Avaliados}} \times 100
 $$
 
-1. Identificar os **componentes/módulos** principais do sistema e elaborar o mapa de dependências entre eles (via ferramenta de análise estática ou inspeção dos imports).
-2. Para cada componente, avaliar se uma alteração em outro componente o afetaria diretamente (acoplamento). Componentes sem dependências de entrada relevantes são considerados **não impactados**.
-3. Registrar o número de componentes não impactados e o total de componentes.
-4. Calcular M5 aplicando a fórmula.
+1. Selecionar os arquivos `.ts` de produção em `no_fluxo_backend/src`, excluindo testes, declarações e código gerado.
+2. Gerar o mapa de imports internos com o Madge.
+3. Classificar como **sem dependências internas** cada arquivo que não importa outro componente interno do backend.
+4. Registrar o número de componentes sem dependências internas e o total de componentes avaliados.
+5. Calcular M5 aplicando a fórmula.
 
 ---
 
@@ -123,15 +131,13 @@ A **Tabela 3** apresenta as ferramentas de análise estática e linters.
 
 | Ferramenta                                                  | Origem no repositório                           | Finalidade na avaliação                                                     | Métricas |
 | :---------------------------------------------------------- | :---------------------------------------------- | :-------------------------------------------------------------------------- | :------- |
-| **ESLint** (+ `@typescript-eslint`, `eslint-plugin-svelte`) | frontend e backend (`lint`)                     | Identificar code smells e apoiar a contagem de ativos/componentes TS/Svelte | M1, M5   |
-| **svelte-check** e **tsc --noEmit** (`type-check`)          | frontend / backend                              | Verificar consistência de tipos e imports entre módulos                     | M5       |
-| **pylint**                                                  | `.pylintrc` na raiz                             | Análise estática dos serviços Python                                        | M1, M5   |
-| **flake8**, **black**, **isort**, **mypy**                  | `security-and-quality.yml` / `python-tests.yml` | Padronização e checagem estática do código Python                           | M1, M5   |
-| **madge** (TS/JS) e **pydeps** (Python) — _a adotar_        | — (não presente; sugerido)                      | Gerar o grafo de dependências entre módulos para medir acoplamento          | M5       |
+| Extensão Svelte / busca de referências                    | Ambiente de desenvolvimento                     | Identificar os contextos de importação dos componentes                      | M1       |
+| **Madge 8.0.0**                                           | Execução por `npx` no backend                    | Gerar o grafo de dependências, listar folhas e verificar ciclos             | M5       |
+| **Pydeps**                                                | Execução experimental nos serviços Python        | Tentativa de geração do grafo Python; resultado não utilizado na medida     | M5       |
 
 <p align="center">Tabela 3 - "Ferramentas de análise estática e linters" Autor: Matheus de Alcântara</p>
 
-> Observação: o projeto ainda não possui uma ferramenta dedicada de **grafo de dependências**. Recomenda-se incluir o `madge` (para o código TypeScript/Svelte) e o `pydeps` (para o código Python) para tornar o cálculo de M5 objetivo e auditável; na ausência delas, o mapa de dependências é obtido pela inspeção dos `import`/`require` apoiada pelo ESLint e pelo `tsc`.
+> A M5 é restrita ao backend TypeScript porque o Madge produziu resultados reproduzíveis nesse escopo. As tentativas no frontend Svelte e nos serviços Python não geraram grafos confiáveis para compor a medida.
 
 #### c) Testes e cobertura
 
@@ -190,9 +196,9 @@ O cronograma da **Tabela 7** é parte do planejamento da Fase 3 e define **quand
 | Etapa | Atividade (a executar na Fase 4)                                                          | Métricas | Responsável | Data de execução |
 | :---- | :---------------------------------------------------------------------------------------- | :------- | :---------- | :--------------- |
 | 1     | Preparação do ambiente: clonar repositório no commit de referência e instalar ferramentas | —        |             | 07/06/2026       |
-| 2     | Coleta estática: mapear ativos e componentes; calcular M1 e M5                            | M1, M5   |             | 08/06/2026       |
+| 2     | Coleta estática: mapear componentes e dependências; calcular M1 e M5                      | M1, M5   |             | 08/06/2026       |
 | 3     | Coleta de testes e diagnóstico: inspeção documental e de código; calcular M3 e M4         | M3, M4   |             | 09/06/2026       |
-| 4     | Coleta de esforço: amostragem de modificações e registro de tempo; calcular M2            | M2       |             | 10/06/2026       |
+| 4     | Coleta de tempo de resolução: selecionar issues implementadas e calcular M2               | M2       |             | 10/06/2026       |
 | 5     | Consolidação dos dados brutos e formulários no repositório                                | todas    |             | 11/06/2026       |
 | 6     | Verificação cruzada dos resultados e preparação para a Fase 4                             | todas    |             | 12/06/2026       |
 
@@ -226,5 +232,9 @@ O histórico de alterações desta página é apresentado na **Tabela 8**.
 | 1.1    | 05/06/2026 | Especificação das ferramentas reais a partir da inspeção do repositório do NoFluxoUNB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.2    | 05/06/2026 | Definição do cronograma de execução (07/06 a 10/06/2026)                              | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
 | 1.3    | 05/06/2026 | Ajuste do cronograma de execução para o período de 07/06 a 12/06/2026                 | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| 1.4    | 13/06/2026 | Adequação do método da M2 aos dados utilizados na execução                            | [Caio Duarte](https://github.com/caioduart3)                   |             |                 |                       |
+| 1.5    | 13/06/2026 | Alinhamento dos métodos de M1, M3 e M5 às evidências da Fase 4                        | [Caio Duarte](https://github.com/caioduart3)                   |             |                 |                       |
+| 1.6    | 13/06/2026 | Restauração do procedimento original da M4                                            | [Caio Duarte](https://github.com/caioduart3)                   |             |                 |                       |
+| 1.7    | 13/06/2026 | Alinhamento da M1 à inspeção de referências dos componentes                            | [Caio Duarte](https://github.com/caioduart3)                   |             |                 |                       |
 
 <p align="center">Tabela 8 - "Histórico de versões da página Plano de Avaliação" Autor: Matheus de Alcântara</p>
