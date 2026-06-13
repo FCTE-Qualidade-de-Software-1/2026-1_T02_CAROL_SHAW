@@ -143,17 +143,17 @@ Para cada métrica, registrar no repositório uma tabela com: identificador da m
 
 ## 4. Cronograma de Avaliação
 
-O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as atividades de coleta e análise da Adequação Funcional serão **executadas na Fase 4**. Ou seja, nesta fase apenas se planeja a agenda; a obtenção das medidas, a comparação com os critérios e o julgamento ocorrerão na Fase 4, conforme este cronograma. Toda a execução está prevista para o período de **07/06/2026 a 10/06/2026**.
+O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as atividades de coleta e análise da Adequação Funcional serão **executadas na Fase 4**. Ou seja, nesta fase apenas se planeja a agenda; a obtenção das medidas, a comparação com os critérios e o julgamento ocorrerão na Fase 4, conforme este cronograma. Toda a execução está prevista para o período de **07/06/2026 a 12/06/2026**.
 
 | Etapa | Atividade (a executar na Fase 4)                                                                              | Métricas    | Responsável | Data de execução |
 | ----- | ------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | ---------------- |
 | 1     | Preparação do ambiente: fixar commit de referência, levantar especificação de requisitos e normas da UnB      | —           |             | 07/06/2026       |
 | 2     | Inspeção documental: mapear funções declaradas e verificar implementação; calcular CRF                        | CRF         |             | 07/06/2026       |
 | 3     | Preparação dos casos de teste: definir operações-padrão com saídas esperadas para TDD e CF                   | TDD, CF     |             | 08/06/2026       |
-| 4     | Execução dos testes de precisão: rodar operações e registrar divergências; calcular TDD                      | TDD         |             | 08/06/2026       |
-| 5     | Execução dos testes de conformidade: rodar transações e verificar conformidade com normas; calcular CF        | CF          |             | 09/06/2026       |
-| 6     | Consolidação dos dados brutos e formulários no repositório                                                    | todas       |             | 09/06/2026       |
-| 7     | Verificação cruzada dos resultados e preparação para a Fase 4                                                 | todas       |             | 10/06/2026       |
+| 4     | Execução dos testes de precisão: rodar operações e registrar divergências; calcular TDD                      | TDD         |             | 09/06/2026       |
+| 5     | Execução dos testes de conformidade: rodar transações e verificar conformidade com normas; calcular CF        | CF          |             | 10/06/2026       |
+| 6     | Consolidação dos dados brutos e formulários no repositório                                                    | todas       |             | 12/06/2026       |
+| 7     | Verificação cruzada dos resultados e preparação para a Fase 4                                                 | todas       |             | 12/06/2026       |
 
 Tabela 5 - "Cronograma de execução da avaliação de Adequação Funcional (Fase 4)" Autor: Gustavo Oki
 
