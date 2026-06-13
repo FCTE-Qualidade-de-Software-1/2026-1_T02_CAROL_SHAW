@@ -16,7 +16,7 @@
 
 #### H1: Espera-se que o NoFluxoUnB apresente um alto grau de reaproveitamento dos componentes do frontend.
 
-#### Métrica 1: Reusabilidade de componentes
+#### Métrica 1: Execução de reusabilidade
 Fórmula:
 $$
 \frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Inventariados}} \times 100
@@ -38,7 +38,7 @@ Critérios:
 
 #### H2: Espera-se que as modificações implementadas no NoFluxoUnB sejam concluídas, em média, em até 4 dias.
 
-#### Métrica 2: Tempo médio de resolução de modificações
+#### Métrica 2: Complexidade de modificação
 Fórmula:
 $$
 \frac{\text{Tempo Total de Resolução das Modificações Implementadas}}{\text{Número de Modificações Implementadas}}
@@ -99,7 +99,7 @@ Critérios:
 
 #### H5: Espera-se que ao menos 80% dos componentes avaliados não importem outros componentes internos.
 
-#### Métrica 5: Independência de componentes
+#### Métrica 5: Condensabilidade
 Fórmula:
 $$
 \frac{\text{Componentes sem Dependências Internas}}{\text{Total de Componentes Avaliados}} \times 100

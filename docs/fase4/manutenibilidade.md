@@ -6,7 +6,7 @@ Esta página apresenta a execução da avaliação de **Manutenibilidade** sobre
 
 ## 1. Obtenção das Medidas
 
-### 1.1 M1 - Reusabilidade de componentes
+### 1.1 M1 - Execução de reusabilidade
 
 O inventário foi elaborado exclusivamente a partir do diretório `no_fluxo_frontend_svelte/src/lib/components`. Foram aplicadas as seguintes regras:
 
@@ -36,7 +36,7 @@ $$
 
 A relação dos 21 componentes reutilizados, dos 61 componentes abaixo do limiar e suas contagens de contextos está na [Evidência da M1](evidencias/manutenibilidade/m1.md).
 
-### 1.2 M2 - Tempo médio de resolução de modificações
+### 1.2 M2 - Complexidade de modificação
 
 #### 1.2.1 Seleção da amostra
 
@@ -127,7 +127,7 @@ $$
 
 Foram identificadas 12 funções de diagnóstico e monitoramento para quatro funções previstas. O resultado da M4 foi de **300%**, classificado como **desejável**, confirmando a hipótese H4.
 
-### 1.5 M5 - Independência de componentes
+### 1.5 M5 - Condensabilidade
 
 O mapa de dependências internas foi obtido por análise estática dos arquivos `.ts` de produção localizados em [`no_fluxo_backend/src/`](https://github.com/unb-mds/2025-1-NoFluxoUNB/tree/ba6db878b9dfa36fb034916612c4cf58ddf43475/no_fluxo_backend/src). Foram excluídos testes, arquivos de declaração, código gerado e dependências externas. Um componente foi classificado como **sem dependências internas** quando não importava outro componente do backend.
 

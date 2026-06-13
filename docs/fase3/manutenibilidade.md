@@ -16,11 +16,11 @@ A **Tabela 1** resume, para cada métrica, o tipo de método de avaliação e a 
 
 | Métrica | Nome                                                | Tipo de método                                | Fonte de dados                                |
 | :------ | :-------------------------------------------------- | :-------------------------------------------- | :-------------------------------------------- |
-| M1      | Reusabilidade de componentes                        | Inspeção de referências/imports               | `src/lib/components` do frontend              |
-| M2      | Tempo médio de resolução de modificações            | Análise do histórico de issues                | Issues implementadas e tempo registrado       |
+| M1      | Execução de reusabilidade                           | Inspeção de referências/imports               | `src/lib/components` do frontend              |
+| M2      | Complexidade de modificação                         | Análise do histórico de issues                | Issues implementadas e tempo registrado       |
 | M3      | Completude funcional das funções de teste embutidas | Inspeção documental + execução de ferramenta  | Especificação de requisitos e suíte de testes |
 | M4      | Suficiência das funções de diagnóstico              | Inspeção manual                               | Especificação e código de monitoramento/logs  |
-| M5      | Independência de componentes                        | Análise estática de dependências              | Arquivos TypeScript do backend                |
+| M5      | Condensabilidade                                    | Análise estática de dependências              | Arquivos TypeScript do backend                |
 
 <p align="center">Tabela 1 - "Visão geral do método de avaliação por métrica de Manutenibilidade" Autor: Matheus de Alcântara</p>
 
@@ -30,7 +30,7 @@ A **Tabela 1** resume, para cada métrica, o tipo de método de avaliação e a 
 
 As instruções a seguir descrevem, passo a passo, como obter cada medida. Todos os dados brutos coletados devem ser registrados nos formulários da seção 3 e armazenados no repositório para auditoria.
 
-### 2.1 M1 — Reusabilidade de componentes
+### 2.1 M1 — Execução de reusabilidade
 
 $$
 M1 = \frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Inventariados}} \times 100
@@ -43,7 +43,7 @@ $$
 5. Registrar a contagem de componentes reutilizados e o total inventariado.
 6. Calcular M1 aplicando a fórmula.
 
-### 2.2 M2 — Tempo médio de resolução de modificações
+### 2.2 M2 — Complexidade de modificação
 
 $$
 M2 = \frac{\text{Tempo Total de Resolução das Modificações Implementadas}}{\text{Número de Modificações Implementadas}}
@@ -83,7 +83,7 @@ $$
 3. Registrar o número de funções implementadas e o número de funções exigidas.
 4. Calcular M4 aplicando a fórmula.
 
-### 2.5 M5 — Independência de componentes
+### 2.5 M5 — Condensabilidade
 
 $$
 M5 = \frac{\text{Componentes sem Dependências Internas}}{\text{Total de Componentes Avaliados}} \times 100
