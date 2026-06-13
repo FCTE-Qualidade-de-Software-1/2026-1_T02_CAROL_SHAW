@@ -143,6 +143,14 @@ $$
 
 O resultado da CF foi de **70,00%**, classificado como **inaceitável** por permanecer abaixo do limite mínimo de 80%.
 
+### 7. Evidências
+
+[historico_190012579](./190012579.png)
+[historico_211029503](./211029503.png)
+[historico_222006202](./222006202.png)
+[historico_222037700](./222037700.png)
+[historico_231026330](./231026330.png)
+
 ## Histórico de Versões
 
 | Versão | Data | Descrição | Autor(es) |
