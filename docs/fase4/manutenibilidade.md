@@ -262,8 +262,5 @@ As ações fundamentadas pelas evidências são:
 | 1.2 | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.3 | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
 | 1.4 | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-<<<<<<< HEAD
 | 1.5 | 12/06/2026 | Inclusão do Knip como análise estática complementar da M1 e registro de suas limitações | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-=======
-| 1.5 | 12/06/2026 | Cálculo das métricas M2 e M4,registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
->>>>>>> 227885a0ec78336af99d56e4315e86e21836d0e4
+| 1.6 | 12/06/2026 | Cálculo das métricas M2 e M4,registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
