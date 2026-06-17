@@ -12,7 +12,7 @@
 
 ## Questões, Hipóteses e  Métricas
 
-### Q1: Quão elevado é o reaproveitamento dos componentes do frontend?
+### Q1: Quão elevado é o reaproveitamento de componentes e ativos já existentes no frontend?
 
 #### H1: Espera-se que o NoFluxoUnB apresente um alto grau de reaproveitamento dos componentes do frontend.
 
@@ -34,7 +34,7 @@ Critérios:
 
 ---
 
-### Q2: Qual é o tempo médio necessário para concluir modificações no sistema?
+### Q2: Qual é o esforço médio de tempo necessário para realizar modificações no sistema?
 
 #### H2: Espera-se que as modificações implementadas no NoFluxoUnB sejam concluídas, em média, em até 4 dias.
 
@@ -95,7 +95,7 @@ Critérios:
 - Inaceitável (H4 Refutada): < 80%
 
 
-### Q5: Qual é a proporção de componentes sem dependências internas diretas?
+### Q5: Quão independente é a estrutura modular do sistema diante de modificações em seus componentes?
 
 #### H5: Espera-se que ao menos 80% dos componentes avaliados não importem outros componentes internos.
 
@@ -148,6 +148,7 @@ Fonte: Isaque Camargos, 2026.
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 04/06/2026 | Criação da documentação inicial e estruturação | [Vilmar José Fagundes](https://github.com/VilmarFagundes) |  |  |  |
 | 1.1    | 04/06/2026 | Escrita de todo o documento | [Isaque Camargos Nascimento](https://github.com/isaqzin) |  |  |  |
-| 1.2    | 13/06/2026 | Adequação da M2 ao tempo de resolução registrado na execução | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.2    | 13/06/2026 | Alteração da m2 para dias | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
 | 1.3    | 13/06/2026 | Alinhamento do escopo da M1 e da definição da M5 às evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
 | 1.4    | 13/06/2026 | Restauração da definição original da M4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.5    | 17/06/2026 | Alterações apontadas no ponto de controle 2 | [Isaque Camargos Nascimento](https://github.com/isaqzin) |  |  |  |
