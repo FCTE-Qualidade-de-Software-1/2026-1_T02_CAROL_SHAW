@@ -95,6 +95,3 @@ Fonte: Caio Duarte, 2026.
 | Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 04/06/2026 | Criação da documentação inicial e estruturação | [Vilmar José Fagundes](https://github.com/VilmarFagundes) |  |  |  |
-| 1.0    | 04/06/2026 | Adiciona GQM de adequação funcional | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
-| 1.1    | 13/06/2026 | Correção da fórmula da CRF e da identificação da hipótese da CF | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
-| 1.2    | 13/06/2026 | Alinhamento da questão e da hipótese da TDD às operações executadas | [Caio Duarte](https://github.com/caioduart3) |  |  |  |

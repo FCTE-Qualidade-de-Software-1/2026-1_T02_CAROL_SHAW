@@ -147,13 +147,13 @@ O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as at
 
 | Etapa | Atividade (a executar na Fase 4)                                                                              | Métricas    | Responsável | Data de execução |
 | ----- | ------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | ---------------- |
-| 1     | Preparação do ambiente: fixar commit de referência, levantar especificação de requisitos e normas da UnB      | —           |             | 07/06/2026       |
-| 2     | Inspeção documental: mapear funções declaradas e verificar implementação; calcular CRF                        | CRF         |             | 07/06/2026       |
-| 3     | Preparação dos casos de teste: definir operações-padrão com saídas esperadas para TDD e CF                   | TDD, CF     |             | 08/06/2026       |
-| 4     | Execução dos testes de precisão: rodar operações e registrar divergências; calcular TDD                      | TDD         |             | 09/06/2026       |
-| 5     | Execução dos testes de conformidade: rodar transações e verificar conformidade com normas; calcular CF        | CF          |             | 10/06/2026       |
-| 6     | Consolidação dos dados brutos e instrumentos de coleta no repositório                                         | todas       |             | 12/06/2026       |
-| 7     | Verificação cruzada dos resultados e preparação para a Fase 4                                                 | todas       |             | 12/06/2026       |
+| 1     | Preparação do ambiente: fixar commit de referência, levantar especificação de requisitos e normas da UnB      | —           | Caio Duarte | 07/06/2026       |
+| 2     | Inspeção documental: mapear funções declaradas e verificar implementação; calcular CRF                        | CRF         | Caio Duarte | 07/06/2026       |
+| 3     | Preparação dos casos de teste: definir operações-padrão com saídas esperadas para TDD e CF                   | TDD, CF     | Gabriel Flores e Caio Duarte | 08/06/2026       |
+| 4     | Execução dos testes de precisão: rodar operações e registrar divergências; calcular TDD                      | TDD         | Gabriel Flores | 09/06/2026       |
+| 5     | Execução dos testes de conformidade: rodar transações e verificar conformidade com normas; calcular CF        | CF          | Caio Duarte | 10/06/2026       |
+| 6     | Consolidação dos dados brutos e instrumentos de coleta no repositório                                         | todas       | Caio Duarte | 12/06/2026       |
+| 7     | Verificação cruzada dos resultados e preparação para a Fase 4                                                 | todas       | Caio Duarte | 12/06/2026       |
 
 Tabela 5 - "Cronograma de execução da avaliação de Adequação Funcional (Fase 4)" Autor: Gustavo Oki
 
@@ -193,6 +193,5 @@ Tabela 6 - "Critérios definidos na fase 2" Autor: Gustavo Oki
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Adequação Funcional | [Gustavo Oki](https://github.com/GustOki) |  |  |  |
 | 1.1    | 05/06/2026 | Especificação das ferramentas e definição do cronograma de execução (07/06 a 10/06/2026) | [Gustavo Oki](https://github.com/GustOki) | [Vilmar José Fagundes](https://github.com/VilmarFagundes) | 12/06/2026 | Ajuste na formatação do arquivo e adição de legendas |
-| 1.2    | 13/06/2026 | Alinhamento dos métodos e das amostras às evidências obtidas na Fase 4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
 
 <p align="center">Tabela 7 - "Histórico de versões" Autor: Vilmar José</p>

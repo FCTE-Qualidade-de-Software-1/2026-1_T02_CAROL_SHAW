@@ -148,7 +148,4 @@ Fonte: Isaque Camargos, 2026.
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
 | 1.0    | 04/06/2026 | Criação da documentação inicial e estruturação | [Vilmar José Fagundes](https://github.com/VilmarFagundes) |  |  |  |
 | 1.1    | 04/06/2026 | Escrita de todo o documento | [Isaque Camargos Nascimento](https://github.com/isaqzin) |  |  |  |
-| 1.2    | 13/06/2026 | Alteração da m2 para dias | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
-| 1.3    | 13/06/2026 | Alinhamento do escopo da M1 e da definição da M5 às evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
-| 1.4    | 13/06/2026 | Restauração da definição original da M4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
 | 1.5    | 17/06/2026 | Alterações apontadas no ponto de controle 2 | [Isaque Camargos Nascimento](https://github.com/isaqzin) |  |  |  |
