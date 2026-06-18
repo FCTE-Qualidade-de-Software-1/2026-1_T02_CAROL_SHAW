@@ -25,7 +25,7 @@ A avaliação da Adequação Funcional combina **inspeção documental**, **exec
 
 ## 2. Instruções para o Avaliador
 
-As instruções a seguir descrevem, passo a passo, como obter cada medida. Todos os dados brutos coletados devem ser registrados nos formulários da seção 3 e armazenados no repositório para auditoria.
+As instruções a seguir descrevem, passo a passo, como obter cada medida. Todos os dados brutos coletados devem ser registrados nos instrumentos de coleta da seção 3 e armazenados no repositório para auditoria.
 
 ### 2.1 CRF — Cobertura de Requisitos Funcionais
 
@@ -36,7 +36,7 @@ $$
 1. Levantar a **lista completa de funções** declaradas na especificação de requisitos do NoFluxoUNB (StoryMap, backlog, PBB ou documento equivalente no repositório).
 2. Para cada um dos 15 requisitos funcionais de primeiro nível, verificar no código-fonte e nas evidências visuais se todos os comportamentos descritos possuem implementação. Registrar como "ausente/incorreto" quando não houver implementação ou quando apenas parte do requisito estiver atendida.
 3. Somar o número de funções **ausentes ou incorretas**.
-4. Registrar o total de funções declaradas e o total de funções ausentes/incorretas no formulário de coleta.
+4. Registrar o total de funções declaradas e o total de funções ausentes/incorretas no instrumento de coleta.
 5. Calcular CRF aplicando a fórmula.
 
 > **Limitação:** a CRF registra presença e aderência estática. A disponibilidade operacional das funcionalidades depende de validação ponta a ponta em ambiente integrado.
@@ -135,7 +135,7 @@ A massa de dados da Adequação Funcional é composta por:
 - cinco históricos acadêmicos únicos de Engenharia de Software para a CF;
 - estrutura curricular `6360/1 - 2017.1` e lista oficial de 39 componentes obrigatórios como referência normativa.
 
-### 3.5 Formulários de coleta
+### 3.5 Instrumentos de coleta
 
 Para cada métrica, registrar no repositório uma tabela com: identificador da métrica, valores brutos coletados (numerador e denominador), data da coleta, avaliador responsável e evidências (links, prints ou logs).
 
@@ -152,7 +152,7 @@ O cronograma abaixo é parte do planejamento da Fase 3 e define **quando** as at
 | 3     | Preparação dos casos de teste: definir operações-padrão com saídas esperadas para TDD e CF                   | TDD, CF     |             | 08/06/2026       |
 | 4     | Execução dos testes de precisão: rodar operações e registrar divergências; calcular TDD                      | TDD         |             | 09/06/2026       |
 | 5     | Execução dos testes de conformidade: rodar transações e verificar conformidade com normas; calcular CF        | CF          |             | 10/06/2026       |
-| 6     | Consolidação dos dados brutos e formulários no repositório                                                    | todas       |             | 12/06/2026       |
+| 6     | Consolidação dos dados brutos e instrumentos de coleta no repositório                                         | todas       |             | 12/06/2026       |
 | 7     | Verificação cruzada dos resultados e preparação para a Fase 4                                                 | todas       |             | 12/06/2026       |
 
 Tabela 5 - "Cronograma de execução da avaliação de Adequação Funcional (Fase 4)" Autor: Gustavo Oki

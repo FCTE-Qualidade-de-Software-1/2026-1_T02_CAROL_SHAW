@@ -8,7 +8,7 @@ Esta página apresenta a execução da avaliação de **Manutenibilidade** sobre
 
 ### 1.1 M1 - Execução de reusabilidade
 
-O inventário foi elaborado exclusivamente a partir do diretório `no_fluxo_frontend_svelte/src/lib/components`. Foram aplicadas as seguintes regras:
+O levantamento foi elaborado exclusivamente a partir do diretório `no_fluxo_frontend_svelte/src/lib/components`. Foram aplicadas as seguintes regras:
 
 1. componentes Svelte independentes foram contados por arquivo;
 2. componentes internos de uma família em `components/ui/<familia>/` foram agrupados pelo módulo público `index.ts`;
@@ -19,7 +19,7 @@ O inventário foi elaborado exclusivamente a partir do diretório `no_fluxo_fron
 A identificação dos contextos de importação foi realizada com a extensão Svelte no ambiente de desenvolvimento, conforme demonstrado no vídeo disponível na [Evidência da M1](evidencias/manutenibilidade/m1.md).
 
 $$
-M1 = \frac{\text{componentes reutilizados}}{\text{total de componentes inventariados}} \times 100
+M1 = \frac{\text{componentes reutilizados}}{\text{total de componentes levantados}} \times 100
 $$
 
 $$
@@ -183,7 +183,7 @@ O mapa, as ferramentas, as relações de maior concentração e os componentes s
 
 ## 4. Julgamento e Ações de Melhoria
 
-O resultado da M1 indica baixo reaproveitamento segundo o critério estabelecido. Entre os 82 componentes inventariados, 61 aparecem em menos de dois contextos. Parte desses componentes pode ser legitimamente específica de uma única tela; contudo, a métrica adotada não distingue especialização arquitetural de ausência de reutilização.
+O resultado da M1 indica baixo reaproveitamento segundo o critério estabelecido. Entre os 82 componentes levantados, 61 aparecem em menos de dois contextos. Parte desses componentes pode ser legitimamente específica de uma única tela; contudo, a métrica adotada não distingue especialização arquitetural de ausência de reutilização.
 
 A M2 apresentou resultado aceitável, com média de 6,75 dias por modificação implementada. Como a hipótese H2 estabelece o nível desejável de até 4 dias, ela não foi confirmada. A M3 permanece inconclusiva porque a especificação não enumera os cenários de teste requeridos. A M4 atingiu 300%, resultado classificado como desejável.
 
@@ -192,7 +192,7 @@ A M5 indica baixa independência de importação entre os componentes do backend
 As ações fundamentadas pelas evidências são:
 
 1. revisar os 61 componentes não reutilizados e remover os que não possuem imports;
-2. consolidar padrões repetidos de formulários, modais e layouts em componentes compartilhados;
+2. consolidar padrões repetidos de entrada de dados, modais e layouts em componentes compartilhados;
 3. manter famílias de UI expostas por módulos públicos e documentar seu uso;
 4. criar a matriz de cenários requeridos para permitir o cálculo de M3;
 5. adicionar testes de frontend e corrigir os 10 erros identificados pelo `svelte-check`;
@@ -230,14 +230,11 @@ As ações fundamentadas pelas evidências são:
 
 | Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
 | ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
-| 1.0    | 11/06/2026 | Registro inicial da execução da avaliação de Manutenibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.1    | 11/06/2026 | Cálculo da M1, evidências auxiliares e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.2    | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.3    | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.4    | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.6    | 12/06/2026 | Cálculo das métricas M2 e M4, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.7    | 13/06/2026 | Correção da M1 e revisão das métricas M2 e M4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.8    | 13/06/2026 | Adequação da definição da M2 ao tempo de resolução utilizado na execução | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.9    | 13/06/2026 | Sincronização das medidas e do escopo com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.10   | 13/06/2026 | Restauração do cálculo e da classificação original da M4 conforme o commit 443ee2e | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
-| 1.11   | 13/06/2026 | Alinhamento da M1 à inspeção de referências dos componentes | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.0    | 11/06/2026 | Registro inicial da execução da avaliação de Manutenibilidade | [Caio Duarte](https://github.com/caioduart3) | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |
+| 1.1    | 11/06/2026 | Cálculo da M1, evidências auxiliares e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |
+| 1.2    | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |
+| 1.3    | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |
+| 1.4    | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |
+| 1.6    | 12/06/2026 | Cálculo das métricas M2 e M4, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) | [Caio Duarte](https://github.com/caioduart3) |  |  |
+| 1.7    | 13/06/2026 | Adequação da definição da M2 ao tempo de resolução utilizado na execução | [Gabriel Flores](https://github.com/Gabrielfcoelho) | [Caio Duarte](https://github.com/caioduart3) |  |  |
+

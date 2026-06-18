@@ -19,10 +19,10 @@
 #### Métrica 1: Execução de reusabilidade
 Fórmula:
 $$
-\frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Inventariados}} \times 100
+\frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Levantados}} \times 100
 $$
 
-O inventário considera os componentes em `src/lib/components`. Componentes Svelte independentes são contados por arquivo, e cada família de UI é agrupada pelo módulo público `index.ts`.
+O levantamento considera os componentes em `src/lib/components`. Componentes Svelte independentes são contados por arquivo, e cada família de UI é agrupada pelo módulo público `index.ts`.
 
 Critérios:
 

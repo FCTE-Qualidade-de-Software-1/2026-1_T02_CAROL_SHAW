@@ -33,14 +33,14 @@ As instruções a seguir descrevem, passo a passo, como obter cada medida. Todos
 ### 2.1 M1 — Execução de reusabilidade
 
 $$
-M1 = \frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Inventariados}} \times 100
+M1 = \frac{\text{Componentes Reutilizados}}{\text{Total de Componentes Levantados}} \times 100
 $$
 
-1. Inventariar os componentes localizados em `no_fluxo_frontend_svelte/src/lib/components`.
+1. Levantar os componentes localizados em `no_fluxo_frontend_svelte/src/lib/components`.
 2. Contar cada componente Svelte independente por arquivo.
 3. Agrupar os componentes internos de cada família `components/ui/<familia>/` pelo módulo público `index.ts`.
 4. Classificar como reutilizado o componente importado por dois ou mais arquivos de contextos distintos, desconsiderando imports internos da própria família de UI.
-5. Registrar a contagem de componentes reutilizados e o total inventariado.
+5. Registrar a contagem de componentes reutilizados e o total levantado.
 6. Calcular M1 aplicando a fórmula.
 
 ### 2.2 M2 — Complexidade de modificação
