@@ -268,13 +268,13 @@ Para diminuir a **Taxa de Divergência de Dados**, é necessário atualizar as f
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) |
-| :----- | :--- | :-------- | :-------- |
-| 1.0 | 11/06/2026 | Registro inicial da execução da avaliação de Adequação Funcional | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.1 | 11/06/2026 | Cálculo da CRF, julgamento e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.2 | 11/06/2026 | Registro do problema de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.3 | 12/06/2026 | Execução da CF para o currículo 6360/1 - 2017.1 | [Caio Duarte](https://github.com/caioduart3) |
-| 1.4 | 12/06/2026 | Deduplicação da amostra e inclusão da conformidade do período letivo atual | [Caio Duarte](https://github.com/caioduart3)  |
-| 1.5 | 12/06/2026 | Cálculo da TDD, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.6 | 13/06/2026 | Registro da limitação amostral da TDD após auditoria dos cálculos | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.7 | 13/06/2026 | Sincronização dos resultados e limitações com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 11/06/2026 | Registro inicial da execução da avaliação de Adequação Funcional | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.1    | 11/06/2026 | Cálculo da CRF, julgamento e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.2    | 11/06/2026 | Registro do problema de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.3    | 12/06/2026 | Execução da CF para o currículo 6360/1 - 2017.1 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.4    | 12/06/2026 | Deduplicação da amostra e inclusão da conformidade do período letivo atual | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.5    | 12/06/2026 | Cálculo da TDD, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.6    | 13/06/2026 | Registro da limitação amostral da TDD após auditoria dos cálculos | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.7    | 13/06/2026 | Sincronização dos resultados e limitações com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |

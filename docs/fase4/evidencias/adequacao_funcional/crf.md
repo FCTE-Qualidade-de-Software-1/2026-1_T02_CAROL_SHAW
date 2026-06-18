@@ -250,10 +250,10 @@ A presença de requisitos compostos reduz a precisão da CRF. A decomposição e
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) |
-| :----- | :--- | :-------- | :-------- |
-| 1.0 | 11/06/2026 | Registro da matriz de rastreabilidade e cálculo da CRF | [Caio Duarte](https://github.com/caioduart3)|
-| 1.1 | 11/06/2026 | Inclusão da análise de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3)  |
-| 1.2 | 12/06/2026 | Associação das evidências visuais aos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 11/06/2026 | Registro da matriz de rastreabilidade e cálculo da CRF | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.1    | 11/06/2026 | Inclusão da análise de atomicidade dos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
+| 1.2    | 12/06/2026 | Associação das evidências visuais aos requisitos funcionais | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
 
 [Voltar para Adequação Funcional](../../adequacao_funcional.md)

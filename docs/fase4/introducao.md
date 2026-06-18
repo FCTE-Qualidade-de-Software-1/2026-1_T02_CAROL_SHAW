@@ -52,10 +52,10 @@ Os resultados apoiam a priorização do backlog e a gestão do débito técnico,
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) |
-| :----- | :--- | :-------- | :-------- |
-| 2.0 | 13/06/2026 | Síntese da Fase 4 conforme os critérios do trabalho final | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 2.1 | 13/06/2026 | Correção dos resultados consolidados após auditoria das fórmulas e dados brutos | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 2.2 | 13/06/2026 | Consolidação da M2 conforme o tempo de resolução utilizado na execução | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 2.3 | 13/06/2026 | Alinhamento da consolidação com as evidências e os métodos das fases anteriores | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 2.4 | 13/06/2026 | Restauração do resultado desejável da M4 conforme o commit 443ee2e | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 2.0    | 13/06/2026 | Síntese da Fase 4 conforme os critérios do trabalho final | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 2.1    | 13/06/2026 | Correção dos resultados consolidados após auditoria das fórmulas e dados brutos | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 2.2    | 13/06/2026 | Consolidação da M2 conforme o tempo de resolução utilizado na execução | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 2.3    | 13/06/2026 | Alinhamento da consolidação com as evidências e os métodos das fases anteriores | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 2.4    | 13/06/2026 | Restauração do resultado desejável da M4 conforme o commit 443ee2e | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |

@@ -189,10 +189,10 @@ Tabela 6 - "Critérios definidos na fase 2" Autor: Gustavo Oki
 
 ## Histórico de Versões
 
-| Versão | Data       | Descrição                                                          | Autor(es) | Revisor(es) | Data de Revisão | Alterações Realizadas |
-| ------ | ---------- | ------------------------------------------------------------------ | --------- | ----------- | --------------- | --------------------- |
-| 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Adequação Funcional   |     [Gustavo Oki](https://github.com/GustOki)      |             |                 |                       |
-| 1.1    | 05/06/2026 | Especificação das ferramentas e definição do cronograma de execução (07/06 a 10/06/2026)   |     [Gustavo Oki](https://github.com/GustOki)      |[Vilmar José Fagundes](https://github.com/VilmarFagundes)      |   12/06/2026      |  Ajuste na formatação do arquivo e adição de legendas  |
-| 1.2    | 13/06/2026 | Alinhamento dos métodos e das amostras às evidências obtidas na Fase 4 | [Caio Duarte](https://github.com/caioduart3) | | | |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Adequação Funcional | [Gustavo Oki](https://github.com/GustOki) |  |  |  |
+| 1.1    | 05/06/2026 | Especificação das ferramentas e definição do cronograma de execução (07/06 a 10/06/2026) | [Gustavo Oki](https://github.com/GustOki) | [Vilmar José Fagundes](https://github.com/VilmarFagundes) | 12/06/2026 | Ajuste na formatação do arquivo e adição de legendas |
+| 1.2    | 13/06/2026 | Alinhamento dos métodos e das amostras às evidências obtidas na Fase 4 | [Caio Duarte](https://github.com/caioduart3) |  |  |  |
 
 <p align="center">Tabela 7 - "Histórico de versões" Autor: Vilmar José</p>

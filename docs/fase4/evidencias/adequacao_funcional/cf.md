@@ -153,7 +153,7 @@ O resultado da CF foi de **70,00%**, classificado como **inaceitável** por perm
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) |
-| :----- | :--- | :-------- | :-------- |
-| 1.0 | 12/06/2026 | Registro da execução e dos dados brutos da CF | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.1 | 12/06/2026 | Deduplicação da amostra e inclusão da verificação do semestre atual | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 12/06/2026 | Registro da execução e dos dados brutos da CF | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.1    | 12/06/2026 | Deduplicação da amostra e inclusão da verificação do semestre atual | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |

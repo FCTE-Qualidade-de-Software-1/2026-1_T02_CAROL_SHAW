@@ -228,16 +228,16 @@ As ações fundamentadas pelas evidências são:
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) |
-| :----- | :--- | :-------- | :-------- |
-| 1.0 | 11/06/2026 | Registro inicial da execução da avaliação de Manutenibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.1 | 11/06/2026 | Cálculo da M1, evidências auxiliares e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.2 | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.3 | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.4 | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.6 | 12/06/2026 | Cálculo das métricas M2 e M4, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.7 | 13/06/2026 | Correção da M1 e revisão das métricas M2 e M4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.8 | 13/06/2026 | Adequação da definição da M2 ao tempo de resolução utilizado na execução | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.9 | 13/06/2026 | Sincronização das medidas e do escopo com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.10 | 13/06/2026 | Restauração do cálculo e da classificação original da M4 conforme o commit 443ee2e | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
-| 1.11 | 13/06/2026 | Alinhamento da M1 à inspeção de referências dos componentes | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 11/06/2026 | Registro inicial da execução da avaliação de Manutenibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.1    | 11/06/2026 | Cálculo da M1, evidências auxiliares e registro das métricas inviáveis | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.2    | 12/06/2026 | Cálculo da M5 por análise estática de dependências | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.3    | 12/06/2026 | Restrição da M5 ao backend TypeScript para garantir reprodutibilidade | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.4    | 12/06/2026 | Consolidação da execução e da inviabilidade de cálculo da M3 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.6    | 12/06/2026 | Cálculo das métricas M2 e M4, registro das métricas e análise | [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.7    | 13/06/2026 | Correção da M1 e revisão das métricas M2 e M4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.8    | 13/06/2026 | Adequação da definição da M2 ao tempo de resolução utilizado na execução | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.9    | 13/06/2026 | Sincronização das medidas e do escopo com as evidências da Fase 4 | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.10   | 13/06/2026 | Restauração do cálculo e da classificação original da M4 conforme o commit 443ee2e | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |
+| 1.11   | 13/06/2026 | Alinhamento da M1 à inspeção de referências dos componentes | [Caio Duarte](https://github.com/caioduart3) e [Gabriel Flores](https://github.com/Gabrielfcoelho) |  |  |  |

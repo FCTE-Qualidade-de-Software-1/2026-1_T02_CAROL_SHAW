@@ -226,12 +226,12 @@ Cada elemento deste plano deriva diretamente da especificação da Fase 2: os m�
 
 O histórico de alterações desta página é apresentado na **Tabela 8**.
 
-| Versão | Data       | Descrição                                                                             | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
-| ------ | ---------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
-| 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Manutenibilidade                         | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
-| 1.1    | 05/06/2026 | Especificação das ferramentas reais a partir da inspeção do repositório do NoFluxoUNB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
-| 1.2    | 05/06/2026 | Definição do cronograma de execução (07/06 a 10/06/2026)                              | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
-| 1.3    | 05/06/2026 | Ajuste do cronograma de execução para o período de 07/06 a 12/06/2026                 | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
-| 1.4    | 18/06/2026 | Correções para a Entrega Final: Adicionar responsáveis no cronograma                  | [Matheus de Alcântara](https://github.com/matheusdealcantara) |             |                 |                       |
+| Versão | Data       | Descrição                      | Autor(es)                                                     | Revisor(es) | Data de Revisão | Alterações Realizadas |
+| ------ | ---------- | ------------------------------ | ------------------------------------------------------------- | ----------- | --------------- | --------------------- |
+| 1.0    | 05/06/2026 | Criação do Plano de Avaliação da Fase 3 para Manutenibilidade | [Matheus de Alcântara](https://github.com/matheusdealcantara) |  |  |  |
+| 1.1    | 05/06/2026 | Especificação das ferramentas reais a partir da inspeção do repositório do NoFluxoUNB | [Matheus de Alcântara](https://github.com/matheusdealcantara) |  |  |  |
+| 1.2    | 05/06/2026 | Definição do cronograma de execução (07/06 a 10/06/2026) | [Matheus de Alcântara](https://github.com/matheusdealcantara) |  |  |  |
+| 1.3    | 05/06/2026 | Ajuste do cronograma de execução para o período de 07/06 a 12/06/2026 | [Matheus de Alcântara](https://github.com/matheusdealcantara) |  |  |  |
+| 1.4    | 18/06/2026 | Correções para a Entrega Final: Adicionar responsáveis no cronograma | [Matheus de Alcântara](https://github.com/matheusdealcantara) |  |  |  |
 
 <p align="center">Tabela 8 - "Histórico de versões da página Plano de Avaliação" Autor: Matheus de Alcântara</p>
