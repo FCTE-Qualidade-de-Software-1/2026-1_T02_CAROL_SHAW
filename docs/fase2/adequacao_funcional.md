@@ -70,7 +70,7 @@ Critérios:
 
 <figure markdown>
 
-![Diagrama GQM - Adequação Funcional](../assets/img/GQM-AdequacaoFuncional.svg)
+![Diagrama GQM - Adequação Funcional](../assets/img/adequacao_funcional.png)
 
 <figcaption>
 
