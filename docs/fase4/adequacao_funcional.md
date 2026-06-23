@@ -122,7 +122,7 @@ $$
 CF = \frac{\text{transações em conformidade}}{\text{total de transações processadas}} \times 100
 $$
 
-A referência normativa adotada foi a estrutura curricular do curso de Engenharia de Software da FCTE, código `6360/1`, vigente desde `2017.1`, registrada no arquivo `spec/SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas.html`. Essa estrutura estabelece:
+A referência normativa adotada foi a estrutura curricular do curso de Engenharia de Software da FCTE, código `6360/1`, vigente desde `2017.1`. Essa estrutura estabelece:
 
 - carga horária total mínima de 3.480 horas;
 - carga horária obrigatória de 2.580 horas;

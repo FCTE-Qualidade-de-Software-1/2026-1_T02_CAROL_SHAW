@@ -6,7 +6,7 @@ Esta página apresenta os dados brutos, as fontes e o procedimento empregados no
 
 | Fonte | Utilização |
 | :---- | :--------- |
-| `spec/SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas.html` | Estrutura curricular oficial e cargas horárias |
+| `SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas.html` | Estrutura curricular oficial e cargas horárias |
 | [`test_historicos/historicos/`](https://github.com/unb-mds/2025-1-NoFluxoUNB/tree/ba6db878b9dfa36fb034916612c4cf58ddf43475/test_historicos/historicos) | Históricos acadêmicos processados |
 | [`test_historicos/pdfDataExtractor.mjs`](https://github.com/unb-mds/2025-1-NoFluxoUNB/blob/ba6db878b9dfa36fb034916612c4cf58ddf43475/test_historicos/pdfDataExtractor.mjs) | Apoio à extração das situações e equivalências registradas nos documentos |
 | [Ambiente de importação do NoFluxoUNB](https://no-fluxo.crianex.com/upload-historico) | Ambiente utilizado na execução das transações |
